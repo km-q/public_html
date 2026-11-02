@@ -1,0 +1,1632 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Kong Ming Quantum</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500&family=Noto+Sans+KR:wght@400;500&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+JP:wght@600;900&family=Noto+Serif+KR:wght@600;900&family=Noto+Serif+SC:wght@600&family=Noto+Serif+TC:wght@600;900&display=swap">
+<style>
+/* Layout: a night sky of ink-wash mountains and drifting particles; content floats above in a 1180px column. One dark world, committed. */
+:root{
+  --night:#060912;
+  --ink:#0d1324;
+  --ink-2:#141c33;
+  --line:rgba(150,172,226,.16);
+  --paper:#ece6d6;
+  --mist:#9aa3bf;
+  --jade:#3ff0d8;
+  --gold:#f0c35a;
+  --seal:#c8382f;
+  --f-cjk:"Noto Serif TC","Noto Serif JP","Noto Serif KR",serif;
+  --f-sans-cjk:"Noto Sans TC","Noto Sans JP","Noto Sans KR";
+  --f-disp:"Cormorant Garamond",var(--f-cjk);
+  --f-body:"Be Vietnam Pro",var(--f-sans-cjk),system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+:root[lang="ja"]{--f-cjk:"Noto Serif JP","Noto Serif TC",serif;--f-sans-cjk:"Noto Sans JP","Noto Sans TC"}
+:root[lang="ko"]{--f-cjk:"Noto Serif KR","Noto Serif TC",serif;--f-sans-cjk:"Noto Sans KR","Noto Sans TC"}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--paper);font-family:var(--f-body);font-size:16px;line-height:1.7;font-weight:400;-webkit-font-smoothing:antialiased}
+:root:is([lang="vi"],[lang="ja"],[lang="ko"],[lang="zh-Hant"]) body{line-height:2.2}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--night)}
+#sky{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+header,main,footer{position:relative;z-index:1}
+a{color:var(--jade)}
+ruby{ruby-position:over}
+rt{font-family:var(--f-cjk);font-size:.52em;color:var(--gold);letter-spacing:0;opacity:.92;font-weight:600}
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px}
+.wrap{max-width:1180px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* Ruby (furigana / hangul / simplified) */
+:root[lang="zh-Hant"] rt{font-family:"Noto Serif SC","Noto Sans SC",serif}
+:root:is([lang="ja"],[lang="ko"],[lang="zh-Hant"]) h2{line-height:1.9}
+:root:is([lang="ja"],[lang="ko"],[lang="zh-Hant"]) .page-head h1{line-height:1.75}
+:root:is([lang="ja"],[lang="ko"],[lang="zh-Hant"]) :is(.cn,.pcn,.quote-cn,.quote-tr){line-height:1.9}
+:root:is([lang="ja"],[lang="ko"],[lang="zh-Hant"]) :is(.glyph,.vg){line-height:1.5}
+:is(.cn,.pcn,.path .num) rt{font-size:.36em}
+.quote-cn rt{font-size:.3em;letter-spacing:0}
+:is(.glyph,.vg) rt{font-size:.2em;-webkit-text-stroke:0;text-shadow:none}
+.vtitle i{font-style:normal;font-family:var(--f-cjk);font-weight:600;font-size:.19em;color:var(--gold);writing-mode:vertical-rl;letter-spacing:.05em;filter:none}
+.btn rt{color:inherit;opacity:.75}
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(6,9,18,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;padding-block:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--paper);margin-right:auto}
+.seal{display:grid;grid-template-columns:1fr 1fr;width:40px;height:40px;background:var(--seal);color:#fbeee6;border-radius:3px;font-family:var(--f-cjk);font-weight:900;font-size:16px;line-height:20px;text-align:center;box-shadow:0 0 0 2px rgba(200,56,47,.25),0 0 18px rgba(200,56,47,.35);flex:none}
+.brand-txt{display:flex;flex-direction:column;line-height:1.1}
+.brand-txt b{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:21px;letter-spacing:.02em}
+.brand-txt span{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.32em;color:var(--mist)}
+nav.main{display:flex;align-items:flex-end;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav.main a{white-space:nowrap;text-decoration:none;color:var(--mist);font-size:14px;padding:8px 12px;border-radius:3px;line-height:1.5}
+nav.main a:hover{color:var(--paper)}
+nav.main a[aria-current="page"]{color:var(--jade);background:rgba(63,240,216,.08);box-shadow:inset 0 -2px 0 var(--jade)}
+.langsel{position:relative;display:flex;align-items:center;gap:8px}
+.langsel select{appearance:none;-webkit-appearance:none;background:var(--ink);color:var(--paper);border:1px solid var(--line);border-radius:3px;padding:8px 28px 8px 12px;font:500 13px var(--f-body);cursor:pointer;field-sizing:content}
+.langsel::after{content:"";position:absolute;right:12px;top:50%;width:7px;height:7px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+@media (max-width:760px){
+  .top .wrap{gap:10px 12px}
+  nav.main{order:3;width:100%;margin-inline:-6px}
+  .brand{gap:10px}
+  .brand-txt b{font-size:18px}
+  .brand-txt span{letter-spacing:.2em}
+  .langsel select{padding:7px 26px 7px 10px;font-size:12.5px}
+}
+
+/* Type */
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
+:root:not([lang="en"]) .eyebrow{letter-spacing:.08em;font-family:var(--f-body);font-size:13.5px;font-weight:500}
+h1,h2,h3{text-wrap:balance;margin:0}
+h2{font-family:var(--f-disp);font-weight:600;font-size:clamp(30px,4vw,48px);line-height:1.12;letter-spacing:.005em}
+:root:not([lang="en"]) h2{font-family:var(--f-cjk);font-weight:600;font-size:clamp(26px,3.4vw,40px);line-height:1.35}
+:root[lang="vi"] h2{font-family:"Cormorant Garamond",var(--f-cjk);font-size:clamp(30px,4vw,46px);line-height:1.6}
+.lead{font-size:clamp(17px,1.6vw,19px);color:var(--paper);opacity:.9;max-width:60ch}
+p{margin:0}
+.muted{color:var(--mist)}
+
+/* Sections */
+.view{display:block}
+.sec{padding-block:clamp(56px,8vw,104px)}
+.sec-head{display:grid;gap:14px;max-width:760px;margin-bottom:clamp(28px,4vw,48px)}
+.sec-head p{color:var(--mist);max-width:62ch}
+.page-head{padding-block:clamp(56px,8vw,96px) clamp(16px,3vw,32px)}
+.page-head h1{font-family:var(--f-disp);font-weight:600;font-size:clamp(40px,6vw,78px);line-height:1.05;margin-bottom:18px}
+:root:not([lang="en"]) .page-head h1{font-family:var(--f-cjk);font-weight:900;font-size:clamp(34px,5vw,64px);line-height:1.3}
+:root[lang="vi"] .page-head h1{font-family:"Cormorant Garamond",var(--f-cjk);font-weight:600;line-height:1.5}
+.page-head .lead{color:var(--mist)}
+
+/* Buttons */
+.btn{display:inline-block;text-align:center;vertical-align:bottom;font:500 15px var(--f-body);padding:12px 20px;border-radius:3px;border:1px solid var(--jade);color:var(--night);background:var(--jade);text-decoration:none;cursor:pointer;transition:box-shadow .25s,transform .25s;line-height:1.4}
+.btn:hover{box-shadow:0 0 24px rgba(63,240,216,.45);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--paper);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--gold);color:var(--gold);box-shadow:none}
+.btn.gold{background:var(--gold);border-color:var(--gold)}
+.btn.gold:hover{box-shadow:0 0 24px rgba(240,195,90,.45)}
+.textlink{font-family:var(--f-body);font-weight:500;color:var(--jade);text-decoration:none;border-bottom:1px solid rgba(63,240,216,.35);padding-bottom:2px}
+.textlink:hover{border-color:var(--jade)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,.95fr);gap:clamp(24px,4vw,56px);align-items:center;padding-block:clamp(40px,6vw,88px)}
+.vtitle{display:flex;flex-direction:column;gap:.06em;font-family:"Noto Serif TC",serif;font-weight:900;font-size:clamp(64px,7.5vw,108px);line-height:1;margin:0;filter:drop-shadow(0 0 22px rgba(63,240,216,.28))}
+.vc{display:flex;align-items:center;gap:.08em}
+.vc b{font-weight:900;color:var(--paper)}
+.vc:nth-child(3) b{color:color-mix(in srgb,var(--paper) 45%,var(--jade))}
+.vc:nth-child(4) b{color:var(--jade)}
+.hero-copy{display:grid;gap:22px;min-width:0}
+.hero-copy h1{font-family:"Cormorant Garamond",serif;font-weight:600;font-style:italic;font-size:clamp(44px,5.6vw,80px);line-height:.98;letter-spacing:-.01em}
+.hero-copy h1 em{font-style:normal;color:var(--jade);text-shadow:0 0 28px rgba(63,240,216,.45)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.oracle{display:grid;gap:14px;justify-items:center;min-width:0}
+.oracle-stage{position:relative;width:100%;max-width:520px;aspect-ratio:1}
+.oracle-stage canvas{position:absolute;inset:0;width:100%;height:100%}
+.oracle-ctrl{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.readout{font-family:var(--f-mono);font-size:13px;color:var(--gold);min-height:1.6em;text-align:center}
+:root:not([lang="en"]) .readout{font-family:var(--f-body)}
+.caption{font-size:13.5px;color:var(--mist);text-align:center;max-width:46ch}
+@media (max-width:980px){
+  .hero{grid-template-columns:auto minmax(0,1fr)}
+  .oracle{grid-column:1/-1}
+}
+@media (max-width:620px){
+  .hero{grid-template-columns:minmax(0,1fr)}
+  .vtitle{flex-direction:row;font-size:56px;gap:.04em}
+  .vc{flex-direction:column-reverse;gap:2px}
+  .vtitle i{writing-mode:horizontal-tb;font-size:.24em}
+}
+
+/* Realms */
+.realms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,40px)}
+.realm{display:grid;gap:12px;align-content:start;padding-top:22px;border-top:1px solid var(--line)}
+.glyph{font-family:"Noto Serif TC",serif;font-weight:900;font-size:88px;line-height:1;color:transparent;-webkit-text-stroke:1.2px var(--jade);text-shadow:0 0 30px rgba(63,240,216,.22)}
+.glyph-rd{font-family:var(--f-cjk);font-weight:600;font-size:18px;line-height:1;color:var(--gold);margin-bottom:-6px}
+.realm:nth-child(2) .glyph{-webkit-text-stroke-color:var(--gold);text-shadow:0 0 30px rgba(240,195,90,.2)}
+.realm h3{font-size:21px;font-weight:600;line-height:1.4}
+:root:is([lang="vi"],[lang="ja"],[lang="ko"],[lang="zh-Hant"]) .realm h3{line-height:2}
+.realm p{color:var(--mist)}
+.realm .topics{font-family:var(--f-mono);font-size:12.5px;color:var(--paper);opacity:.8;line-height:1.9}
+:root:not([lang="en"]) .realm .topics{font-family:var(--f-body);font-size:13.5px}
+@media (max-width:820px){.realms{grid-template-columns:minmax(0,1fr)}}
+
+/* Quote band */
+.quote{position:relative;border-block:1px solid var(--line);background:linear-gradient(90deg,rgba(13,19,36,.2),rgba(13,19,36,.85) 30%,rgba(13,19,36,.85) 70%,rgba(13,19,36,.2))}
+.quote .wrap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:center;padding-block:clamp(40px,6vw,72px)}
+.quote-cn{font-family:"Noto Serif TC",serif;font-weight:900;font-size:clamp(30px,4.2vw,54px);line-height:1.25;color:var(--gold);letter-spacing:.08em;text-shadow:0 0 30px rgba(240,195,90,.25);margin:0}
+.quote-body{display:grid;gap:10px;min-width:0}
+.quote-tr{font-family:"Cormorant Garamond",var(--f-cjk);font-style:italic;font-size:clamp(20px,2.2vw,26px);line-height:1.45}
+:root:not([lang="en"]) .quote-tr{font-style:normal;font-family:var(--f-cjk);font-weight:600;font-size:clamp(18px,2vw,22px)}
+.quote-src{font-size:13.5px;color:var(--mist)}
+@media (max-width:720px){.quote .wrap{grid-template-columns:minmax(0,1fr)}}
+
+/* Cards */
+.card{background:rgba(13,19,36,.78);border:1px solid var(--line);border-radius:4px;padding:24px;display:grid;gap:12px;align-content:start;transition:border-color .3s,box-shadow .3s;min-width:0}
+.card:hover{border-color:rgba(63,240,216,.45);box-shadow:0 0 0 1px rgba(63,240,216,.12),0 18px 40px -24px rgba(63,240,216,.35)}
+.feat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media (max-width:900px){.feat-grid{grid-template-columns:minmax(0,1fr)}}
+.cn{font-family:"Noto Serif TC",serif;font-weight:900;font-size:34px;line-height:1.15;letter-spacing:.06em;color:var(--paper)}
+.tri-row{display:flex;align-items:center;gap:12px}
+.tri-row svg{flex:none}
+.tri-meta{font-family:var(--f-mono);font-size:12.5px;color:var(--gold);letter-spacing:.04em}
+.sname{font-size:15px;color:var(--jade);font-weight:500}
+.card .lesson-p{color:var(--mist)}
+.more{margin-top:28px}
+
+/* Path (home) */
+.path{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:4px;background:rgba(13,19,36,.6)}
+.path li{list-style:none;padding:22px;display:grid;gap:6px;border-right:1px solid var(--line);min-width:0}
+.path li:last-child{border-right:0}
+.path .num{font-family:"Noto Serif TC",serif;font-weight:900;color:var(--gold);font-size:14px}
+.path .pcn{font-family:"Noto Serif TC",serif;font-weight:900;font-size:28px;letter-spacing:.06em}
+.path .psub{color:var(--mist);font-size:14.5px}
+ol.path{margin:0;padding:0}
+@media (max-width:820px){.path{grid-template-columns:repeat(2,minmax(0,1fr))}.path li:nth-child(2){border-right:0}.path li:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media (max-width:440px){.path{grid-template-columns:minmax(0,1fr)}.path li{border-right:0;border-bottom:1px solid var(--line)}.path li:last-child{border-bottom:0}}
+
+/* Stratagems */
+.strat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;padding-bottom:clamp(56px,8vw,104px)}
+@media (max-width:1140px){.strat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.strat-grid{grid-template-columns:minmax(0,1fr)}}
+.strat .cn{font-size:32px}
+.part{display:grid;gap:4px}
+.lbl{font-family:var(--f-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mist)}
+:root:not([lang="en"]) .lbl{font-family:var(--f-body);letter-spacing:.06em;font-size:12.5px}
+.part p{font-size:15px}
+.part.lesson{padding:12px 14px;background:rgba(63,240,216,.06);border-left:2px solid var(--jade)}
+.part.lesson .lbl{color:var(--jade)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-family:var(--f-mono);font-size:11.5px;color:var(--gold);border:1px solid rgba(240,195,90,.3);padding:3px 8px;border-radius:2px;line-height:1.5}
+:root:not([lang="en"]) .tag{font-family:var(--f-body);font-size:12.5px}
+:root:is([lang="vi"],[lang="ja"],[lang="ko"],[lang="zh-Hant"]) .tag{line-height:2}
+
+/* Programs */
+.levels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;position:relative;margin:0;padding:0}
+.levels::before{content:"";position:absolute;top:22px;left:22px;right:22px;height:1px;background:linear-gradient(90deg,var(--gold),var(--jade));opacity:.5}
+.level{list-style:none;display:grid;gap:12px;align-content:start;position:relative;min-width:0}
+.level .dot{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--night);border:1px solid var(--gold);color:var(--gold);font-family:"Noto Serif TC",serif;font-weight:900;font-size:18px;box-shadow:0 0 18px rgba(240,195,90,.3)}
+.level .pcn{font-family:"Noto Serif TC",serif;font-weight:900;font-size:30px;letter-spacing:.06em;line-height:1.2}
+.level h3{font-size:17px;color:var(--jade);font-weight:500;line-height:1.5}
+:root:is([lang="vi"],[lang="ja"],[lang="ko"],[lang="zh-Hant"]) .level h3{line-height:2}
+.level p{color:var(--mist);font-size:15px}
+@media (max-width:900px){.levels{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:36px}.levels::before{display:none}}
+@media (max-width:520px){.levels{grid-template-columns:minmax(0,1fr)}}
+.labs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+@media (max-width:1000px){.labs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.labs{grid-template-columns:minmax(0,1fr)}}
+.lab .cn{font-size:26px}
+.lab h3{font-size:16px;font-weight:500;color:var(--gold);line-height:1.5}
+:root:is([lang="vi"],[lang="ja"],[lang="ko"],[lang="zh-Hant"]) .lab h3{line-height:2}
+.lab p{color:var(--mist);font-size:15px}
+
+/* Qubit demo */
+.demo{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(20px,4vw,48px);align-items:center;padding:clamp(20px,3vw,36px);border:1px solid rgba(63,240,216,.3);border-radius:4px;background:radial-gradient(circle at 20% 30%,rgba(63,240,216,.08),transparent 60%),rgba(13,19,36,.85)}
+.demo-l{display:grid;gap:14px;justify-items:center}
+.demo-l svg{width:100%;max-width:240px;height:auto}
+.slider{display:grid;gap:6px;width:100%;max-width:280px}
+.slider label{font-size:14px;color:var(--mist);display:flex;justify-content:space-between}
+.slider output{font-family:var(--f-mono);color:var(--gold)}
+input[type=range]{width:100%;accent-color:var(--jade)}
+.demo-r{display:grid;gap:18px;min-width:0}
+.demo-r h3{font-family:var(--f-disp);font-size:clamp(24px,2.6vw,32px);font-weight:600;line-height:1.25}
+:root:not([lang="en"]) .demo-r h3{font-family:var(--f-cjk);font-size:clamp(20px,2.2vw,26px);line-height:1.5}
+:root:is([lang="vi"],[lang="ja"],[lang="ko"],[lang="zh-Hant"]) .demo-r h3{line-height:2}
+.demo-r > p{color:var(--mist)}
+.bars{display:grid;gap:14px}
+.bar{display:grid;grid-template-columns:52px minmax(0,1fr) 120px;gap:12px;align-items:center}
+.bar .k{font-family:var(--f-mono);color:var(--paper);font-size:15px}
+.track{position:relative;height:22px;background:rgba(150,172,226,.1);border-radius:2px;overflow:hidden}
+.fill{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,rgba(63,240,216,.5),var(--jade));box-shadow:0 0 14px rgba(63,240,216,.5)}
+.bar.one .fill{background:linear-gradient(90deg,rgba(240,195,90,.5),var(--gold));box-shadow:0 0 14px rgba(240,195,90,.45)}
+.exp{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--paper)}
+.bar .v{font-family:var(--f-mono);font-size:12.5px;color:var(--mist);text-align:right;font-variant-numeric:tabular-nums;line-height:1.4}
+.legend{display:flex;gap:18px;font-size:13px;color:var(--mist);flex-wrap:wrap}
+.legend i{display:inline-block;width:14px;height:10px;margin-right:6px;vertical-align:middle;background:var(--jade)}
+.legend i.e{width:2px;height:14px;background:var(--paper)}
+@media (max-width:760px){.demo{grid-template-columns:minmax(0,1fr)}.bar{grid-template-columns:44px minmax(0,1fr);}.bar .v{grid-column:2;text-align:left}}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,72px);align-items:start;padding-bottom:clamp(40px,6vw,72px)}
+.about-text{display:grid;gap:18px;font-size:17px}
+.about-text p:last-child{color:var(--gold)}
+.values{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.value{background:rgba(13,19,36,.92);padding:22px;display:grid;gap:6px;align-content:start;min-width:0}
+.value .vg{font-family:"Noto Serif TC",serif;font-weight:900;font-size:40px;line-height:1;color:var(--jade);text-shadow:0 0 18px rgba(63,240,216,.35)}
+.value h3{font-size:16px;font-weight:600;line-height:1.5}
+:root:is([lang="vi"],[lang="ja"],[lang="ko"],[lang="zh-Hant"]) .value h3{line-height:2}
+.value p{color:var(--mist);font-size:14.5px}
+.vals-h{font-size:14px;color:var(--gold);margin-bottom:12px;font-weight:500}
+@media (max-width:860px){.about-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:420px){.values{grid-template-columns:minmax(0,1fr)}}
+
+.join{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,4vw,56px);padding:clamp(22px,4vw,44px);border:1px solid var(--line);border-radius:4px;background:rgba(13,19,36,.85);margin-bottom:clamp(56px,8vw,104px)}
+.join .sec-head{margin:0}
+form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.field{display:grid;gap:6px;min-width:0}
+.field.full{grid-column:1/-1}
+.field label{font-size:13.5px;color:var(--mist)}
+.field input,.field select{width:100%;background:var(--night);color:var(--paper);border:1px solid var(--line);border-radius:3px;padding:11px 12px;font:400 15px var(--f-body)}
+.field input:focus,.field select:focus{border-color:var(--jade);outline:none;box-shadow:0 0 0 3px rgba(63,240,216,.15)}
+.form-foot{grid-column:1/-1;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.form-note{font-size:13px;color:var(--mist)}
+.thanks{grid-column:1/-1;color:var(--jade);font-size:15px}
+@media (max-width:820px){.join{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:480px){form{grid-template-columns:minmax(0,1fr)}}
+
+/* Footer */
+footer{border-top:1px solid var(--line);background:rgba(6,9,18,.86)}
+footer .wrap{display:flex;gap:18px;align-items:center;padding-block:28px;flex-wrap:wrap}
+footer p{color:var(--mist);font-size:14px;flex:1 1 300px}
+footer .copy{font-family:var(--f-mono);font-size:12px;color:var(--mist);flex:none}
+
+/* Lesson pages */
+.strat .open{margin-top:6px;justify-self:start}
+.ls-top{padding-block:28px 0}
+.ls-hero{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(20px,4vw,48px);align-items:center;padding-block:18px clamp(24px,4vw,44px)}
+.ls-title{display:grid;gap:14px;min-width:0}
+.ls-title .eyebrow{margin:0}
+.ls-cn{font-size:clamp(50px,6vw,84px);line-height:1.15}
+:root:is([lang="ja"],[lang="ko"],[lang="zh-Hant"]) .ls-cn{line-height:1.6}
+.ls-sub{font-size:19px;color:var(--jade);font-weight:500;line-height:1.5}
+.ls-sub .muted{font-weight:400;font-size:15px}
+.ls-lead{color:var(--mist)}
+.scene{margin:0;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--night);box-shadow:0 30px 80px -40px rgba(63,240,216,.4)}
+.scene svg{display:block;width:100%;height:auto}
+@media (max-width:920px){.ls-hero{grid-template-columns:minmax(0,1fr)}}
+.ls-note{border:1px dashed rgba(240,195,90,.45);color:var(--gold);padding:10px 14px;border-radius:3px;font-size:14px}
+.ls-sec{padding-block:clamp(26px,4vw,48px);display:grid;gap:22px;align-content:start}
+.ls-story{grid-template-columns:minmax(0,1.45fr) minmax(0,.75fr);gap:clamp(24px,4vw,56px);align-items:start}
+.ls-main{display:grid;gap:16px;max-width:66ch;min-width:0}
+.ls-main p{font-size:17px}
+.ls-main h2+p::first-letter{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:3.3em;float:left;line-height:.8;margin:6px 10px 0 0;color:var(--gold)}
+.ls-aside{display:grid;gap:10px;padding:20px;border-left:2px solid var(--gold);background:rgba(240,195,90,.05);min-width:0}
+.ls-ch{font-family:var(--f-disp);font-size:28px;font-weight:600;line-height:1.2}
+@media (max-width:860px){.ls-story{grid-template-columns:minmax(0,1fr)}}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.steps li{display:grid;gap:8px;align-content:start;padding-top:16px;border-top:1px solid var(--line);min-width:0}
+.steps li:first-child{border-top-color:var(--jade)}
+.sn{font-family:var(--f-mono);color:var(--gold);font-size:13px;letter-spacing:.1em}
+.steps h3{font-size:17px;font-weight:600;line-height:1.4}
+.steps p{color:var(--mist);font-size:15px}
+@media (max-width:1000px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.steps{grid-template-columns:minmax(0,1fr)}}
+.demo-box{border:1px solid rgba(63,240,216,.3);border-radius:4px;background:radial-gradient(circle at 12% 0%,rgba(63,240,216,.08),transparent 55%),rgba(13,19,36,.9);padding:clamp(18px,3vw,32px);display:grid;gap:20px;min-width:0}
+.demo-head{display:grid;gap:6px;max-width:72ch}
+.demo-head h3{font-family:var(--f-disp);font-size:clamp(22px,2.4vw,30px);font-weight:600;line-height:1.25}
+.demo-head p{color:var(--mist)}
+#lsDemo{display:grid;gap:18px;min-width:0}
+.dctl{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center}
+.dctl label{font-size:14px;color:var(--mist)}
+.dctl output{font-family:var(--f-mono);color:var(--gold);min-width:2ch}
+.dctl input[type=range]{width:220px;max-width:100%}
+.chk{display:inline-flex;gap:8px;align-items:center;cursor:pointer;color:var(--paper)!important}
+.chk input{accent-color:var(--jade);width:18px;height:18px}
+.btn:disabled{opacity:.45;cursor:default;box-shadow:none;transform:none}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.tile{border:1px solid var(--line);border-radius:3px;padding:14px 16px;display:grid;gap:4px;align-content:start;background:rgba(6,9,18,.6);min-width:0}
+.tile b{font-family:var(--f-mono);font-size:22px;font-weight:500;color:var(--paper);font-variant-numeric:tabular-nums;line-height:1.25;overflow-wrap:anywhere}
+.tile span{font-size:13px;color:var(--mist);line-height:1.45}
+.tile.good b{color:var(--jade)}.tile.warn b{color:var(--gold)}.tile.bad b{color:#ff7d70}
+.dmsg{font-size:15px;min-height:1.7em}
+.dnote{font-size:13px;color:var(--mist)}
+.fleet{display:flex;flex-wrap:wrap;gap:10px}
+.boat{display:grid;justify-items:center;gap:2px;padding:8px 10px;border:1px solid var(--line);border-radius:3px;min-width:92px;line-height:1.5}
+.boat.real{border-color:rgba(240,195,90,.65);background:rgba(240,195,90,.05)}
+.bl{font-size:12px;color:var(--mist)}.bc{font-family:var(--f-mono);font-size:13px}
+.gates{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px}
+@media (max-width:640px){.gates{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.gate{appearance:none;border:1px solid var(--line);background:rgba(6,9,18,.7);color:var(--paper);border-radius:3px;padding:14px 4px 10px;display:grid;gap:6px;justify-items:center;cursor:pointer;font:inherit;transition:border-color .2s,opacity .2s}
+.gate:hover{border-color:var(--jade)}
+.gc{font-family:"Noto Serif TC",serif;font-weight:900;font-size:26px;line-height:1.4}
+.gc rt{font-size:.4em}
+.gl{font-family:var(--f-mono);font-size:11px;color:var(--mist)}
+.gate.probed{opacity:.35}
+.gate.found{border-color:var(--gold);box-shadow:0 0 20px rgba(240,195,90,.4)}.gate.found .gc{color:var(--gold)}
+.seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.segb{appearance:none;background:transparent;border:0;color:var(--mist);padding:9px 14px;font:500 14px var(--f-body);cursor:pointer}
+.segb.on{background:rgba(63,240,216,.12);color:var(--jade)}
+.dcanvas{display:block;width:100%;border:1px solid var(--line);border-radius:3px;background:rgba(6,9,18,.75);cursor:crosshair}
+.logbar{padding-block:30px 30px}
+.lb-track{position:relative;height:14px;background:rgba(150,172,226,.12);border-radius:2px}
+.lb-fill{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,var(--jade),var(--gold) 55%,var(--seal));border-radius:2px;transition:width .2s}
+.lb-mk{position:absolute;top:22px;font-family:var(--f-mono);font-size:11px;color:var(--mist);white-space:nowrap;transform:translateX(-50%)}
+.lb-mk.up{top:auto;bottom:22px}
+.lb-mk i{position:absolute;left:50%;width:1px;height:26px;background:var(--paper);opacity:.6}
+.lb-mk:not(.up) i{bottom:100%}.lb-mk.up i{top:100%}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:3px}
+table.bb{border-collapse:collapse;font-family:var(--f-mono);font-size:13px;min-width:760px;width:100%}
+.bb th{text-align:left;font:500 12.5px var(--f-body);color:var(--mist);padding:6px 10px;white-space:nowrap;position:sticky;left:0;background:var(--ink)}
+.bb td{text-align:center;padding:6px 3px;border-left:1px solid rgba(150,172,226,.08)}
+.bb td.keep{background:rgba(63,240,216,.09)}.bb td.err{background:rgba(200,56,47,.45)}.bb td.dim{color:rgba(154,163,191,.4)}
+.rounds{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:760px){.rounds{grid-template-columns:minmax(0,1fr)}}
+.rlog{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14px;color:var(--mist)}.rlog b{color:var(--gold);font-weight:500}
+.rchart svg{width:100%;height:auto;display:block}
+.mosca{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.mosca .slider{max-width:none}
+@media (max-width:760px){.mosca{grid-template-columns:minmax(0,1fr)}}
+.mtl svg{width:100%;height:auto;display:block}
+.ls-two{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(24px,4vw,56px)}
+@media (max-width:860px){.ls-two{grid-template-columns:minmax(0,1fr)}}
+.ls-two>div{display:grid;gap:18px;align-content:start;min-width:0}
+.terms{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+@media (max-width:560px){.terms{grid-template-columns:minmax(0,1fr)}}
+.terms div{background:rgba(13,19,36,.94);padding:14px 16px;display:grid;gap:4px;align-content:start}
+.terms dt{color:var(--jade);font-weight:500}.terms dd{margin:0;color:var(--mist);font-size:14.5px}
+.learn{display:grid;gap:12px}
+.lcard{text-decoration:none;color:inherit}
+.lcard .pcn{font-family:"Noto Serif TC",serif;font-weight:900;font-size:28px;letter-spacing:.06em;line-height:1.5}
+.lcard .pcn rt{font-size:.36em}
+.lsub{color:var(--jade);font-size:15px}
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-block:clamp(20px,3vw,32px) clamp(56px,8vw,96px)}
+.pn a{display:grid;gap:4px;align-content:start;padding:18px 20px;border:1px solid var(--line);border-radius:4px;text-decoration:none;color:var(--paper);background:rgba(13,19,36,.75);min-width:0}
+.pn a:hover{border-color:var(--jade)}
+.pn a.nx{text-align:right;justify-items:end}
+.pn .cn{font-size:28px}.pt{color:var(--jade);font-size:14px}
+@media (max-width:560px){.pn{grid-template-columns:minmax(0,1fr)}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn,.card{transition:none}
+}
+</style>
+
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="Kong Ming Quantum home">
+      <span class="seal" aria-hidden="true"><span>量</span><span>諸</span><span>子</span><span>葛</span></span>
+      <span class="brand-txt"><b>Kong Ming Quantum</b><span>諸葛量子</span></span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="#home" data-route="home" data-i="nav.home"></a>
+      <a href="#stratagems" data-route="stratagems" data-i="nav.strat"></a>
+      <a href="#programs" data-route="programs" data-i="nav.prog"></a>
+      <a href="#about" data-route="about" data-i="nav.about"></a>
+    </nav>
+    <div class="langsel">
+      <select id="lang" aria-label="Language">
+        <option value="en">English</option>
+        <option value="zh">中文</option>
+        <option value="ja">日本語</option>
+        <option value="ko">韓國어</option>
+        <option value="vi">Tiếng Việt</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HOME -->
+  <section class="view" id="v-home">
+    <div class="wrap hero">
+      <p class="vtitle no-simp" id="vtitle" aria-hidden="true">諸葛量子</p>
+      <div class="hero-copy">
+        <p class="eyebrow" data-i="hero.eyebrow"></p>
+        <h1 class="no-hz">Kong Ming <em>Quantum</em></h1>
+        <p class="lead" data-i="hero.lead"></p>
+        <div class="ctas">
+          <a class="btn" href="#stratagems" data-i="hero.cta1"></a>
+          <a class="btn ghost" href="#programs" data-i="hero.cta2"></a>
+        </div>
+      </div>
+      <div class="oracle">
+        <div class="oracle-stage"><canvas id="bagua" role="img" aria-label="Eight trigrams arranged as the eight basis states of three qubits"></canvas></div>
+        <div class="oracle-ctrl">
+          <button class="btn gold" id="measure" type="button" data-i="hero.measure"></button>
+          <button class="btn ghost" id="superpose" type="button" data-i="hero.reset"></button>
+        </div>
+        <p class="readout" id="readout" aria-live="polite"></p>
+        <p class="caption" data-i="hero.caption"></p>
+      </div>
+    </div>
+
+    <div class="wrap sec">
+      <div class="sec-head">
+        <h2 data-i="realms.h"></h2>
+        <p data-i="realms.p"></p>
+      </div>
+      <div class="realms" id="realms"></div>
+    </div>
+
+    <div class="quote">
+      <div class="wrap">
+        <p class="quote-cn" id="quoteCn">鞠躬盡瘁<br>死而後已</p>
+        <div class="quote-body">
+          <p class="quote-tr" data-i="quote.tr"></p>
+          <p class="quote-src" data-i="quote.src"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap sec">
+      <div class="sec-head"><h2 data-i="feat.h"></h2></div>
+      <div class="feat-grid" id="featured"></div>
+      <p class="more"><a class="textlink" href="#stratagems" data-i="feat.link"></a></p>
+    </div>
+
+    <div class="wrap sec" style="padding-top:0">
+      <div class="sec-head">
+        <h2 data-i="path.h"></h2>
+        <p data-i="path.p"></p>
+      </div>
+      <ol class="path" id="path"></ol>
+      <p class="more"><a class="textlink" href="#programs" data-i="path.link"></a></p>
+    </div>
+  </section>
+
+  <!-- STRATAGEMS -->
+  <section class="view" id="v-stratagems" hidden>
+    <div class="wrap page-head">
+      <p class="eyebrow" data-i="strat.eyebrow"></p>
+      <h1 data-i="strat.h"></h1>
+      <p class="lead" data-i="strat.p"></p>
+    </div>
+    <div class="wrap strat-grid" id="strats"></div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="view" id="v-programs" hidden>
+    <div class="wrap page-head">
+      <p class="eyebrow" data-i="prog.eyebrow"></p>
+      <h1 data-i="nav.prog"></h1>
+      <p class="lead" data-i="prog.p"></p>
+    </div>
+    <div class="wrap sec" style="padding-top:24px">
+      <div class="sec-head"><h2 data-i="prog.levels"></h2></div>
+      <ol class="levels" id="levels"></ol>
+    </div>
+    <div class="wrap" style="padding-bottom:clamp(40px,6vw,72px)">
+      <div class="demo">
+        <div class="demo-l">
+          <svg id="bloch" viewBox="0 0 220 220" aria-hidden="true"></svg>
+          <div class="slider">
+            <label for="theta"><span data-i="demo.angle"></span><output id="thetaOut">60°</output></label>
+            <input id="theta" type="range" min="0" max="180" step="1" value="60">
+          </div>
+        </div>
+        <div class="demo-r">
+          <p class="eyebrow" style="margin:0">觀星臺 · Qubit</p>
+          <h3 data-i="demo.h"></h3>
+          <p data-i="demo.p"></p>
+          <div class="bars">
+            <div class="bar zero"><span class="k">|0⟩</span><div class="track"><div class="fill" id="f0"></div><div class="exp" id="e0"></div></div><span class="v" id="v0"></span></div>
+            <div class="bar one"><span class="k">|1⟩</span><div class="track"><div class="fill" id="f1"></div><div class="exp" id="e1"></div></div><span class="v" id="v1"></span></div>
+          </div>
+          <div class="legend"><span><i></i><span data-i="demo.obs"></span></span><span><i class="e"></i><span data-i="demo.exp"></span></span></div>
+          <div><button class="btn" id="shots" type="button" data-i="demo.btn"></button></div>
+        </div>
+      </div>
+    </div>
+    <div class="wrap sec" style="padding-top:clamp(24px,4vw,48px)">
+      <div class="sec-head"><h2 data-i="prog.labs"></h2></div>
+      <div class="labs" id="labs"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="view" id="v-about" hidden>
+    <div class="wrap page-head">
+      <p class="eyebrow" data-i="about.eyebrow"></p>
+      <h1 data-i="nav.about"></h1>
+    </div>
+    <div class="wrap about-grid">
+      <div class="about-text">
+        <h2 data-i="about.h"></h2>
+        <p data-i="about.p1"></p>
+        <p data-i="about.p2"></p>
+      </div>
+      <div>
+        <p class="vals-h" data-i="about.values"></p>
+        <div class="values" id="values"></div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="join">
+        <div class="sec-head">
+          <h2 data-i="join.h"></h2>
+          <p data-i="join.p"></p>
+        </div>
+        <form id="joinForm" novalidate>
+          <div class="field"><label for="jName" data-i="join.name"></label><input id="jName" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="jEmail" data-i="join.email"></label><input id="jEmail" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="jRole" data-i="join.role"></label><select id="jRole" name="role"></select></div>
+          <div class="field"><label for="jLevel" data-i="join.level"></label><select id="jLevel" name="level"></select></div>
+          <div class="field full"><label for="jLang" data-i="join.lang"></label>
+            <select id="jLang" name="lang">
+              <option value="en">English</option><option value="zh">中文</option><option value="ja">日本語</option><option value="ko">韓國어</option><option value="vi">Tiếng Việt</option>
+            </select>
+          </div>
+          <div class="form-foot"><button class="btn" type="submit" data-i="join.btn"></button><span class="form-note" data-i="join.note"></span></div>
+          <p class="thanks" id="thanks" hidden></p>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="view" id="v-lesson" hidden></section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="seal" aria-hidden="true"><span>量</span><span>諸</span><span>子</span><span>葛</span></span>
+    <p data-i="foot.p"></p>
+    <span class="copy">© 2026 Kong Ming Quantum · 諸葛量子</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- constant data ---------- */
+var TRI={"乾":{b:"111",n:"天"},"兌":{b:"110",n:"澤"},"離":{b:"101",n:"火"},"震":{b:"100",n:"雷"},"巽":{b:"011",n:"風"},"坎":{b:"010",n:"水"},"艮":{b:"001",n:"山"},"坤":{b:"000",n:"地"}};
+var RING=["乾","巽","坎","艮","坤","震","離","兌"]; /* Earlier Heaven order, clockwise from top (south) */
+var STRATS=[["草船借箭","坎"],["空城計","兌"],["借東風","巽"],["八陣圖","坤"],["錦囊妙計","離"],["七擒孟獲","震"],["木牛流馬","艮"],["隆中對","乾"]];
+var LIDS=["straw-boats","empty-fort","east-wind","eight-formations","silk-bags","seven-captures","wooden-ox","longzhong"];
+var LEVELS=["茅廬","隆中","赤壁","五丈原"], NUMS=["一","二","三","四"];
+var LABS=["觀星臺","八陣圖","草船","木牛流馬"];
+var REALMS=["量","網","粒"], VALUES=["知","謀","義","傳"];
+var FIX={
+ja:{"草船借箭":"そうせんしゃくせん","空城計":"くうじょうけい","借東風":"しゃくとうふう","八陣圖":"はちじんず","錦囊妙計":"きんのうみょうけい","七擒孟獲":"しちきんもうかく","木牛流馬":"もくぎゅうりゅうば","隆中對":"りゅうちゅうたい","茅廬":"ぼうろ","隆中":"りゅうちゅう","赤壁":"せきへき","五丈原":"ごじょうげん","觀星臺":"かんせいだい","草船":"そうせん","量":"りょう","網":"もう","粒":"りゅう","知":"ち","謀":"ぼう","義":"ぎ","傳":"でん","乾":"けん","兌":"だ","離":"り","震":"しん","巽":"そん","坎":"かん","艮":"ごん","坤":"こん","天":"てん","澤":"たく","火":"か","雷":"らい","風":"ふう","水":"すい","山":"さん","地":"ち","一":"いち","二":"に","三":"さん","四":"し","鞠躬盡瘁":"きっきゅうじんすい","死而後已":"しじこうい","諸葛量子":"しょかつりょうし"},
+ko:{"草船借箭":"초선차전","空城計":"공성계","借東風":"차동풍","八陣圖":"팔진도","錦囊妙計":"금낭묘계","七擒孟獲":"칠금맹획","木牛流馬":"목우유마","隆中對":"융중대","茅廬":"모려","隆中":"융중","赤壁":"적벽","五丈原":"오장원","觀星臺":"관성대","草船":"초선","量":"량","網":"망","粒":"립","知":"지","謀":"모","義":"의","傳":"전","乾":"건","兌":"태","離":"리","震":"진","巽":"손","坎":"감","艮":"간","坤":"곤","天":"천","澤":"택","火":"화","雷":"뢰","風":"풍","水":"수","山":"산","地":"지","一":"일","二":"이","三":"삼","四":"사","鞠躬盡瘁":"국궁진췌","死而後已":"사이후이","諸葛量子":"제갈양자"}};
+var HTMLLANG={en:"en",zh:"zh-Hant",ja:"ja",ko:"ko",vi:"vi"};
+
+/* ---------- translations ---------- */
+var I={
+en:{
+ "nav.home":"Home","nav.strat":"Stratagems","nav.prog":"Programs & Labs","nav.about":"About & Join",
+ "hero.eyebrow":"臥龍 · The Sleeping Dragon wakes in the quantum age",
+ "hero.lead":"Learn quantum science and cybersecurity the way Zhuge Liang read a battlefield: calmly, precisely, and three moves ahead.",
+ "hero.cta1":"Explore the stratagems","hero.cta2":"View programs",
+ "hero.caption":"Eight trigrams, eight basis states. Three yin–yang lines are three qubits, from |000⟩ to |111⟩.",
+ "hero.measure":"Measure","hero.reset":"Superpose again",
+ "hero.super":"In superposition: all eight states at once","hero.collapsed":"Collapsed to {s}",
+ "realms.h":"Three realms, one strategist",
+ "realms.p":"In the Longzhong Plan, Kong Ming divided the empire into three. We divide the frontier of science the same way.",
+ "quote.tr":"“Bend to the task with all your strength, and stop only at your last breath.”",
+ "quote.src":"Zhuge Liang, Later Memorial on Dispatching the Troops",
+ "feat.h":"Ancient stratagems, quantum lessons","feat.link":"All eight stratagems →",
+ "path.h":"From the thatched cottage to the Wuzhang Plains",
+ "path.p":"Four levels, each named for a turning point in Kong Ming’s life.","path.link":"All programs and labs →",
+ "strat.eyebrow":"From the Romance of the Three Kingdoms","strat.h":"Eight stratagems, eight lessons",
+ "strat.p":"Each story opens one idea in quantum science or cybersecurity. Each card also carries a trigram and its three-qubit state.",
+ "lbl.story":"The story","lbl.lesson":"The lesson",
+ "prog.eyebrow":"Four levels · Four labs","prog.p":"Study in order, or start where your knowledge already is.",
+ "prog.levels":"The four levels","prog.labs":"The four labs",
+ "demo.h":"Try it: one qubit on the Stargazing Terrace",
+ "demo.p":"Set the angle θ, then measure 1,000 times. Theory says |1⟩ appears with probability sin²(θ/2).",
+ "demo.angle":"Angle θ","demo.btn":"Measure 1,000 times","demo.obs":"Observed","demo.exp":"Expected",
+ "about.eyebrow":"Our story","about.h":"Why Kong Ming?",
+ "about.p1":"Zhuge Liang was a scholar first. He read the stars, built machines, wrote on strategy and served with integrity. Quantum science and cybersecurity need the same mix: deep knowledge, careful planning and a clear ethic.",
+ "about.p2":"The eight trigrams are three-bit codes. Leibniz saw binary in them in 1703. We see qubits.",
+ "about.values":"Our four principles",
+ "join.h":"Join the academy","join.p":"Tell us who you are and where you want to start.",
+ "join.name":"Name","join.email":"Email","join.role":"I am a","join.level":"Starting level","join.lang":"Preferred language",
+ "join.btn":"Send my interest","join.note":"Preview form. Sign-ups are not collected yet.",
+ "join.thanks":"Thank you, {name}. This preview does not send your details anywhere yet.",
+ "foot.p":"An education portal for quantum science and cybersecurity, seen through the eyes of Kong Ming.",
+ roles:["Student","Teacher","School or organisation","Professional"],
+ realms:[
+  {t:"Quantum Computing",d:"Qubits, superposition, entanglement, and the algorithms that use them.",k:"Qubits · Gates · Shor & Grover · Error correction"},
+  {t:"Cyberspace & Security",d:"Defending networks, breaking ciphers, and building ones that survive the quantum era.",k:"Cryptography · Post-quantum · Threat hunting · Zero trust"},
+  {t:"Atoms & Particles",d:"The physics underneath: atoms, photons, spin and the Standard Model.",k:"Atomic structure · Photons · Spin · Standard Model"}],
+ strats:[
+  {t:"Borrowing Arrows with Straw Boats",s:"In thick fog, Kong Ming sailed straw-lined boats toward Cao Cao’s camp. The enemy fired, and he came back with over 100,000 arrows.",l:"Honeypots work the same way. A decoy system draws attacks, and every captured sample becomes intelligence for defence.",k:"Honeypots · Threat intelligence · Deception"},
+  {t:"The Empty Fort",s:"With no army in Xicheng, Kong Ming opened the gates and played the zither on the wall. Sima Yi suspected an ambush and withdrew.",l:"Attackers act on what they observe. Moving-target defence and deception change what they see and raise the cost of every guess.",k:"Moving-target defence · Deception · Attacker psychology"},
+  {t:"Borrowing the East Wind",s:"Before Red Cliffs, Kong Ming “summoned” a south-east wind. In truth, he had read the season’s weather.",l:"Good prediction looks like magic. Quantum simulation models molecules and materials that classical computers cannot follow.",k:"Quantum simulation · Probability · Forecasting"},
+  {t:"The Eight Formations Maze",s:"Kong Ming laid out stones at Fish Belly Shore. Lu Xun walked in and could not find the way out.",l:"Lattice cryptography builds a maze in hundreds of dimensions. Even a quantum computer struggles to find the shortest way out.",k:"Lattice cryptography · Post-quantum · Hard problems"},
+  {t:"The Silk-Bag Stratagems",s:"Kong Ming gave Zhao Yun three sealed silk bags, each to be opened only at a set moment.",l:"Quantum key distribution seals a key in photons. Any eavesdropper disturbs the quantum states and reveals themselves.",k:"QKD · No-cloning theorem · Key exchange"},
+  {t:"Seven Captures of Meng Huo",s:"Kong Ming captured the southern chief Meng Huo seven times and released him six, until he chose loyalty.",l:"Security improves through repetition. Red and blue teams attack, release and retest until the defence holds and trust is earned.",k:"Red team · Blue team · Responsible disclosure"},
+  {t:"Wooden Ox and Flowing Horse",s:"To carry grain over the mountain roads of Shu, Kong Ming designed self-moving supply carts.",l:"Logistics is an optimisation problem. Quantum annealing and QAOA search huge route spaces for good solutions.",k:"Optimisation · Annealing · QAOA"},
+  {t:"The Longzhong Plan",s:"In a thatched cottage at Longzhong, the young Kong Ming laid out a plan for the realm’s next decades.",l:"Every organisation needs a Longzhong Plan for the quantum era: list the cryptography in use, then migrate before “harvest now, decrypt later” pays off.",k:"Crypto-agility · Migration · Roadmaps"}],
+ levels:[
+  {t:"Thatched Cottage · Foundations",d:"Before the three visits, Kong Ming studied alone. Start here: atoms, light, probability, linear algebra, and how computers and networks work."},
+  {t:"Longzhong · Strategy & Cryptography",d:"The Longzhong Plan was a map of the future. Learn qubits and gates, classical and post-quantum cryptography, and how to plan a migration."},
+  {t:"Red Cliffs · Defence Labs",d:"Fire on the river. Hands-on attack-and-defence exercises, quantum circuits on simulators, and team capture-the-flag."},
+  {t:"Wuzhang Plains · Capstone",d:"Kong Ming’s final campaign. A mentored research or engineering project that ends in a public defence."}],
+ labs:[
+  {t:"Stargazing Terrace · Qubit sandbox",d:"Build circuits and watch the probabilities change."},
+  {t:"Formation Maze · Cipher forge",d:"Solve lattice and post-quantum cryptography puzzles."},
+  {t:"Straw Boats · Honeynet range",d:"Catch and study attack traffic in a safe sandbox."},
+  {t:"Wooden Ox · Optimisation lab",d:"Plan supply routes with quantum annealing and QAOA."}],
+ values:[
+  {t:"Knowledge",d:"Learn the physics, not only the tools."},
+  {t:"Strategy",d:"Think three moves ahead."},
+  {t:"Integrity",d:"Attack only to defend. White hat, always."},
+  {t:"Teaching",d:"Pass it on, in every language we speak."}]
+},
+zh:{
+ "nav.home":"首頁","nav.strat":"錦囊妙計","nav.prog":"課程與實驗室","nav.about":"關於與加入",
+ "hero.eyebrow":"臥龍 · 醒於量子時代",
+ "hero.lead":"以諸葛亮觀戰局之法，學習量子科學與網絡安全：沉著、精準、先謀三步。",
+ "hero.cta1":"探索錦囊妙計","hero.cta2":"瀏覽課程",
+ "hero.caption":"八卦即八個基態。陰陽三爻，正是三個量子位元，由 |000⟩ 至 |111⟩。",
+ "hero.measure":"測量","hero.reset":"重回疊加",
+ "hero.super":"疊加態：八態並存","hero.collapsed":"坍縮為 {s}",
+ "realms.h":"天下三分，一位軍師",
+ "realms.p":"孔明於隆中對定下三分天下之策。我們亦將科學前沿一分為三。",
+ "quote.tr":"竭盡心力，直到生命最後一刻。",
+ "quote.src":"諸葛亮《後出師表》",
+ "feat.h":"古計今用，量子之課","feat.link":"全部八計 →",
+ "path.h":"由茅廬至五丈原",
+ "path.p":"四個階段，各以孔明一生的轉捩點命名。","path.link":"全部課程與實驗室 →",
+ "strat.eyebrow":"出自《三國演義》","strat.h":"八計八課",
+ "strat.p":"每段故事，開啟一個量子科學或網絡安全的概念。每張卡片亦附一卦，及其三量子位元狀態。",
+ "lbl.story":"典故","lbl.lesson":"今課",
+ "prog.eyebrow":"四個階段 · 四座實驗室","prog.p":"循序漸進，或從你已有的程度開始。",
+ "prog.levels":"四個階段","prog.labs":"四座實驗室",
+ "demo.h":"試一試：觀星臺上的一個量子位元",
+ "demo.p":"設定角度 θ，然後測量 1,000 次。理論上，|1⟩ 出現的機率為 sin²(θ/2)。",
+ "demo.angle":"角度 θ","demo.btn":"測量 1,000 次","demo.obs":"實測","demo.exp":"理論",
+ "about.eyebrow":"我們的故事","about.h":"何以孔明？",
+ "about.p1":"諸葛亮首先是一位學者。他觀星象、造器械、著兵法，並以忠誠事主。量子科學與網絡安全需要同樣的結合：深厚的學識、周密的謀劃，以及清晰的操守。",
+ "about.p2":"八卦本是三位元的編碼。萊布尼茲於 1703 年從中看見二進制；我們看見的是量子位元。",
+ "about.values":"四項原則",
+ "join.h":"加入學院","join.p":"告訴我們你是誰，想從哪裡開始。",
+ "join.name":"姓名","join.email":"電郵","join.role":"我是","join.level":"起步階段","join.lang":"首選語言",
+ "join.btn":"提交意向","join.note":"此為預覽表格，暫未收集報名資料。",
+ "join.thanks":"謝謝你，{name}。此預覽版本暫不會傳送你的資料。",
+ "foot.p":"以孔明之眼，講述量子科學與網絡安全的教育平台。",
+ roles:["學生","教師","學校或機構","專業人士"],
+ realms:[
+  {t:"量子計算",d:"量子位元、疊加、糾纏，以及運用它們的演算法。",k:"量子位元 · 量子閘 · Shor 與 Grover · 量子糾錯"},
+  {t:"網絡空間與安全",d:"守護網絡、破解密碼，並打造能抵禦量子時代的新密碼。",k:"密碼學 · 後量子密碼 · 威脅獵捕 · 零信任"},
+  {t:"原子與粒子",d:"底層的物理：原子、光子、自旋與標準模型。",k:"原子結構 · 光子 · 自旋 · 標準模型"}],
+ strats:[
+  {t:"蜜罐誘捕",s:"大霧之中，孔明以草船駛近曹營。曹軍亂箭齊發，孔明滿載十萬餘枝箭而歸。",l:"蜜罐亦然：以誘餌系統吸引攻擊，每一份截獲的樣本，都化為防守的情報。",k:"蜜罐 · 威脅情報 · 誘敵"},
+  {t:"欺敵防禦",s:"西城無兵，孔明大開城門，於城樓撫琴。司馬懿疑有伏兵，引軍而退。",l:"攻擊者依所見而行動。移動目標防禦與欺敵技術改變其所見，令每一次猜測的代價更高。",k:"移動目標防禦 · 欺敵技術 · 攻擊者心理"},
+  {t:"量子模擬",s:"赤壁之前，孔明「借」來東南風。其實他早已讀懂當季天時。",l:"精準的預測看似神術。量子模擬能模擬傳統電腦難以追蹤的分子與材料。",k:"量子模擬 · 機率 · 預測"},
+  {t:"格密碼迷陣",s:"孔明於魚腹浦以亂石佈陣。陸遜誤入其中，迷不得出。",l:"格密碼於數百維空間中佈下迷陣。即使是量子電腦，也難以找到最短出路。",k:"格密碼 · 後量子密碼 · 困難問題"},
+  {t:"量子密鑰分發",s:"孔明授趙雲三個錦囊，囑其到指定時刻方可拆閱。",l:"量子密鑰分發將密鑰封存於光子之中。任何竊聽都會擾動量子態，竊聽者無所遁形。",k:"量子密鑰分發 · 不可複製定理 · 密鑰交換"},
+  {t:"紅藍對抗",s:"孔明七擒南中首領孟獲，六次釋放，終令其心服歸順。",l:"安全在反覆中進步。紅隊與藍隊攻、放、再測，直至防線穩固，信任建立。",k:"紅隊 · 藍隊 · 負責任披露"},
+  {t:"量子優化",s:"為在蜀道上運糧，孔明設計木牛流馬，自行運輸。",l:"後勤即優化問題。量子退火與 QAOA 可在龐大的路線空間中尋找良解。",k:"優化 · 量子退火 · QAOA"},
+  {t:"量子遷移藍圖",s:"隆中茅廬，年輕的孔明為天下規劃數十年大計。",l:"每個機構都需要量子時代的隆中對：盤點現有密碼，在「先收集、後解密」得逞之前完成遷移。",k:"密碼敏捷性 · 遷移 · 路線圖"}],
+ levels:[
+  {t:"基礎",d:"三顧之前，孔明獨自苦讀。由此起步：原子、光、機率、線性代數，以及電腦與網絡的運作原理。"},
+  {t:"謀略與密碼",d:"隆中對是一幅未來的地圖。學習量子位元與量子閘、古典與後量子密碼，以及如何規劃遷移。"},
+  {t:"攻防實驗",d:"火燒赤壁。實戰攻防演練、在模擬器上運行量子電路，以及團隊奪旗賽。"},
+  {t:"畢業專題",d:"孔明最後的北伐。在導師指導下完成研究或工程專題，並公開答辯。"}],
+ labs:[
+  {t:"量子位元沙盒",d:"搭建電路，觀察機率變化。"},
+  {t:"密碼工坊",d:"破解格密碼與後量子密碼謎題。"},
+  {t:"蜜網靶場",d:"在安全沙盒中捕捉並分析攻擊流量。"},
+  {t:"優化實驗室",d:"以量子退火與 QAOA 規劃補給路線。"}],
+ values:[
+  {t:"求知",d:"學懂物理，而不只是工具。"},
+  {t:"謀略",d:"先謀三步。"},
+  {t:"道義",d:"只為守護而攻，永守白帽之道。"},
+  {t:"傳承",d:"薪火相傳，以我們所說的每一種語言。"}]
+},
+ja:{
+ "nav.home":"ホーム","nav.strat":"[計略|けいりゃく]","nav.prog":"[課程|かてい]と[實驗室|じっけんしつ]","nav.about":"[槪要|がいよう]と[參加|さんか]",
+ "hero.eyebrow":"[臥龍|がりょう]、[量子|りょうし]の[時代|じだい]に[目覺|めざ]める",
+ "hero.lead":"[諸葛亮|しょかつりょう]が[戰局|せんきょく]を[讀|よ]んだように、[量子科學|りょうしかがく]とサイバー[安全|あんぜん]を[學|まな]ぶ。[沈着|ちんちゃく]に、[精確|せいかく]に、[三手先|みてさき]を[見據|みす]えて。",
+ "hero.cta1":"[計略|けいりゃく]を[探|さぐ]る","hero.cta2":"[課程|かてい]を[見|み]る",
+ "hero.caption":"[八卦|はっけ]は[八|やっ]つの[基底狀態|きていじょうたい]。[陰陽|いんよう]の[三爻|さんこう]は[三|みっ]つの[量子|りょうし]ビット、|000⟩ から |111⟩ まで。",
+ "hero.measure":"[測定|そくてい]","hero.reset":"[再|ふたた]び[重|かさ]ね[合|あ]わせ",
+ "hero.super":"[重|かさ]ね[合|あ]わせ[狀態|じょうたい]：[八|やっ]つが[同時|どうじ]に[存在|そんざい]","hero.collapsed":"{s} に[收縮|しゅうしゅく]",
+ "realms.h":"[天下三分|てんかさんぶん]、[軍師一人|ぐんしひとり]",
+ "realms.p":"[孔明|こうめい]は[隆中對|りゅうちゅうたい]で[天下三分|てんかさんぶん]の[計|けい]を[說|と]いた。[我々|われわれ]も[科學|かがく]の[最前線|さいぜんせん]を[三|みっ]つに[分|わ]ける。",
+ "quote.tr":"[身|み]を[屈|かが]めて[力|ちから]を[盡|つ]くし、[死|し]して[後|のち]に[已|や]む。",
+ "quote.src":"[諸葛亮|しょかつりょう]『[後出師表|ごすいしのひょう]』",
+ "feat.h":"[古|いにしえ]の[計略|けいりゃく]、[量子|りょうし]の[敎訓|きょうくん]","feat.link":"[八|やっ]つの[計略|けいりゃく]をすべて[見|み]る →",
+ "path.h":"[茅廬|ぼうろ]から[五丈原|ごじょうげん]へ",
+ "path.p":"[四|よっ]つの[段階|だんかい]。それぞれ[孔明|こうめい]の[生涯|しょうがい]の[轉機|てんき]に[因|ちな]む。","path.link":"[課程|かてい]と[實驗室|じっけんしつ]をすべて[見|み]る →",
+ "strat.eyebrow":"『[三國志演義|さんごくしえんぎ]』より","strat.h":"[八|やっ]つの[計略|けいりゃく]、[八|やっ]つの[敎訓|きょうくん]",
+ "strat.p":"[各逸話|かくいつわ]が、[量子科學|りょうしかがく]やサイバー[安全|あんぜん]の[一|ひと]つの[槪念|がいねん]を[開|ひら]く。[各|かく]カードには[一|ひと]つの[卦|け]と、その[三量子|さんりょうし]ビット[狀態|じょうたい]を[添|そ]えた。",
+ "lbl.story":"[故事|こじ]","lbl.lesson":"[敎訓|きょうくん]",
+ "prog.eyebrow":"[四|よっ]つの[段階|だんかい] · [四|よっ]つの[實驗室|じっけんしつ]","prog.p":"[順|じゅん]に[學|まな]ぶもよし、[今|いま]の[知識|ちしき]から[始|はじ]めるもよし。",
+ "prog.levels":"[四|よっ]つの[段階|だんかい]","prog.labs":"[四|よっ]つの[實驗室|じっけんしつ]",
+ "demo.h":"[試|ため]してみよう：[觀星臺|かんせいだい]の[一量子|いちりょうし]ビット",
+ "demo.p":"[角度|かくど] θ を[決|き]め、1,000 [回|かい][測定|そくてい]する。[理論上|りろんじょう]、|1⟩ が[出|で]る[確率|かくりつ]は sin²(θ/2)。",
+ "demo.angle":"[角度|かくど] θ","demo.btn":"1,000 [回|かい][測定|そくてい]","demo.obs":"[實測|じっそく]","demo.exp":"[理論値|りろんち]",
+ "about.eyebrow":"[私|わたし]たちの[物語|ものがたり]","about.h":"なぜ[孔明|こうめい]か",
+ "about.p1":"[諸葛亮|しょかつりょう]はまず[學者|がくしゃ]であった。[星|ほし]を[觀|み]、[器械|きかい]を[作|つく]り、[兵法|へいほう]を[著|あらわ]し、[誠實|せいじつ]に[仕|つか]えた。[量子科學|りょうしかがく]とサイバー[安全|あんぜん]にも[同|おな]じ[組|く]み[合|あ]わせが[要|い]る。[深|ふか]い[知識|ちしき]、[周到|しゅうとう]な[計劃|けいかく]、そして[明確|めいかく]な[倫理|りんり]。",
+ "about.p2":"[八卦|はっけ]は[三|さん]ビットの[符號|ふごう]だ。ライプニッツは 1703 [年|ねん]にそこに[二進法|にしんほう]を[見|み]た。[我々|われわれ]は[量子|りょうし]ビットを[見|み]る。",
+ "about.values":"[四|よっ]つの[原則|げんそく]",
+ "join.h":"[學院|がくいん]に[參加|さんか]","join.p":"あなたのことと、どこから[始|はじ]めたいかを[敎|おし]えてください。",
+ "join.name":"[氏名|しめい]","join.email":"メール","join.role":"[私|わたし]は","join.level":"[開始段階|かいしだんかい]","join.lang":"[希望言語|きぼうげんご]",
+ "join.btn":"[參加希望|さんかきぼう]を[送|おく]る","join.note":"プレビュー[版|ばん]のため、[申込|もうしこみ]はまだ[受|う]け[付|つ]けていません。",
+ "join.thanks":"{name} さん、ありがとうございます。このプレビューはまだ情報を送信しません。",
+ "foot.p":"[孔明|こうめい]の[眼|め]を[通|とお]して、[量子科學|りょうしかがく]とサイバー[安全|あんぜん]を[學|まな]ぶ[敎育|きょういく]ポータル。",
+ roles:["學生","敎員","學校・團體","專門職"],
+ realms:[
+  {t:"[量子計算|りょうしけいさん]",d:"[量子|りょうし]ビット、[重|かさ]ね[合|あ]わせ、もつれ、そしてそれを[使|つか]うアルゴリズム。",k:"[量子|りょうし]ビット · [量子|りょうし]ゲート · Shor と Grover · [誤|あやま]り[訂正|ていせい]"},
+  {t:"サイバー[空間|くうかん]と[安全|あんぜん]",d:"ネットワークを[守|まも]り、[暗號|あんごう]を[破|やぶ]り、[量子時代|りょうしじだい]に[耐|た]える[暗號|あんごう]を[築|きず]く。",k:"[暗號學|あんごうがく] · [耐量子暗號|たいりょうしあんごう] · [脅威|きょうい]ハンティング · ゼロトラスト"},
+  {t:"[原子|げんし]と[素粒子|そりゅうし]",d:"[根底|こんてい]にある[物理|ぶつり]。[原子|げんし]、[光子|こうし]、スピン、[標準模型|ひょうじゅんもけい]。",k:"[原子構造|げんしこうぞう] · [光子|こうし] · スピン · [標準模型|ひょうじゅんもけい]"}],
+ strats:[
+  {t:"ハニーポットと[脅威情報|きょういじょうほう]",s:"[濃霧|のうむ]の[中|なか]、[孔明|こうめい]は[藁|わら]を[積|つ]んだ[船|ふね]で[曹操|そうそう]の[陣|じん]に[近|ちか]づいた。[敵|てき]は[矢|や]を[浴|あ]びせ、[孔明|こうめい]は[十萬餘本|じゅうまんよほん]の[矢|や]を[持|も]ち[歸|かえ]った。",l:"ハニーポットも[同|おな]じだ。[囮|おとり]のシステムが[攻擊|こうげき]を[引|ひ]き[寄|よ]せ、[捕|と]らえた[檢體|けんたい]はすべて[防禦|ぼうぎょ]の[情報|じょうほう]となる。",k:"ハニーポット · [脅威|きょうい]インテリジェンス · [欺瞞|ぎまん]"},
+  {t:"[欺瞞|ぎまん]による[防禦|ぼうぎょ]",s:"[西城|せいじょう]に[兵|へい]はいなかった。[孔明|こうめい]は[城門|じょうもん]を[開|あ]け[放|はな]ち、[城樓|じょうろう]で[琴|こと]を[彈|ひ]いた。[司馬懿|しばい]は[伏兵|ふくへい]を[疑|うたが]い、[軍|ぐん]を[退|ひ]いた。",l:"[攻擊者|こうげきしゃ]は[見|み]えるものに[基|もと]づいて[動|うご]く。ムービングターゲット[防禦|ぼうぎょ]と[欺瞞|ぎまん]は、その[見|み]え[方|かた]を[變|か]え、あらゆる[推測|すいそく]の[代償|だいしょう]を[高|たか]める。",k:"ムービングターゲット[防禦|ぼうぎょ] · [欺瞞技術|ぎまんぎじゅつ] · [攻擊者心理|こうげきしゃしんり]"},
+  {t:"[量子|りょうし]シミュレーション",s:"[赤壁|せきへき]の[戰|たたか]いの[前|まえ]、[孔明|こうめい]は[東南|とうなん]の[風|かぜ]を「[借|か]りた」。[實|じつ]は[季節|きせつ]の[天候|てんこう]を[讀|よ]んでいたのだ。",l:"[優|すぐ]れた[豫測|よそく]は[魔法|まほう]に[見|み]える。[量子|りょうし]シミュレーションは、[古典計算機|こてんけいさんき]では[追|お]えない[分子|ぶんし]や[材料|ざいりょう]を[模擬|もぎ]する。",k:"[量子|りょうし]シミュレーション · [確率|かくりつ] · [豫測|よそく]"},
+  {t:"[格子暗號|こうしあんごう]の[迷陣|めいじん]",s:"[孔明|こうめい]は[魚腹浦|ぎょふくほ]に[石|いし]を[竝|なら]べて[陣|じん]を[敷|し]いた。[陸遜|りくそん]は[入|はい]り[込|こ]み、[出口|でぐち]を[見|み]つけられなかった。",l:"[格子暗號|こうしあんごう]は[數百次元|すうひゃくじげん]の[迷陣|めいじん]を[築|きず]く。[量子計算機|りょうしけいさんき]でさえ、[最短|さいたん]の[出口|でぐち]を[見|み]つけるのは[難|むずか]しい。",k:"[格子暗號|こうしあんごう] · [耐量子暗號|たいりょうしあんごう] · [困難|こんなん]な[問題|もんだい]"},
+  {t:"[量子鍵配送|りょうしかぎはいそう]",s:"[孔明|こうめい]は[趙雲|ちょううん]に[三|みっ]つの[錦|にしき]の[袋|ふくろ]を[授|さず]け、[定|さだ]められた[時|とき]にだけ[開|ひら]くよう[命|めい]じた。",l:"[量子鍵配送|りょうしかぎはいそう]は[鍵|かぎ]を[光子|こうし]に[封|ふう]じる。[盜聽者|とうちょうしゃ]は[量子狀態|りょうしじょうたい]を[亂|みだ]し、[自|みずか]らの[存在|そんざい]を[露|あら]わにする。",k:"[量子鍵配送|りょうしかぎはいそう] · [複製不可能定理|ふくせいふかのうていり] · [鍵交換|かぎこうかん]"},
+  {t:"レッドチーム[演習|えんしゅう]",s:"[孔明|こうめい]は[南中|なんちゅう]の[首領|しゅりょう][孟獲|もうかく]を[七度|しちど][捕|と]らえ、[六度|ろくど][放|はな]ち、[遂|つい]に[心|こころ]から[歸順|きじゅん]させた。",l:"[安全|あんぜん]は[反復|はんぷく]によって[高|たか]まる。レッドチームとブルーチームが[攻|せ]め、[放|はな]ち、[再檢證|さいけんしょう]し、[防禦|ぼうぎょ]が[固|かた]まり[信賴|しんらい]が[生|う]まれるまで[續|つづ]ける。",k:"レッドチーム · ブルーチーム · [責任|せきにん]ある[開示|かいじ]"},
+  {t:"[量子最適化|りょうしさいてきか]",s:"[蜀|しょく]の[險|けわ]しい[山道|やまみち]で[兵糧|ひょうろう]を[運|はこ]ぶため、[孔明|こうめい]は[木牛流馬|もくぎゅうりゅうば]を[考案|こうあん]した。",l:"[兵站|へいたん]は[最適化問題|さいてきかもんだい]である。[量子|りょうし]アニーリングと QAOA は、[膨大|ぼうだい]な[經路|けいろ]の[中|なか]から[良|よ]い[解|かい]を[探|さが]す。",k:"[最適化|さいてきか] · [量子|りょうし]アニーリング · QAOA"},
+  {t:"[耐量子移行|たいりょうしいこう]の[計劃|けいかく]",s:"[隆中|りゅうちゅう]の[草廬|そうろ]で、[若|わか]き[孔明|こうめい]は[天下|てんか]の[數十年先|すうじゅうねんさき]を[見據|みす]えた[計|けい]を[立|た]てた。",l:"どの[組織|そしき]にも[量子時代|りょうしじだい]の[隆中對|りゅうちゅうたい]が[要|い]る。[使用中|しようちゅう]の[暗號|あんごう]を[棚卸|たなおろ]しし、「[今|いま][收集|しゅうしゅう]し、[後|あと]で[解讀|かいどく]する」[攻擊|こうげき]が[實|み]を[結|むす]ぶ[前|まえ]に[移行|いこう]せよ。",k:"[暗號|あんごう]アジリティ · [移行|いこう] · ロードマップ"}],
+ levels:[
+  {t:"[基礎|きそ]",d:"[三顧|さんこ]の[禮|れい]の[前|まえ]、[孔明|こうめい]は[獨|ひと]り[學|まな]んだ。ここから[始|はじ]める。[原子|げんし]、[光|ひかり]、[確率|かくりつ]、[線形代數|せんけいだいすう]、そして[計算機|けいさんき]とネットワークの[仕組|しく]み。"},
+  {t:"[謀略|ぼうりゃく]と[暗號|あんごう]",d:"[隆中對|りゅうちゅうたい]は[未來|みらい]の[地圖|ちず]だった。[量子|りょうし]ビットとゲート、[古典暗號|こてんあんごう]と[耐量子暗號|たいりょうしあんごう]、そして[移行|いこう]の[計劃|けいかく]を[學|まな]ぶ。"},
+  {t:"[攻防實驗|こうぼうじっけん]",d:"[江上|こうじょう]の[火攻|ひぜ]め。[實踐的|じっせんてき]な[攻防演習|こうぼうえんしゅう]、シミュレータ[上|じょう]の[量子回路|りょうしかいろ]、チーム[對抗|たいこう]の CTF。"},
+  {t:"[卒業研究|そつぎょうけんきゅう]",d:"[孔明|こうめい][最後|さいご]の[北伐|ほくばつ]。[指導者|しどうしゃ]のもとで[研究|けんきゅう]または[工學|こうがく]の[課題|かだい]に[取|と]り[組|く]み、[公開審査|こうかいしんさ]で[締|し]めくくる。"}],
+ labs:[
+  {t:"[量子|りょうし]ビットの[砂場|すなば]",d:"[回路|かいろ]を[組|く]み、[確率|かくりつ]の[變化|へんか]を[見|み]る。"},
+  {t:"[暗號工房|あんごうこうぼう]",d:"[格子暗號|こうしあんごう]と[耐量子暗號|たいりょうしあんごう]の[謎|なぞ]を[解|と]く。"},
+  {t:"ハニーネット[演習場|えんしゅうじょう]",d:"[安全|あんぜん]な[砂場|すなば]で[攻擊通信|こうげきつうしん]を[捕|と]らえ、[分析|ぶんせき]する。"},
+  {t:"[最適化|さいてきか]ラボ",d:"[量子|りょうし]アニーリングと QAOA で[補給路|ほきゅうろ]を[計劃|けいかく]する。"}],
+ values:[
+  {t:"[知識|ちしき]",d:"[道具|どうぐ]だけでなく、[物理|ぶつり]を[學|まな]ぶ。"},
+  {t:"[謀略|ぼうりゃく]",d:"[三手先|みてさき]を[讀|よ]む。"},
+  {t:"[義|ぎ]",d:"[守|まも]るためにのみ[攻|せ]める。[常|つね]に[白帽子|しろぼうし]で。"},
+  {t:"[傳承|でんしょう]",d:"[我々|われわれ]が[話|はな]すすべての[言葉|ことば]で[傳|つた]える。"}]
+},
+ko:{
+ "nav.home":"홈","nav.strat":"[計略|계략]","nav.prog":"[課程|과정]과 [實驗室|실험실]","nav.about":"[紹介|소개]와 [參加|참가]",
+ "hero.eyebrow":"[臥龍|와룡], [量子|양자] [時代|시대]에 깨어나다",
+ "hero.lead":"[諸葛亮|제갈량]이 [戰局|전국]을 읽던 [方式|방식]으로 [量子科學|양자과학]과 사이버 [保安|보안]을 배웁니다. [沈着|침착]하게, [精確|정확]하게, 세 [手|수] 앞을 내다보며.",
+ "hero.cta1":"[計略|계략] 살펴보기","hero.cta2":"[課程|과정] 보기",
+ "hero.caption":"[八卦|팔괘]는 여덟 [基底狀態|기저상태]. [陰陽|음양]의 [三爻|삼효]는 [量子|양자]비트 셋, |000⟩부터 |111⟩까지.",
+ "hero.measure":"[測定|측정]","hero.reset":"다시 [重疊|중첩]",
+ "hero.super":"[重疊|중첩] [狀態|상태]: 여덟 [狀態|상태]가 [同時|동시]에","hero.collapsed":"{s}(으)로 [收縮|수축]",
+ "realms.h":"[天下三分|천하삼분], [軍師|군사] 한 사람",
+ "realms.p":"[孔明|공명]은 [隆中對|융중대]에서 [天下|천하]를 셋으로 나누는 [計策|계책]을 내놓았다. 우리도 [科學|과학]의 [最前線|최전선]을 셋으로 나눈다.",
+ "quote.tr":"몸을 굽혀 힘을 다하고, 죽은 뒤에야 그친다.",
+ "quote.src":"[諸葛亮|제갈량], 《[後出師表|후출사표]》",
+ "feat.h":"옛 [計略|계략], [量子|양자]의 [敎訓|교훈]","feat.link":"여덟 [計略|계략] 모두 보기 →",
+ "path.h":"[茅廬|모려]에서 [五丈原|오장원]까지",
+ "path.p":"네 [段階|단계]. [各各|각각] [孔明|공명] [生涯|생애]의 [轉換點|전환점]에서 이름을 따왔다.","path.link":"[課程|과정]과 [實驗室|실험실] 모두 보기 →",
+ "strat.eyebrow":"《[三國志演義|삼국지연의]》에서","strat.h":"여덟 [計略|계략], 여덟 [敎訓|교훈]",
+ "strat.p":"이야기 하나하나가 [量子科學|양자과학]이나 사이버 [保安|보안]의 [槪念|개념] 하나를 연다. 카드마다 [卦|괘] 하나와 그 [量子|양자]비트 세 개의 [狀態|상태]를 담았다.",
+ "lbl.story":"[故事|고사]","lbl.lesson":"[敎訓|교훈]",
+ "prog.eyebrow":"네 [段階|단계] · 네 [實驗室|실험실]","prog.p":"[順序|순서]대로 배워도 좋고, 지금 아는 데서 [始作|시작]해도 좋다.",
+ "prog.levels":"네 [段階|단계]","prog.labs":"네 [實驗室|실험실]",
+ "demo.h":"[直接|직접] 해보기: [觀星臺|관성대]의 [量子|양자]비트 하나",
+ "demo.p":"[角度|각도] θ를 [定|정]하고 1,000[番|번] [測定|측정]한다. [理論上|이론상] |1⟩이 나올 [確率|확률]은 sin²(θ/2)이다.",
+ "demo.angle":"[角度|각도] θ","demo.btn":"1,000[番|번] [測定|측정]","demo.obs":"[實測|실측]","demo.exp":"[理論|이론]",
+ "about.eyebrow":"우리의 이야기","about.h":"왜 [孔明|공명]인가",
+ "about.p1":"[諸葛亮|제갈량]은 무엇보다 [學者|학자]였다. 별을 [觀察|관찰]하고, [器械|기계]를 만들고, [兵法|병법]을 쓰고, [誠實|성실]하게 섬겼다. [量子科學|양자과학]과 사이버 [保安|보안]에도 같은 [組合|조합]이 [必要|필요]하다. 깊은 [知識|지식], [周到|주도]한 [計劃|계획], 그리고 [分明|분명]한 [倫理|윤리].",
+ "about.p2":"[八卦|팔괘]는 3비트 [符號|부호]다. 라이프니츠는 1703[年|년] 거기서 [二進法|이진법]을 보았다. 우리는 [量子|양자]비트를 본다.",
+ "about.values":"네 가지 [原則|원칙]",
+ "join.h":"[學院|학원]에 [參加|참가]하기","join.p":"누구인지, 어디서 [始作|시작]하고 싶은지 알려 주세요.",
+ "join.name":"이름","join.email":"이메일","join.role":"저는","join.level":"[始作|시작] [段階|단계]","join.lang":"[希望|희망] [言語|언어]",
+ "join.btn":"[參加|참가] [意向|의향] 보내기","join.note":"미리보기 [樣式|양식]입니다. 아직 [申請|신청]을 받지 않습니다.",
+ "join.thanks":"{name} 님, 感謝합니다. 이 미리보기는 아직 情報를 傳送하지 않습니다.",
+ "foot.p":"[孔明|공명]의 눈으로 [量子科學|양자과학]과 사이버 [保安|보안]을 배우는 [敎育|교육] 포털.",
+ roles:["學生","敎師","學校·機關","專門家"],
+ realms:[
+  {t:"[量子|양자] 컴퓨팅",d:"[量子|양자]비트, [重疊|중첩], 얽힘, 그리고 이를 [活用|활용]하는 알고리즘.",k:"[量子|양자]비트 · [量子|양자]게이트 · Shor와 Grover · [誤謬|오류] [訂正|정정]"},
+  {t:"사이버 [空間|공간]과 [保安|보안]",d:"네트워크를 [守護|수호]하고, [暗號|암호]를 [解讀|해독]하며, [量子|양자] [時代|시대]에도 견디는 [暗號|암호]를 만든다.",k:"[暗號學|암호학] · [後量子|후양자] [暗號|암호] · [威脅|위협] [探知|탐지] · 제로 트러스트"},
+  {t:"[原子|원자]와 [粒子|입자]",d:"[根底|근저]의 [物理學|물리학]. [原子|원자], [光子|광자], 스핀, [標準模型|표준모형].",k:"[原子構造|원자구조] · [光子|광자] · 스핀 · [標準模型|표준모형]"}],
+ strats:[
+  {t:"허니팟과 [威脅|위협] [情報|정보]",s:"짙은 안개 속, [孔明|공명]은 짚을 실은 배로 [曹操|조조]의 [陣營|진영]에 다가갔다. [敵|적]이 화살을 퍼붓자 [孔明|공명]은 [十萬餘|십만여] 개의 화살을 싣고 돌아왔다.",l:"허니팟도 같다. 미끼 시스템이 [攻擊|공격]을 끌어들이고, [捕獲|포획]한 [標本|표본] 하나하나가 [防禦|방어]의 [情報|정보]가 된다.",k:"허니팟 · [威脅|위협] 인텔리전스 · [欺瞞|기만]"},
+  {t:"[欺瞞|기만]에 의한 [防禦|방어]",s:"[西城|서성]에 [兵力|병력]이 없자 [孔明|공명]은 [城門|성문]을 활짝 열고 [城樓|성루]에서 거문고를 탔다. [司馬懿|사마의]는 [伏兵|복병]을 [疑心|의심]해 [軍|군]을 물렸다.",l:"[攻擊者|공격자]는 보이는 것에 따라 움직인다. [移動標的|이동표적] [防禦|방어]와 [欺瞞|기만] [技術|기술]은 그 [視野|시야]를 바꾸어 모든 [推測|추측]의 [代價|대가]를 높인다.",k:"[移動標的|이동표적] [防禦|방어] · [欺瞞|기만] [技術|기술] · [攻擊者|공격자] [心理|심리]"},
+  {t:"[量子|양자] 시뮬레이션",s:"[赤壁大戰|적벽대전] [前|전], [孔明|공명]은 [東南風|동남풍]을 「빌려」 왔다. [實|실]은 그 [季節|계절]의 [氣象|기상]을 읽었던 것이다.",l:"뛰어난 [豫測|예측]은 [魔法|마법]처럼 보인다. [量子|양자] 시뮬레이션은 [古典|고전] 컴퓨터가 따라가지 못하는 [分子|분자]와 [物質|물질]을 [模擬|모의]한다.",k:"[量子|양자] 시뮬레이션 · [確率|확률] · [豫測|예측]"},
+  {t:"[格子|격자] [暗號|암호]의 [迷宮|미궁]",s:"[孔明|공명]은 [魚腹浦|어복포]에 돌을 늘어놓아 [陣|진]을 쳤다. [陸遜|육손]은 그 안에 들어갔다가 길을 잃었다.",l:"[格子|격자] [暗號|암호]는 [數百|수백] [次元|차원]의 [迷宮|미궁]을 쌓는다. [量子|양자] 컴퓨터조차 가장 짧은 [出口|출구]를 찾기 어렵다.",k:"[格子|격자] [暗號|암호] · [後量子|후양자] [暗號|암호] · [難題|난제]"},
+  {t:"[量子|양자] 키 [分配|분배]",s:"[孔明|공명]은 [趙雲|조운]에게 [錦囊|금낭] 세 개를 주며 [定|정]해진 때에만 열라고 일렀다.",l:"[量子|양자] 키 [分配|분배]는 키를 [光子|광자]에 [封印|봉인]한다. [盜聽者|도청자]는 [量子|양자] [狀態|상태]를 흐트러뜨려 스스로를 드러낸다.",k:"[量子|양자] 키 [分配|분배] · [複製|복제] [不可|불가] [定理|정리] · 키 [交換|교환]"},
+  {t:"레드팀 [演習|연습]",s:"[孔明|공명]은 [南中|남중]의 [首領|수령] [孟獲|맹획]을 일곱 [番|번] 사로잡고 여섯 [番|번] 풀어 주어, 마침내 마음으로 [歸順|귀순]하게 했다.",l:"[保安|보안]은 [反復|반복]으로 [强|강]해진다. 레드팀과 블루팀이 [攻擊|공격]하고, 풀어 주고, 다시 [檢證|검증]하며, [防禦|방어]가 굳건해지고 [信賴|신뢰]가 쌓일 때까지 이어 간다.",k:"레드팀 · 블루팀 · [責任|책임] 있는 [公開|공개]"},
+  {t:"[量子|양자] [最適化|최적화]",s:"[險|험]한 [蜀|촉]의 [山|산]길로 [軍糧|군량]을 나르기 위해 [孔明|공명]은 [木牛流馬|목우유마]를 [考案|고안]했다.",l:"[兵站|병참]은 [最適化|최적화] [問題|문제]다. [量子|양자] 어닐링과 QAOA는 막대한 [經路|경로] [空間|공간]에서 좋은 [解|해]를 찾는다.",k:"[最適化|최적화] · [量子|양자] 어닐링 · QAOA"},
+  {t:"[量子|양자] [時代|시대]의 [移轉|이전] [計劃|계획]",s:"[隆中|융중]의 [草廬|초려]에서 젊은 [孔明|공명]은 [天下|천하]의 [數十|수십] [年|년] [大計|대계]를 세웠다.",l:"모든 [組織|조직]에는 [量子|양자] [時代|시대]의 [隆中對|융중대]가 [必要|필요]하다. 쓰고 있는 [暗號|암호]를 [點檢|점검]하고, 「지금 [收集|수집], 나중에 [解讀|해독]」 [攻擊|공격]이 [結實|결실]하기 [前|전]에 [移轉|이전]하라.",k:"[暗號|암호] [敏捷性|민첩성] · [移轉|이전] · 로드맵"}],
+ levels:[
+  {t:"[基礎|기초]",d:"[三顧草廬|삼고초려] [以前|이전], [孔明|공명]은 홀로 [工夫|공부]했다. 여기서 [始作|시작]한다. [原子|원자], 빛, [確率|확률], [線形代數|선형대수], 그리고 컴퓨터와 네트워크의 [原理|원리]."},
+  {t:"[謀略|모략]과 [暗號|암호]",d:"[隆中對|융중대]는 [未來|미래]의 [地圖|지도]였다. [量子|양자]비트와 게이트, [古典|고전] [暗號|암호]와 [後量子|후양자] [暗號|암호], 그리고 [移轉|이전] [計劃|계획]을 배운다."},
+  {t:"[攻防|공방] [實驗|실험]",d:"[江|강] 위의 [火攻|화공]. [實戰|실전] [攻防|공방] [演習|연습], 시뮬레이터 위의 [量子|양자] [回路|회로], 팀 [對抗|대항] CTF."},
+  {t:"[卒業|졸업] 프로젝트",d:"[孔明|공명]의 마지막 [北伐|북벌]. [指導敎授|지도교수]와 함께 [硏究|연구] 또는 [工學|공학] 프로젝트를 [遂行|수행]하고 [公開|공개] [發表|발표]로 마무리한다."}],
+ labs:[
+  {t:"[量子|양자]비트 샌드박스",d:"[回路|회로]를 만들고 [確率|확률]의 [變化|변화]를 지켜본다."},
+  {t:"[暗號|암호] [工房|공방]",d:"[格子|격자] [暗號|암호]와 [後量子|후양자] [暗號|암호] 퍼즐을 푼다."},
+  {t:"허니넷 [訓鍊場|훈련장]",d:"[安全|안전]한 샌드박스에서 [攻擊|공격] 트래픽을 [捕捉|포착]하고 [分析|분석]한다."},
+  {t:"[最適化|최적화] 랩",d:"[量子|양자] 어닐링과 QAOA로 [補給路|보급로]를 [計劃|계획]한다."}],
+ values:[
+  {t:"[知識|지식]",d:"[道具|도구]만이 아니라 [物理|물리]를 배운다."},
+  {t:"[謀略|모략]",d:"세 [手|수] 앞을 내다본다."},
+  {t:"[義理|의리]",d:"지키기 위해서만 [攻擊|공격]한다. 언제나 화이트햇."},
+  {t:"[傳承|전승]",d:"우리가 쓰는 모든 [言語|언어]로 [傳|전]한다."}]
+},
+vi:{
+ "nav.home":"Trang chủ","nav.strat":"[Kế sách|計策]","nav.prog":"[Chương trình|章程] & [Thí nghiệm|試驗]","nav.about":"[Giới thiệu|介紹] & [Tham gia|參加]",
+ "hero.eyebrow":"[Ngọa Long|臥龍] thức giấc trong [thời đại|時代] [lượng tử|量子]",
+ "hero.lead":"Học [khoa học|科學] [lượng tử|量子] và [an ninh|安寧] mạng như [Gia Cát Lượng|諸葛亮] đọc [chiến cục|戰局]: [điềm tĩnh|恬靜], [chính xác|正確], đi trước ba nước cờ.",
+ "hero.cta1":"Khám phá [kế sách|計策]","hero.cta2":"Xem [chương trình|章程]",
+ "hero.caption":"[Bát quái|八卦] là tám [trạng thái|狀態] cơ sở. Ba hào [âm dương|陰陽] là ba qubit, từ |000⟩ đến |111⟩.",
+ "hero.measure":"Đo","hero.reset":"Chồng chập lại",
+ "hero.super":"Đang chồng chập: cả tám [trạng thái|狀態] cùng lúc","hero.collapsed":"Sụp đổ về {s}",
+ "realms.h":"Ba cõi, một [quân sư|軍師]",
+ "realms.p":"Trong [Long Trung đối|隆中對], [Khổng Minh|孔明] chia [thiên hạ|天下] làm ba. Chúng tôi chia [tiền tuyến|前線] [khoa học|科學] theo cách ấy.",
+ "quote.tr":"Cúi mình dốc hết sức, đến chết mới thôi.",
+ "quote.src":"[Gia Cát Lượng|諸葛亮], [Hậu xuất sư biểu|後出師表]",
+ "feat.h":"[Kế|計] xưa, bài học [lượng tử|量子]","feat.link":"Xem cả tám [kế|計] →",
+ "path.h":"Từ [mao lư|茅廬] đến [Ngũ Trượng Nguyên|五丈原]",
+ "path.p":"Bốn [cấp độ|級度], mỗi cấp mang tên một bước ngoặt trong đời [Khổng Minh|孔明].","path.link":"Xem mọi [chương trình|章程] →",
+ "strat.eyebrow":"Từ [Tam Quốc diễn nghĩa|三國演義]","strat.h":"Tám [kế|計], tám bài học",
+ "strat.p":"Mỗi [điển tích|典跡] mở ra một [khái niệm|槪念] về [khoa học|科學] [lượng tử|量子] hoặc [an ninh|安寧] mạng. Mỗi thẻ còn mang một quẻ và [trạng thái|狀態] ba qubit của nó.",
+ "lbl.story":"[Điển tích|典跡]","lbl.lesson":"Bài học",
+ "prog.eyebrow":"Bốn cấp độ · Bốn phòng thí nghiệm","prog.p":"Học theo thứ tự, hoặc bắt đầu từ chỗ bạn đã biết.",
+ "prog.levels":"Bốn [cấp độ|級度]","prog.labs":"Bốn phòng [thí nghiệm|試驗]",
+ "demo.h":"Thử ngay: một qubit trên [Quan Tinh Đài|觀星臺]",
+ "demo.p":"Chọn góc θ rồi đo 1.000 lần. Theo [lý thuyết|理說], |1⟩ xuất hiện với [xác suất|確率] sin²(θ/2).",
+ "demo.angle":"Góc θ","demo.btn":"Đo 1.000 lần","demo.obs":"[Thực tế|實際]","demo.exp":"[Lý thuyết|理說]",
+ "about.eyebrow":"Câu chuyện của chúng tôi","about.h":"Vì sao [Khổng Minh|孔明]?",
+ "about.p1":"[Gia Cát Lượng|諸葛亮] trước hết là một [học giả|學者]. Ông xem sao, chế tạo [khí giới|器械], viết [binh pháp|兵法] và phụng sự bằng sự [chính trực|正直]. [Khoa học|科學] [lượng tử|量子] và [an ninh|安寧] mạng cần đúng sự kết hợp ấy: [tri thức|知識] sâu, [kế hoạch|計劃] chu đáo và [đạo đức|道德] rõ ràng.",
+ "about.p2":"[Bát quái|八卦] là mã ba bit. Năm 1703, Leibniz thấy trong đó hệ [nhị phân|二分]. Chúng tôi thấy qubit.",
+ "about.values":"Bốn [nguyên tắc|原則]",
+ "join.h":"Gia nhập [học viện|學院]","join.p":"Cho chúng tôi biết bạn là ai và muốn bắt đầu từ đâu.",
+ "join.name":"Họ tên","join.email":"Email","join.role":"Tôi là","join.level":"[Cấp độ|級度] bắt đầu","join.lang":"Ngôn ngữ ưa thích",
+ "join.btn":"Gửi [nguyện vọng|願望]","join.note":"Đây là biểu mẫu xem trước. Chưa thu nhận đăng ký.",
+ "join.thanks":"Cảm ơn {name}. Bản xem trước này chưa gửi thông tin của bạn đi đâu.",
+ "foot.p":"Cổng [giáo dục|教育] về [khoa học|科學] [lượng tử|量子] và [an ninh|安寧] mạng, qua đôi mắt [Khổng Minh|孔明].",
+ roles:["Học sinh, sinh viên","Giáo viên","Trường hoặc tổ chức","Chuyên gia"],
+ realms:[
+  {t:"[Điện toán|電算] [lượng tử|量子]",d:"Qubit, chồng chập, rối [lượng tử|量子] và các [thuật toán|術算] dùng chúng.",k:"Qubit · Cổng lượng tử · Shor & Grover · Sửa lỗi"},
+  {t:"[Không gian|空間] mạng & [an ninh|安寧]",d:"Bảo vệ mạng, phá [mật mã|密碼] và xây dựng mật mã đứng vững trong [thời đại|時代] [lượng tử|量子].",k:"[Mật mã học|密碼學] · Hậu lượng tử · Săn mối đe dọa · Zero trust"},
+  {t:"[Nguyên tử|原子] & hạt [cơ bản|基本]",d:"[Vật lý|物理] nền tảng: nguyên tử, [quang tử|光子], spin và [Mô hình|模型] [Chuẩn|準].",k:"[Cấu trúc|構築] nguyên tử · Photon · Spin · Mô hình Chuẩn"}],
+ strats:[
+  {t:"Thảo thuyền tá tiễn",s:"Trong sương mù, [Khổng Minh|孔明] cho thuyền chở rơm áp sát trại [Tào Tháo|曹操]. Quân địch bắn tên như mưa, và ông mang về hơn mười vạn mũi tên.",l:"Honeypot cũng vậy. Một [hệ thống|系統] mồi nhử hút các cuộc [tấn công|進攻], và mỗi mẫu bắt được trở thành [tình báo|情報] cho [phòng thủ|防守].",k:"Honeypot · [Tình báo|情報] mối đe dọa · Đánh lừa"},
+  {t:"Không thành kế",s:"[Tây Thành|西城] không còn quân, [Khổng Minh|孔明] mở toang cổng thành và gảy đàn trên lầu. [Tư Mã Ý|司馬懿] ngờ có [phục binh|伏兵] nên rút quân.",l:"Kẻ [tấn công|進攻] hành động theo những gì chúng thấy. [Phòng thủ|防守] [mục tiêu|目標] [di động|移動] và [nghi binh|疑兵] thay đổi điều chúng thấy, khiến mỗi lần đoán đều đắt hơn.",k:"Phòng thủ mục tiêu di động · Đánh lừa · [Tâm lý|心理] kẻ tấn công"},
+  {t:"Tá đông phong",s:"Trước trận [Xích Bích|赤壁], [Khổng Minh|孔明] “mượn” gió [Đông Nam|東南]. Thực ra ông đã đọc được [thời tiết|時節] của mùa.",l:"[Dự báo|預報] giỏi trông như phép màu. [Mô phỏng|模倣] [lượng tử|量子] tái hiện các [phân tử|分子] và [vật liệu|物料] mà máy tính [cổ điển|古典] không theo kịp.",k:"Mô phỏng lượng tử · [Xác suất|確率] · Dự báo"},
+  {t:"Bát trận đồ",s:"[Khổng Minh|孔明] xếp đá thành trận ở [Ngư Phúc Phố|魚腹浦]. [Lục Tốn|陸遜] lạc vào và không tìm được lối ra.",l:"[Mật mã|密碼] lưới dựng một mê cung trong hàng trăm chiều. Ngay cả máy tính [lượng tử|量子] cũng khó tìm ra lối ngắn nhất.",k:"Mật mã lưới · Hậu lượng tử · Bài toán khó"},
+  {t:"Cẩm nang diệu kế",s:"[Khổng Minh|孔明] trao cho [Triệu Vân|趙雲] ba [cẩm nang|錦囊], dặn chỉ mở vào đúng thời điểm.",l:"[Phân phối|分配] khóa [lượng tử|量子] (QKD) niêm phong khóa trong [quang tử|光子]. Kẻ nghe lén sẽ làm nhiễu [trạng thái|狀態] lượng tử và tự lộ diện.",k:"QKD · [Định lý|定理] không thể sao chép · Trao đổi khóa"},
+  {t:"Thất cầm Mạnh Hoạch",s:"[Khổng Minh|孔明] bắt [Mạnh Hoạch|孟獲] bảy lần, thả sáu lần, cho đến khi ông ta thật lòng quy phục.",l:"[An ninh|安寧] tiến bộ nhờ lặp lại. Đội đỏ và đội xanh tấn công, thả ra, kiểm tra lại, cho đến khi [phòng tuyến|防線] vững và lòng tin được tạo dựng.",k:"Đội đỏ · Đội xanh · Công bố có [trách nhiệm|責任]"},
+  {t:"Mộc ngưu lưu mã",s:"Để chở lương qua núi non hiểm trở đất [Thục|蜀], [Khổng Minh|孔明] chế ra [Mộc ngưu lưu mã|木牛流馬].",l:"[Hậu cần|後勤] là bài toán [tối ưu|最優]. Ủ nhiệt [lượng tử|量子] và QAOA tìm lời giải tốt trong không gian lộ trình khổng lồ.",k:"Tối ưu hóa · Ủ nhiệt lượng tử · QAOA"},
+  {t:"Long Trung đối",s:"Trong [mao lư|茅廬] ở [Long Trung|隆中], [Khổng Minh|孔明] trẻ tuổi vạch ra [đại kế|大計] cho [thiên hạ|天下] suốt mấy mươi năm.",l:"Mỗi [tổ chức|組織] đều cần một [Long Trung đối|隆中對] cho [thời đại|時代] [lượng tử|量子]: kiểm kê [mật mã|密碼] đang dùng, rồi chuyển đổi trước khi kiểu tấn công “thu trước, giải mã sau” thành công.",k:"Linh hoạt mật mã · Chuyển đổi · Lộ trình"}],
+ levels:[
+  {t:"Nền tảng",d:"Trước [Tam cố|三顧], [Khổng Minh|孔明] tự học một mình. Bắt đầu tại đây: [nguyên tử|原子], ánh sáng, [xác suất|確率], [đại số|代數] [tuyến tính|線性] và cách máy tính, mạng vận hành."},
+  {t:"[Mưu lược|謀略] & [mật mã|密碼]",d:"[Long Trung đối|隆中對] là tấm bản đồ của [tương lai|將來]. Học qubit và cổng [lượng tử|量子], mật mã [cổ điển|古典] và hậu lượng tử, cùng cách lập [kế hoạch|計劃] chuyển đổi."},
+  {t:"[Thí nghiệm|試驗] [công thủ|攻守]",d:"Lửa trên sông. Diễn tập tấn công và phòng thủ, mạch [lượng tử|量子] trên trình [mô phỏng|模倣], và thi cướp cờ (CTF) theo đội."},
+  {t:"[Đồ án|圖案] tốt nghiệp",d:"Chiến dịch cuối cùng của [Khổng Minh|孔明]. Một [đề tài|題材] [nghiên cứu|研究] hoặc kỹ thuật có người hướng dẫn, kết thúc bằng buổi bảo vệ công khai."}],
+ labs:[
+  {t:"Sa bàn qubit",d:"Dựng mạch và xem [xác suất|確率] thay đổi."},
+  {t:"Lò rèn [mật mã|密碼]",d:"Giải câu đố mật mã lưới và hậu [lượng tử|量子]."},
+  {t:"Bãi tập honeynet",d:"Bắt và phân tích lưu lượng tấn công trong môi trường an toàn."},
+  {t:"Phòng [thí nghiệm|試驗] [tối ưu|最優]",d:"Lập tuyến tiếp tế bằng ủ nhiệt [lượng tử|量子] và QAOA."}],
+ values:[
+  {t:"[Tri thức|知識]",d:"Học [vật lý|物理], không chỉ công cụ."},
+  {t:"[Mưu lược|謀略]",d:"Nghĩ trước ba nước."},
+  {t:"[Đạo nghĩa|道義]",d:"Chỉ tấn công để bảo vệ. Luôn là mũ trắng."},
+  {t:"[Truyền|傳] dạy",d:"Truyền lại, bằng mọi ngôn ngữ chúng tôi nói."}]
+}};
+
+/* ---------- helpers ---------- */
+var lang="en";
+function T(k){var d=I[lang]; return (d && d[k]!=null)?d[k]:I.en[k];}
+function rb(s){return String(s).replace(/\[([^\[\]|]+)\|([^\[\]]+)\]/g,"<ruby>$1<rt>$2</rt></ruby>");}
+function plain(s){return String(s).replace(/\[([^\[\]|]+)\|([^\[\]]+)\]/g,"$1");}
+function fx(t){var m=FIX[lang];return (m&&m[t])?'<ruby>'+t+'<rt>'+m[t]+'</rt></ruby>':t;}
+function $(id){return document.getElementById(id);}
+function triSVG(bits,size,color){
+  size=size||34; color=color||"#f0c35a";
+  var w=size,h=size*0.8,g=h/3,sw=h*0.16,out='<svg width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'" aria-hidden="true">';
+  for(var r=0;r<3;r++){ /* top line = bits[2] */
+    var bit=bits.charAt(2-r), y=g*r+g/2;
+    if(bit==="1") out+='<rect x="0" y="'+(y-sw/2)+'" width="'+w+'" height="'+sw+'" fill="'+color+'"/>';
+    else out+='<rect x="0" y="'+(y-sw/2)+'" width="'+(w*0.42)+'" height="'+sw+'" fill="'+color+'"/><rect x="'+(w*0.58)+'" y="'+(y-sw/2)+'" width="'+(w*0.42)+'" height="'+sw+'" fill="'+color+'"/>';
+  }
+  return out+"</svg>";
+}
+function chips(s){return String(s).split(" · ").map(function(x){return '<span class="tag">'+rb(x)+"</span>";}).join("");}
+function triMeta(t){return fx(t)+" "+fx(TRI[t].n)+" · |"+TRI[t].b+"⟩";}
+
+/* ---------- renderers ---------- */
+function renderAll(){
+  document.querySelectorAll("[data-i]").forEach(function(el){el.innerHTML=rb(T(el.getAttribute("data-i")));});
+  var d=I[lang];
+  $("vtitle").innerHTML=["諸","葛","量","子"].map(function(c,i){var r={ja:["しょ","かつ","りょう","し"],ko:["제","갈","양","자"],zh:["诸","","",""]}[lang];return '<span class="vc"><b>'+c+"</b>"+(r&&r[i]?"<i>"+r[i]+"</i>":"")+"</span>";}).join("");
+  $("quoteCn").innerHTML=fx("鞠躬盡瘁")+"<br>"+fx("死而後已");
+  $("realms").innerHTML=d.realms.map(function(r,i){
+    return '<article class="realm">'+(FIX[lang]?'<span class="glyph-rd">'+FIX[lang][REALMS[i]]+'</span>':((lang==="zh"&&SIMP[REALMS[i]])?'<span class="glyph-rd">'+SIMP[REALMS[i]]+'</span>':''))+'<div class="glyph" aria-hidden="true">'+REALMS[i]+'</div><h3>'+rb(r.t)+'</h3><p>'+rb(r.d)+'</p><p class="topics">'+rb(r.k)+'</p></article>';
+  }).join("");
+  $("featured").innerHTML=[0,1,4].map(function(i){
+    var s=d.strats[i],b=STRATS[i];
+    return '<a class="card" href="#'+LIDS[i]+'" style="text-decoration:none;color:inherit"><div class="tri-row">'+triSVG(TRI[b[1]].b,30)+'<span class="tri-meta">'+triMeta(b[1])+'</span></div><h3 class="cn">'+fx(b[0])+'</h3><p class="sname">'+rb(s.t)+'</p><p class="lesson-p">'+rb(s.l)+'</p></a>';
+  }).join("");
+  $("path").innerHTML=d.levels.map(function(l,i){
+    return '<li><span class="num">'+fx(NUMS[i])+'</span><span class="pcn">'+fx(LEVELS[i])+'</span><span class="psub">'+rb(l.t)+'</span></li>';
+  }).join("");
+  $("strats").innerHTML=d.strats.map(function(s,i){
+    var b=STRATS[i];
+    return '<article class="card strat"><div class="tri-row">'+triSVG(TRI[b[1]].b,34)+'<span class="tri-meta">'+triMeta(b[1])+'</span></div><h2 class="cn">'+fx(b[0])+'</h2><p class="sname">'+rb(s.t)+'</p><div class="part"><span class="lbl">'+rb(T("lbl.story"))+'</span><p>'+rb(s.s)+'</p></div><div class="part lesson"><span class="lbl">'+rb(T("lbl.lesson"))+'</span><p>'+rb(s.l)+'</p></div><p class="tags">'+chips(s.k)+'</p><a class="textlink open" href="#'+LIDS[i]+'">'+rb(T("ls.open"))+'</a></article>';
+  }).join("");
+  $("levels").innerHTML=d.levels.map(function(l,i){
+    return '<li class="level"><span class="dot">'+NUMS[i]+'</span><span class="pcn">'+fx(LEVELS[i])+'</span><h3>'+rb(l.t)+'</h3><p>'+rb(l.d)+'</p></li>';
+  }).join("");
+  $("labs").innerHTML=d.labs.map(function(l,i){
+    return '<article class="card lab"><span class="cn">'+fx(LABS[i])+'</span><h3>'+rb(l.t)+'</h3><p>'+rb(l.d)+'</p></article>';
+  }).join("");
+  $("values").innerHTML=d.values.map(function(v,i){
+    return '<div class="value"><span class="vg">'+fx(VALUES[i])+'</span><h3>'+rb(v.t)+'</h3><p>'+rb(v.d)+'</p></div>';
+  }).join("");
+  var role=$("jRole"),lev=$("jLevel"),rv=role.selectedIndex,lv=lev.selectedIndex;
+  role.innerHTML=d.roles.map(function(r){return "<option>"+plain(r)+"</option>";}).join("");
+  lev.innerHTML=d.levels.map(function(l,i){return "<option>"+NUMS[i]+" · "+LEVELS[i]+" — "+plain(l.t)+"</option>";}).join("");
+  if(rv>0) role.selectedIndex=rv; if(lv>0) lev.selectedIndex=lv;
+  $("jLang").value=lang;
+  updateReadout();
+  if(!$("thanks").hidden) showThanks();
+  if(curLesson>=0) renderLesson(curLesson);
+  annotateNames();
+  simpPage();
+}
+function setLang(l){
+  if(!I[l]) l="en";
+  lang=l;
+  document.documentElement.lang=HTMLLANG[l];
+  $("lang").value=l;
+  fitLang();
+  try{localStorage.setItem("kmq-lang",l);}catch(e){}
+  renderAll();
+}
+$("lang").addEventListener("change",function(){setLang(this.value);});
+function fitLang(){var sel=$("lang"),cs=getComputedStyle(sel),m=document.createElement("span");m.style.cssText="position:absolute;visibility:hidden;white-space:nowrap;font:"+cs.font;m.textContent=sel.options[sel.selectedIndex].text;document.body.appendChild(m);var w=m.getBoundingClientRect().width;m.remove();sel.style.width=Math.ceil(w+parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight)+parseFloat(cs.borderLeftWidth)*2+2)+"px";}
+if(document.fonts)document.fonts.ready.then(fitLang);window.addEventListener("resize",fitLang);
+
+/* ---------- routing ---------- */
+var VIEWS=["home","stratagems","programs","about"],curLesson=-1;
+function route(first){
+  var v=location.hash.replace("#",""),li=LIDS.indexOf(v);
+  if(li<0&&VIEWS.indexOf(v)<0) v="home";
+  VIEWS.forEach(function(n){$("v-"+n).hidden=(n!==v);});
+  $("v-lesson").hidden=(li<0);
+  curLesson=li; if(li<0) $("v-lesson").innerHTML=""; renderAll();
+  var nv=li>=0?"stratagems":v;
+  document.querySelectorAll("nav.main a").forEach(function(a){
+    if(a.getAttribute("data-route")===nv) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current");
+  });
+  if(!first) window.scrollTo(0,0);
+  if(v==="home") sizeBagua();
+}
+window.addEventListener("hashchange",function(){route(false);});
+
+/* ---------- reduced motion ---------- */
+var reduce=window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- sky: ink-wash mountains + particle constellations ---------- */
+var sky=$("sky"),sctx=sky.getContext("2d"),SW=0,SH=0,DPR=1,bgLayer=null,parts=[];
+function rand(a,b){return a+Math.random()*(b-a);}
+function buildSky(){
+  DPR=Math.min(window.devicePixelRatio||1,2);
+  SW=window.innerWidth; SH=window.innerHeight;
+  sky.width=SW*DPR; sky.height=SH*DPR;
+  bgLayer=document.createElement("canvas"); bgLayer.width=sky.width; bgLayer.height=sky.height;
+  var c=bgLayer.getContext("2d"); c.scale(DPR,DPR);
+  var g=c.createLinearGradient(0,0,0,SH);
+  g.addColorStop(0,"#060912"); g.addColorStop(.6,"#0a1120"); g.addColorStop(1,"#070b16");
+  c.fillStyle=g; c.fillRect(0,0,SW,SH);
+  /* moon */
+  var mx=SW*.82,my=SH*.2,mr=Math.max(50,Math.min(SW,SH)*.09);
+  var mg=c.createRadialGradient(mx,my,0,mx,my,mr*3.2);
+  mg.addColorStop(0,"rgba(236,230,214,.20)"); mg.addColorStop(.3,"rgba(236,230,214,.06)"); mg.addColorStop(1,"rgba(236,230,214,0)");
+  c.fillStyle=mg; c.fillRect(0,0,SW,SH);
+  c.beginPath(); c.arc(mx,my,mr,0,Math.PI*2); c.fillStyle="rgba(236,230,214,.08)"; c.fill();
+  c.strokeStyle="rgba(63,240,216,.18)"; c.lineWidth=1; c.beginPath(); c.arc(mx,my,mr*1.35,0,Math.PI*2); c.stroke();
+  /* mountains */
+  var layers=[{y:.66,a:.16,amp:.16,col:"120,140,190"},{y:.76,a:.22,amp:.12,col:"90,110,160"},{y:.87,a:.34,amp:.09,col:"40,52,86"}];
+  layers.forEach(function(L,li){
+    var ph=[rand(0,9),rand(0,9),rand(0,9)];
+    c.save();
+    if("filter" in c) c.filter="blur("+(6-li*2)+"px)";
+    c.beginPath(); c.moveTo(0,SH);
+    for(var x=0;x<=SW+8;x+=8){
+      var t=x/SW;
+      var y=SH*L.y - SH*L.amp*(0.55*Math.sin(t*3.1+ph[0]) + 0.3*Math.sin(t*7.3+ph[1]) + 0.15*Math.sin(t*17+ph[2]) + 0.45);
+      c.lineTo(x,y);
+    }
+    c.lineTo(SW,SH); c.closePath();
+    var mgr=c.createLinearGradient(0,SH*(L.y-L.amp),0,SH);
+    mgr.addColorStop(0,"rgba("+L.col+","+L.a+")"); mgr.addColorStop(.55,"rgba("+L.col+","+(L.a*.45)+")"); mgr.addColorStop(1,"rgba(6,9,18,.0)");
+    c.fillStyle=mgr; c.fill(); c.restore();
+    /* mist band */
+    var mist=c.createLinearGradient(0,SH*(L.y-.02),0,SH*(L.y+.08));
+    mist.addColorStop(0,"rgba(236,230,214,0)"); mist.addColorStop(.5,"rgba(236,230,214,.035)"); mist.addColorStop(1,"rgba(236,230,214,0)");
+    c.fillStyle=mist; c.fillRect(0,SH*(L.y-.02),SW,SH*.1);
+  });
+  var n=Math.round(Math.min(130,SW*SH/9000));
+  parts=[];
+  for(var i=0;i<n;i++) parts.push({x:rand(0,SW),y:rand(0,SH),vx:rand(-.08,.08),vy:rand(-.18,-.03),r:rand(.6,1.8),gold:Math.random()<.22,ph:rand(0,6.3)});
+}
+function drawSky(t){
+  sctx.setTransform(1,0,0,1,0,0);
+  sctx.drawImage(bgLayer,0,0);
+  sctx.setTransform(DPR,0,0,DPR,0,0);
+  var i,j,p,q,dx,dy,d2,max=95*95;
+  sctx.lineWidth=.6;
+  for(i=0;i<parts.length;i++){
+    p=parts[i];
+    for(j=i+1;j<parts.length;j++){
+      q=parts[j]; dx=p.x-q.x; dy=p.y-q.y; d2=dx*dx+dy*dy;
+      if(d2<max){ sctx.strokeStyle="rgba(63,240,216,"+(0.11*(1-d2/max))+")"; sctx.beginPath(); sctx.moveTo(p.x,p.y); sctx.lineTo(q.x,q.y); sctx.stroke(); }
+    }
+  }
+  for(i=0;i<parts.length;i++){
+    p=parts[i];
+    var a=.45+.4*Math.sin(t*.0015+p.ph);
+    sctx.fillStyle=p.gold?"rgba(240,195,90,"+a+")":"rgba(63,240,216,"+a+")";
+    sctx.beginPath(); sctx.arc(p.x,p.y,p.r,0,Math.PI*2); sctx.fill();
+    if(!reduce){ p.x+=p.vx; p.y+=p.vy; if(p.y<-10){p.y=SH+10;p.x=rand(0,SW);} if(p.x<-10)p.x=SW+10; if(p.x>SW+10)p.x=-10; }
+  }
+}
+
+/* ---------- bagua oracle ---------- */
+var bc=$("bagua"),bctx=bc.getContext("2d"),BW=0,BD=1;
+var mode="super",chosen=-1,spinUntil=0,spinIdx=0,lastSpin=0;
+function sizeBagua(){
+  var r=bc.getBoundingClientRect(); if(!r.width) return;
+  BD=Math.min(window.devicePixelRatio||1,2); BW=r.width;
+  bc.width=BW*BD; bc.height=BW*BD;
+}
+function drawBagua(t){
+  if(!BW||$("v-home").hidden) return;
+  var c=bctx,W=BW,cx=W/2,cy=W/2,R=W*.30;
+  c.setTransform(BD,0,0,BD,0,0); c.clearRect(0,0,W,W);
+  var time=reduce?0:t/1000;
+  /* outer rings and 64 hexagram ticks */
+  c.strokeStyle="rgba(150,172,226,.22)"; c.lineWidth=1;
+  c.beginPath(); c.arc(cx,cy,R*1.3,0,Math.PI*2); c.stroke();
+  c.beginPath(); c.arc(cx,cy,R*.7,0,Math.PI*2); c.stroke();
+  for(var k=0;k<64;k++){
+    var a=k/64*Math.PI*2+time*.05, r1=R*1.3, r2=R*(k%8===0?1.22:1.26);
+    c.strokeStyle=k%8===0?"rgba(240,195,90,.55)":"rgba(150,172,226,.28)";
+    c.beginPath(); c.moveTo(cx+Math.cos(a)*r1,cy+Math.sin(a)*r1); c.lineTo(cx+Math.cos(a)*r2,cy+Math.sin(a)*r2); c.stroke();
+  }
+  var active=-1;
+  if(mode==="spin"){ if(t-lastSpin>70){spinIdx=Math.floor(Math.random()*8);lastSpin=t;} active=spinIdx; if(t>=spinUntil){mode="collapsed";updateReadout();} }
+  if(mode==="collapsed") active=chosen;
+  /* beams */
+  for(var i=0;i<8;i++){
+    var ang=-Math.PI/2+i*Math.PI/4, px=cx+Math.cos(ang)*R, py=cy+Math.sin(ang)*R;
+    var on=(i===active), sup=(mode==="super");
+    var amp=sup?(.5+.35*Math.sin(time*2.2+i*.9)):(on?1:.16);
+    if(sup||on){
+      var lg=c.createLinearGradient(cx,cy,px,py);
+      lg.addColorStop(0,on?"rgba(240,195,90,.0)":"rgba(63,240,216,0)");
+      lg.addColorStop(1,on?"rgba(240,195,90,.85)":"rgba(63,240,216,"+(amp*.35)+")");
+      c.strokeStyle=lg; c.lineWidth=on?2:1; c.beginPath(); c.moveTo(cx,cy); c.lineTo(px,py); c.stroke();
+    }
+    /* trigram */
+    var bits=TRI[RING[i]].b, col=on?"240,195,90":"63,240,216", L=R*.30, sw=R*.05, gap=R*.085;
+    c.save(); c.translate(px,py); c.rotate(ang+Math.PI/2);
+    c.shadowColor="rgba("+col+","+(on?.9:.6*amp)+")"; c.shadowBlur=on?18:10*amp;
+    c.fillStyle="rgba("+col+","+Math.min(1,amp+.1)+")";
+    for(var ln=0;ln<3;ln++){
+      var bit=bits.charAt(2-ln), y=(ln-1)*gap - sw/2; /* local +y points to centre: bottom line nearest centre */
+      if(bit==="1") c.fillRect(-L/2,y,L,sw);
+      else { c.fillRect(-L/2,y,L*.42,sw); c.fillRect(L*.08,y,L*.42,sw); }
+    }
+    c.restore();
+    /* labels */
+    var lr=R*1.5, lx=cx+Math.cos(ang)*lr, ly=cy+Math.sin(ang)*lr;
+    c.textAlign="center"; c.textBaseline="middle";
+    c.fillStyle=on?"#f0c35a":"rgba(236,230,214,"+(sup?.85:.35)+")";
+    c.font="900 "+Math.round(W*.037)+"px 'Noto Serif TC', serif";
+    c.fillText(RING[i],lx,ly-W*.016);
+    var rdg=FIX[lang]?FIX[lang][RING[i]]:(lang==="zh"?SIMP[RING[i]]:null);
+    if(rdg){ c.save(); c.textAlign="left"; c.font="600 "+Math.round(W*.02)+"px 'Noto Serif JP','Noto Serif KR','Noto Serif SC',serif"; c.fillStyle=on?"#f0c35a":"rgba(240,195,90,"+(sup?.8:.35)+")"; c.fillText(rdg,lx+W*.024,ly-W*.022); c.restore(); }
+    c.font="500 "+Math.round(W*.022)+"px 'JetBrains Mono', monospace";
+    c.fillStyle=on?"#f0c35a":"rgba(154,163,191,"+(sup?.9:.4)+")";
+    c.fillText("|"+bits+"⟩",lx,ly+W*.022);
+  }
+  /* nucleus + electron orbits */
+  for(var o=0;o<3;o++){
+    c.save(); c.translate(cx,cy); c.rotate(o*Math.PI/3+time*.15);
+    c.strokeStyle="rgba(63,240,216,.28)"; c.lineWidth=1;
+    c.beginPath(); c.ellipse(0,0,R*.55,R*.19,0,0,Math.PI*2); c.stroke();
+    var ea=time*(1.4+o*.35)+o*2;
+    c.fillStyle="#3ff0d8"; c.shadowColor="rgba(63,240,216,.9)"; c.shadowBlur=10;
+    c.beginPath(); c.arc(Math.cos(ea)*R*.55,Math.sin(ea)*R*.19,W*.008,0,Math.PI*2); c.fill();
+    c.restore();
+  }
+  var ng=c.createRadialGradient(cx,cy,0,cx,cy,R*.2);
+  ng.addColorStop(0,"rgba(255,236,190,1)"); ng.addColorStop(.35,"rgba(240,195,90,.85)"); ng.addColorStop(1,"rgba(240,195,90,0)");
+  c.fillStyle=ng; c.beginPath(); c.arc(cx,cy,R*.2,0,Math.PI*2); c.fill();
+}
+function updateReadout(){
+  var el=$("readout");
+  if(mode==="collapsed"&&chosen>=0){ var tname=RING[chosen]; el.innerHTML=rb(T("hero.collapsed")).replace("{s}",tname+" "+TRI[tname].n+" |"+TRI[tname].b+"⟩"); }
+  else if(mode==="spin") el.textContent="…";
+  else el.innerHTML=rb(T("hero.super"));
+  if(typeof simpEl==="function")simpEl(el);
+}
+$("measure").addEventListener("click",function(){
+  chosen=Math.floor(Math.random()*8);
+  if(reduce){mode="collapsed";updateReadout();drawBagua(0);return;}
+  mode="spin"; spinUntil=performance.now()+700; updateReadout();
+});
+$("superpose").addEventListener("click",function(){mode="super";chosen=-1;updateReadout();if(reduce)drawBagua(0);});
+
+/* ---------- qubit demo ---------- */
+var theta=$("theta"),counts=[0,0],shown=[0,0],animStart=0;
+function drawBloch(deg){
+  var th=deg*Math.PI/180,cx=110,cy=110,r=78,x=cx+r*Math.sin(th),y=cy-r*Math.cos(th);
+  $("bloch").innerHTML=
+    '<circle cx="110" cy="110" r="78" fill="rgba(63,240,216,0.05)" stroke="rgba(150,172,226,0.35)"/>'+
+    '<ellipse cx="110" cy="110" rx="78" ry="22" fill="none" stroke="rgba(150,172,226,0.25)" stroke-dasharray="3 4"/>'+
+    '<line x1="110" y1="26" x2="110" y2="194" stroke="rgba(150,172,226,0.3)"/>'+
+    '<text x="110" y="18" fill="#ece6d6" font-family="JetBrains Mono, monospace" font-size="13" text-anchor="middle">|0⟩</text>'+
+    '<text x="110" y="212" fill="#f0c35a" font-family="JetBrains Mono, monospace" font-size="13" text-anchor="middle">|1⟩</text>'+
+    '<text x="200" y="114" fill="#9aa3bf" font-family="JetBrains Mono, monospace" font-size="12" text-anchor="start">|+⟩</text>'+
+    '<line x1="110" y1="110" x2="'+x.toFixed(1)+'" y2="'+y.toFixed(1)+'" stroke="#3ff0d8" stroke-width="2.5"/>'+
+    '<circle cx="110" cy="110" r="3.5" fill="#ece6d6"/>'+
+    '<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="7" fill="#f0c35a"/>';
+}
+function p1(){var th=theta.value*Math.PI/180;return Math.pow(Math.sin(th/2),2);}
+function setBars(c0,c1){
+  var tot=1000,e1=p1();
+  $("f0").style.width=(c0/tot*100)+"%"; $("f1").style.width=(c1/tot*100)+"%";
+  $("e0").style.left="calc("+((1-e1)*100)+"% - 1px)"; $("e1").style.left="calc("+(e1*100)+"% - 1px)";
+  $("v0").textContent=Math.round(c0)+" / "+((1-e1)*100).toFixed(1)+"%";
+  $("v1").textContent=Math.round(c1)+" / "+(e1*100).toFixed(1)+"%";
+}
+function runShots(animate){
+  var p=p1(),one=0; for(var i=0;i<1000;i++) if(Math.random()<p) one++;
+  counts=[1000-one,one];
+  if(!animate||reduce){shown=counts.slice();setBars(counts[0],counts[1]);return;}
+  var from=shown.slice(); animStart=performance.now();
+  (function step(now){
+    var k=Math.min(1,(now-animStart)/650), e=1-Math.pow(1-k,3);
+    shown=[from[0]+(counts[0]-from[0])*e,from[1]+(counts[1]-from[1])*e];
+    setBars(shown[0],shown[1]); if(k<1) requestAnimationFrame(step);
+  })(animStart);
+}
+theta.addEventListener("input",function(){$("thetaOut").textContent=theta.value+"°";drawBloch(+theta.value);setBars(shown[0],shown[1]);});
+$("shots").addEventListener("click",function(){runShots(true);});
+
+/* ---------- join form ---------- */
+function showThanks(){
+  var n=$("jName").value.trim()||"—", el=$("thanks");
+  el.textContent=plain(T("join.thanks")).replace("{name}",n); el.hidden=false;
+}
+$("joinForm").addEventListener("submit",function(e){e.preventDefault();showThanks();});
+
+/* ---------- lesson pages ---------- */
+Object.assign(I.en,{"ls.story":"The story","ls.idea":"The idea","ls.try":"Try it","ls.terms":"Key terms","ls.learn":"Where you learn it","ls.prev":"Previous","ls.next":"Next","ls.back":"All stratagems","ls.open":"Open the lesson →","ls.note":"","ls.level":"Level","ls.lab":"Lab","ls.lesson":"Lesson {n} of 8"});
+Object.assign(I.zh,{"ls.story":"典故","ls.idea":"原理","ls.try":"動手試","ls.terms":"關鍵詞","ls.learn":"在哪裡學","ls.prev":"上一課","ls.next":"下一課","ls.back":"全部錦囊妙計","ls.open":"進入課程 →","ls.note":"本課內文暫以英文提供，譯本即將推出。","ls.level":"階段","ls.lab":"實驗室","ls.lesson":"第 {n} 課 · 共 8 課"});
+Object.assign(I.ja,{"ls.story":"[故事|こじ]","ls.idea":"[原理|げんり]","ls.try":"[試|ため]してみよう","ls.terms":"[用語|ようご]","ls.learn":"[學|まな]ぶ[場所|ばしょ]","ls.prev":"[前|まえ]の[課|か]","ls.next":"[次|つぎ]の[課|か]","ls.back":"[計略|けいりゃく][一覽|いちらん]","ls.open":"[課|か]を[開|ひら]く →","ls.note":"この[課|か]の[本文|ほんぶん]は[現在|げんざい][英語|えいご]のみです。[翻譯|ほんやく]は[準備中|じゅんびちゅう]です。","ls.level":"[段階|だんかい]","ls.lab":"[實驗室|じっけんしつ]","ls.lesson":"[第|だい] {n} [課|か] · [全|ぜん] 8 [課|か]"});
+Object.assign(I.ko,{"ls.story":"[故事|고사]","ls.idea":"[原理|원리]","ls.try":"해보기","ls.terms":"[核心|핵심] [用語|용어]","ls.learn":"어디서 배우나","ls.prev":"[以前|이전] [課|과]","ls.next":"다음 [課|과]","ls.back":"[計略|계략] [目錄|목록]","ls.open":"[課程|과정] 열기 →","ls.note":"이 [課|과]의 [本文|본문]은 [當分間|당분간] [英語|영어]로만 [提供|제공]됩니다. [飜譯|번역]은 [準備中|준비중]입니다.","ls.level":"[段階|단계]","ls.lab":"[實驗室|실험실]","ls.lesson":"[第|제] {n} [課|과] · [全|전] 8 [課|과]"});
+Object.assign(I.vi,{"ls.story":"[Điển tích|典跡]","ls.idea":"[Nguyên lý|原理]","ls.try":"Thử ngay","ls.terms":"[Thuật ngữ|術語]","ls.learn":"Học ở đâu","ls.prev":"Bài trước","ls.next":"Bài sau","ls.back":"Tất cả [kế sách|計策]","ls.open":"Mở bài học →","ls.note":"Nội dung bài này tạm thời chỉ có tiếng Anh. Bản dịch đang được chuẩn bị.","ls.level":"[Cấp độ|級度]","ls.lab":"Phòng [thí nghiệm|試驗]","ls.lesson":"Bài {n} / 8"});
+
+var LES=[
+{ch:"Chapter 46",level:2,lab:2,
+ story:["Zhou Yu, the commander of Wu, did not trust Kong Ming. He ordered him to deliver 100,000 arrows within ten days, hoping he would fail. Kong Ming said three days would be enough.",
+ "He asked Lu Su for twenty boats, each with thirty men, and had them lined with bundles of straw behind blue cloth. Then, for two days, he did nothing.",
+ "On the third night, thick fog covered the Yangtze. The boats sailed toward Cao Cao's camp while the crews beat drums and shouted. Cao Cao feared an ambush hidden in the fog. He kept his ships in harbour and ordered his archers to shoot.",
+ "Arrows thudded into the straw. Kong Ming turned the boats to fill the other side. At dawn he sailed home with more than 100,000 arrows. Cao Cao had paid for every one."],
+ steps:[["Build a target worth attacking","A honeypot looks like a real server, database or device. It holds nothing of value, and no legitimate user has a reason to touch it."],
+ ["Let the attacker shoot","Because nobody should connect, every connection is suspicious. The honeypot records the tools, commands and malware each attacker uses."],
+ ["Collect the arrows","Defenders turn captured samples into signatures, block lists and threat reports. The attacker pays the cost. The defender gains the knowledge."],
+ ["Keep the real fleet apart","Honeypots sit apart from production systems, so a compromised decoy cannot reach real data. Many decoys together form a honeynet."]],
+ terms:[["Honeypot","A decoy system built to be attacked and watched."],["Honeynet","A network of honeypots that imitates a whole environment."],["Threat intelligence","Knowledge about attackers' tools, methods and targets."],["Indicator of compromise","A trace, such as a file hash or address, that signals an attack."],["Deception technology","Decoys, fake credentials and traps placed across a network."]],
+ tryH:"Launch the fog attack",tryP:"Add decoy boats, then fire 1,000 probes. Attackers cannot tell a decoy from the real server, so each probe picks a target at random."},
+{ch:"Chapter 95",level:2,lab:2,
+ story:["After the loss of Jieting, Kong Ming was left in the small town of Xicheng with only a few troops. Sima Yi was marching on it with a great army.",
+ "Kong Ming ordered the flags taken down and all four gates opened. At each gate, a few soldiers dressed as townsfolk swept the road. He climbed the wall with two boys, lit incense and began to play the zither.",
+ "Sima Yi knew Kong Ming as a careful man who never took risks. An open gate and calm music could only mean a trap. He turned his army around.",
+ "The bluff worked because Sima Yi trusted what he saw and what he thought he knew. Kong Ming controlled both."],
+ steps:[["Attackers start with reconnaissance","Before an attack, adversaries scan addresses, ports and software versions. They build a map of the target."],
+ ["Change the map","Moving-target defence shifts addresses, ports or configurations on a schedule. A map drawn yesterday is wrong today."],
+ ["Show them what you choose","Deception adds fake services, fake credentials and decoy files. Touching any of them raises an alert."],
+ ["Raise the cost of every guess","Neither technique makes a system unbreakable. Both make each probe less useful to the attacker and more likely to be seen."]],
+ terms:[["Reconnaissance","Gathering information about a target before attacking."],["Attack surface","Every point where an attacker could try to get in."],["Moving-target defence","Changing a system's visible shape so attacker knowledge goes stale."],["Honeytoken","A fake credential or record that should never be used. Any use is an alarm."],["Deception","Showing attackers a false picture on purpose."]],
+ tryH:"Find the real gate",tryP:"One of eight gates is real. Click a gate to probe it. Turn on moving-target defence and the real gate moves after every probe."},
+{ch:"Chapter 49",level:1,lab:0,
+ story:["Wu and Shu planned to burn Cao Cao's fleet at Red Cliffs. Cao Cao had chained his ships together so his northern soldiers would not be seasick. Fire would leap from ship to ship, but only with the right wind.",
+ "In winter the wind blew from the north-west, back toward Wu. Zhou Yu fell ill with worry. Kong Ming told him he could borrow a south-east wind.",
+ "He built the Seven Stars Altar on the Nanping hills and promised a wind for three days and nights. On the night of the attack the wind turned. Huang Gai's fire ships sailed into the chained fleet, and Cao Cao's navy burned.",
+ "Many readers say Kong Ming did not summon the wind. He had studied the weather and knew a brief south-east wind came in that season. His magic was a good model of nature."],
+ steps:[["Nature is quantum","Molecules, materials and chemical reactions follow quantum mechanics. To predict them, we must track the quantum state of many particles."],
+ ["The state grows exponentially","Describing n interacting two-level particles takes 2ⁿ complex numbers. Every extra particle doubles the memory."],
+ ["Classical computers run out of room","Near 50 particles, the full state needs petabytes. Chemists use clever approximations, but some systems resist them."],
+ ["Use quantum to model quantum","In 1981 Richard Feynman proposed simulating nature with a quantum machine. n qubits hold the 2ⁿ amplitudes directly. Target uses include catalysts, batteries and medicines."]],
+ terms:[["Quantum state","The full description of a quantum system."],["Amplitude","A complex number per possible outcome. Its squared size is a probability."],["Superposition","A state that combines several outcomes at once."],["Hamiltonian","The rule that gives a system's energy and how it changes in time."],["Quantum simulation","Using a controllable quantum system to model another one."]],
+ tryH:"How much memory does nature need?",tryP:"Choose the number of particles. See how much classical memory the full quantum state needs, and how many qubits would hold it."},
+{ch:"Chapter 84",level:1,lab:1,
+ story:["After the defeat at Yiling, Liu Bei fled west. The Wu commander Lu Xun pursued him to Fish Belly Shore, near Kuizhou.",
+ "There Lu Xun found only heaps of stones set out on the riverbank. Curious, he rode in with a few men. Wind rose, sand flew, and the stones seemed to tower like walls. Every path led back into the maze.",
+ "An old man appeared. He was Huang Chengyan, Kong Ming's father-in-law. He said Kong Ming had built the Eight Formations years before. They shifted endlessly and could hold back a hundred thousand soldiers. He led Lu Xun out by the Gate of Life.",
+ "Lu Xun withdrew. The maze had no soldiers. Its strength was a structure that was easy to build and very hard to solve."],
+ steps:[["A lattice is a grid of points","Pick a few basis vectors. Every whole-number combination of them is a point in the lattice. In cryptography the lattice has hundreds of dimensions."],
+ ["Good map, bad map","The same lattice can be described by many bases. A short, nearly square basis is a good map. A long, skewed basis is a bad map of the same points."],
+ ["The hard problem","Given a point near the lattice, find the closest lattice point. With the good basis this is easy. With only the bad one, in high dimensions, no known method, classical or quantum, does it efficiently."],
+ ["The trapdoor","Keep the good basis private and publish the bad one. This demo shows that classic idea (GGH, 1997). Today's standards, ML-KEM and ML-DSA (NIST, 2024), use a related problem called Learning With Errors."]],
+ terms:[["Lattice","A regular grid of points made from whole-number combinations of vectors."],["Basis","The set of vectors that generates a lattice."],["Closest Vector Problem","Find the lattice point nearest to a given point."],["Learning With Errors","Solve equations hidden by small random noise. The basis of ML-KEM."],["Post-quantum cryptography","Classical algorithms designed to resist quantum attacks."]],
+ tryH:"Escape the stone maze",tryP:"Click anywhere to place a point. Babai's method rounds it to a lattice point using the chosen basis. The good basis finds the closest point. The bad basis often lands far away."},
+{ch:"Chapters 54–55",level:1,lab:1,
+ story:["Sun Quan of Wu offered his sister in marriage to Liu Bei. It was a trap. Zhou Yu planned to hold Liu Bei in Wu until Jingzhou was handed over.",
+ "Kong Ming sent Zhao Yun as escort and gave him three silk bags. Each held a plan, to be opened only at a set moment: on arrival, at the year's end, and when the road home was blocked.",
+ "The first plan told Zhao Yun to announce the wedding across the city, so it could not be called off. The second had Liu Bei leave by claiming Cao Cao was attacking Jingzhou. The third told him to ask his new wife for help, and she sent the pursuing generals away.",
+ "Each plan stayed sealed until its moment. No one could read it on the road without breaking the seal."],
+ steps:[["Encode bits in photons","Alice sends single photons. She encodes each bit in one of two bases: rectilinear (| or —) or diagonal (/ or \\)."],
+ ["Measure in a random basis","Bob picks a basis at random for each photon. When his basis matches Alice's, he reads her bit. When it doesn't, he gets a random result."],
+ ["Compare bases, not bits","Over a public channel they share which bases they used, never the bits. They keep only the matching positions. This is the sifted key."],
+ ["Catch the eavesdropper","To learn a photon, Eve must measure it, and a wrong basis disturbs it. The no-cloning theorem stops her from copying it first. Intercept-and-resend causes about 25% errors in the sifted key, so Alice and Bob compare a sample and see her."]],
+ terms:[["Photon polarisation","The direction a light wave vibrates. Used to carry a qubit."],["Basis","A pair of measurement directions, such as | and —."],["BB84","The first QKD protocol, by Bennett and Brassard, 1984."],["No-cloning theorem","An unknown quantum state cannot be copied perfectly."],["QBER","Quantum bit error rate: the share of sifted bits that disagree."]],
+ tryH:"Send 24 photons",tryP:"Run the protocol with and without Eve. Watch the error rate in the bits Alice and Bob keep."},
+{ch:"Chapters 87–90",level:2,lab:2,
+ story:["In the year 225, the southern tribes rose against Shu under Meng Huo. Kong Ming marched south. Ma Su advised him: winning hearts is better than winning walls.",
+ "Kong Ming captured Meng Huo and let him go. Meng Huo said he had lost to a trick and would fight again. Kong Ming captured him again, and again. Each time he used a different plan.",
+ "After the seventh capture, Kong Ming once more offered him freedom. Meng Huo wept and refused to leave. He swore the south would never rebel again.",
+ "Kong Ming did not win by force alone. He tested, released and tested again, until the result was certain and the trust was real."],
+ steps:[["The red team attacks","An authorised team acts like a real adversary. Its goal is to find weaknesses before criminals do."],
+ ["The blue team defends and learns","Defenders detect, respond and fix. Each finding becomes a patch, a rule or a better process."],
+ ["Repeat","One test is a snapshot. Repeated rounds show whether fixes hold and whether new flaws appear. Purple teaming puts both sides in one room."],
+ ["Disclose responsibly","When researchers find flaws in someone else's system, they report them privately and give the owner time to fix them before going public."]],
+ terms:[["Red team","Authorised attackers who test defences."],["Blue team","Defenders who detect, respond and repair."],["Purple team","Red and blue working together and sharing what they learn."],["Penetration test","A scoped, time-boxed attempt to break in."],["Coordinated disclosure","Reporting a flaw privately before publishing it."]],
+ tryH:"Seven rounds in the south",tryP:"The system starts with hidden weaknesses. Each round, the red team finds some and the blue team fixes them. Some fixes add new flaws. Run all seven rounds. This is a simple model, not real data."},
+{ch:"Chapter 102",level:2,lab:3,
+ story:["Kong Ming's northern campaigns failed more than once because grain could not cross the Qinling mountains. The plank roads of Shu were narrow and steep.",
+ "He designed the Wooden Ox and the Flowing Horse: carts shaped like animals, moved by levers hidden inside. In the novel they carried grain day and night and needed neither food nor rest.",
+ "Sima Yi captured some and had copies built. Kong Ming let him. When Wei used the copies, Shu soldiers twisted the oxen's tongues, which locked their legs, and drove the whole convoy home to Shu.",
+ "Historians still debate what the devices were. They may have been clever wheelbarrows. The lesson is logistics: the best plan fails without supply."],
+ steps:[["Logistics is a search","In which order should a convoy visit its camps? With 6 camps there are 720 orders. With 20 there are about 2.4 × 10¹⁸."],
+ ["Score every plan","Write the cost as an energy: distance, fuel or delay. The best plan has the lowest energy."],
+ ["Annealing","Simulated annealing starts hot and accepts some bad moves to escape traps, then cools to settle in a good valley. Quantum annealers use effects such as tunnelling for a similar search."],
+ ["QAOA","The Quantum Approximate Optimization Algorithm (2014) alternates a cost step and a mixing step on a gate-based quantum computer. Whether it beats the best classical methods is still open research."]],
+ terms:[["Combinatorial optimisation","Choosing the best option from a huge set of discrete choices."],["Travelling salesman problem","Find the shortest tour that visits every stop once."],["Simulated annealing","A search that slowly lowers its tolerance for worse moves."],["Quantum annealing","Optimisation on hardware that settles into low-energy quantum states."],["QAOA","A hybrid quantum–classical algorithm for optimisation."]],
+ tryH:"Plan the grain route",tryP:"Click camps to build a route from the base and back. Then let annealing search for a shorter one, and compare both with the true best."},
+{ch:"Chapter 38",level:1,lab:1,
+ story:["Liu Bei visited Kong Ming's thatched cottage at Longzhong three times. On the first two visits Kong Ming was away. On the third he was asleep, and Liu Bei waited quietly until he woke.",
+ "Kong Ming unrolled a map. Cao Cao held the north and could not be fought head-on. Sun Quan held the south-east and should be an ally. Liu Bei should take Jingzhou and Yizhou, then wait for his moment.",
+ "The plan shaped the realm for decades. Three kingdoms rose, as he had foreseen.",
+ "It was not a battle plan. It was an inventory of strengths, threats and time, made long before the first move."],
+ steps:[["Harvest now, decrypt later","Adversaries can record encrypted traffic today and decrypt it once a large quantum computer exists. Shor's algorithm would break RSA and elliptic-curve cryptography."],
+ ["Take inventory","List where public-key cryptography is used: websites, VPNs, code signing, devices and archives. You cannot migrate what you cannot see."],
+ ["Mosca's inequality","Let x be how long data must stay secret, y how long migration takes, and z the time until a cryptographically relevant quantum computer. If x + y &gt; z, you are already late."],
+ ["Migrate with agility","Adopt standard post-quantum algorithms such as ML-KEM and ML-DSA, often in hybrid mode first. Design systems so algorithms can be swapped again."]],
+ terms:[["Shor's algorithm","A quantum algorithm that factors numbers and breaks RSA and ECC."],["Harvest now, decrypt later","Storing encrypted data today to read it in the quantum era."],["CRQC","A cryptographically relevant quantum computer: one large enough to break today's public-key cryptography."],["Crypto-agility","Being able to swap algorithms without rebuilding systems."],["Hybrid key exchange","Combining a classical and a post-quantum method in one handshake."]],
+ tryH:"Draw your Longzhong Plan",tryP:"Set the three numbers for your organisation. Nobody knows z for certain, so try several values."}
+];
+
+
+/* ---- English: add Han characters after Chinese names ---- */
+var HZ=[["Romance of the Three Kingdoms","三國演義"],["Later Memorial on Dispatching the Troops","後出師表"],["Seven Stars Altar","七星壇"],["Fish Belly Shore","魚腹浦"],["Gate of Life","生門"],["Wuzhang Plains","五丈原"],["Huang Chengyan","黃承彥"],["Zhuge Liang","諸葛亮"],["Kong Ming","孔明"],["Zhou Yu","周瑜"],["Cao Cao","曹操"],["Liu Bei","劉備"],["Sima Yi","司馬懿"],["Sun Quan","孫權"],["Zhao Yun","趙雲"],["Meng Huo","孟獲"],["Huang Gai","黃蓋"],["Lu Xun","陸遜"],["Lu Su","魯肅"],["Ma Su","馬謖"],["Red Cliffs","赤壁"],["Longzhong","隆中"],["Jingzhou","荊州"],["Yizhou","益州"],["Xicheng","西城"],["Jieting","街亭"],["Nanping","南屏"],["Yiling","夷陵"],["Kuizhou","夔州"],["Qinling","秦嶺"],["Yangtze","長江"],["Shu","蜀"],["Wei","魏"],["Wu","吳"]];
+
+/* ---- Chinese page: simplified characters as ruby over traditional ---- */
+var SIMP={"諸": "诸", "頁": "页", "錦": "锦", "計": "计", "課": "课", "與": "与", "實": "实", "驗": "验", "關": "关", "於": "于", "語": "语", "韓": "韩", "國": "国", "臥": "卧", "龍": "龙", "時": "时", "觀": "观", "戰": "战", "學": "学", "習": "习", "網": "网", "絡": "络", "準": "准", "謀": "谋", "瀏": "浏", "覽": "览", "測": "测", "疊": "叠", "態": "态", "並": "并", "個": "个", "陰": "阴", "陽": "阳", "軍": "军", "師": "师", "對": "对", "們": "们", "將": "将", "為": "为", "糾": "纠", "纏": "缠", "運": "运", "閘": "闸", "錯": "错", "間": "间", "護": "护", "碼": "码", "禦": "御", "後": "后", "脅": "胁", "獵": "猎", "層": "层", "標": "标", "結": "结", "構": "构", "盡": "尽", "誘": "诱", "餌": "饵", "統": "统", "擊": "击", "獲": "获", "樣": "样", "報": "报", "兌": "兑", "澤": "泽", "敵": "敌", "見": "见", "動": "动", "術": "术", "變": "变", "價": "价", "離": "离", "鑰": "钥", "發": "发", "竊": "窃", "聽": "听", "會": "会", "擾": "扰", "無": "无", "廬": "庐", "階": "阶", "轉": "转", "點": "点", "礎": "础", "畢": "毕", "業": "业", "專": "专", "題": "题", "講": "讲", "義": "义", "開": "开", "啟": "启", "張": "张", "狀": "状", "霧": "雾", "駛": "驶", "營": "营", "亂": "乱", "齊": "齐", "滿": "满", "載": "载", "萬": "万", "餘": "余", "歸": "归", "進": "进", "門": "门", "樓": "楼", "撫": "抚", "馬": "马", "風": "风", "東": "东", "擬": "拟", "來": "来", "讀": "读", "當": "当", "預": "预", "傳": "传", "電": "电", "腦": "脑", "難": "难", "蹤": "踪", "機": "机", "陣": "阵", "圖": "图", "魚": "鱼", "佈": "布", "陸": "陆", "遜": "逊", "誤": "误", "數": "数", "維": "维", "問": "问", "趙": "赵", "雲": "云", "囑": "嘱", "閱": "阅", "複": "复", "製": "制", "換": "换", "紅": "红", "藍": "蓝", "領": "领", "釋": "释", "終": "终", "順": "顺", "隊": "队", "線": "线", "穩": "稳", "負": "负", "責": "责", "優": "优", "糧": "粮", "設": "设", "輸": "输", "龐": "庞", "尋": "寻", "遷": "迁", "輕": "轻", "規": "规", "劃": "划", "盤": "盘", "現": "现", "漸": "渐", "從": "从", "顧": "顾", "獨": "独", "燒": "烧", "練": "练", "團": "团", "奪": "夺", "賽": "赛", "導": "导", "辯": "辩", "臺": "台", "試": "试", "論": "论", "謎": "谜", "場": "场", "補": "补", "給": "给", "誠": "诚", "識": "识", "編": "编", "萊": "莱", "茲": "兹", "項": "项", "則": "则", "說": "说", "種": "种", "訴": "诉", "誰": "谁", "裡": "里", "郵": "邮", "選": "选", "暫": "暂", "資": "资", "內": "内", "譯": "译", "吳": "吴", "魯": "鲁", "肅": "肃", "長": "长", "鍵": "键", "詞": "词", "壇": "坛", "黃": "黄", "蓋": "盖", "劉": "刘", "備": "备", "彥": "彦", "孫": "孙", "權": "权", "荊": "荆", "謖": "谡", "漢": "汉", "嶺": "岭"};
+function simpEl(root){if(lang!=="zh"||!root)return;var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){var q=n.parentNode;while(q&&q!==root.parentNode){if(/^(RT|RUBY|SCRIPT|STYLE|svg|CANVAS|OPTION|SELECT|TEXTAREA)$/.test(q.nodeName)||(q.classList&&(q.classList.contains("glyph")||q.classList.contains("no-simp"))))return NodeFilter.FILTER_REJECT;q=q.parentNode;}return NodeFilter.FILTER_ACCEPT;}}),nodes=[];
+ while(w.nextNode())nodes.push(w.currentNode);
+ nodes.forEach(function(n){var t=n.nodeValue,hit=false;for(var i=0;i<t.length;i++)if(SIMP[t[i]]){hit=true;break;}if(!hit)return;var f=document.createDocumentFragment(),buf="";
+  for(var i=0;i<t.length;i++){var ch=t[i],sc=SIMP[ch];if(sc){if(buf){f.appendChild(document.createTextNode(buf));buf="";}var r=document.createElement("ruby");r.appendChild(document.createTextNode(ch));var rt=document.createElement("rt");rt.textContent=sc;r.appendChild(rt);f.appendChild(r);}else buf+=ch;}
+  if(buf)f.appendChild(document.createTextNode(buf));n.parentNode.replaceChild(f,n);});}
+function simpPage(){if(lang!=="zh")return;simpEl(document.querySelector("nav.main"));simpEl(document.querySelector("main > .view:not([hidden])"));simpEl(document.querySelector("footer p"));}
+
+function annotateNames(){var seen={},roots=[document.querySelector("main > .view:not([hidden])"),document.querySelector("footer")];
+ roots.forEach(function(root){if(!root)return;var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){var q=n.parentNode;while(q&&q!==root){if(/^(RT|SCRIPT|STYLE|svg|CANVAS|OPTION|SELECT|TEXTAREA|BUTTON)$/.test(q.nodeName)||(q.classList&&q.classList.contains("no-hz")))return NodeFilter.FILTER_REJECT;q=q.parentNode;}return NodeFilter.FILTER_ACCEPT;}}),nodes=[];
+  while(w.nextNode())nodes.push(w.currentNode);
+  nodes.forEach(function(n){var t=n.nodeValue,ch=false;HZ.forEach(function(p){if(seen[p[0]])return;var m=new RegExp("\\b"+p[0]+"(?:'s)?\\b(?! Quantum)").exec(t);if(m){seen[p[0]]=1;var i=m.index+m[0].length;t=t.slice(0,i)+" ("+p[1]+")"+t.slice(i);ch=true;}});if(ch)n.nodeValue=t;});});}
+
+/* ---- scene kit: half solid, half jade wireframe, gold measurement seam ---- */
+var cJ="#3ff0d8",cG="#f0c35a",cS="#c8382f",cP="#ece6d6";
+var SOLID={f:"#17213c",f2:"#212e52",s:"#4a5d94",w:1.4},WIRE={f:"rgba(63,240,216,.05)",f2:"rgba(63,240,216,.025)",s:cJ,w:1.3};
+function sDefs(){return '<defs>'+
+'<filter id="sgl" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>'+
+'<filter id="sfog" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="18"/></filter>'+
+'<linearGradient id="ssky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050812"/><stop offset=".65" stop-color="#0c1428"/><stop offset="1" stop-color="#0a1020"/></linearGradient>'+
+'<linearGradient id="swat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0e1b36"/><stop offset="1" stop-color="#050913"/></linearGradient>'+
+'<linearGradient id="sfire" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="'+cS+'"/><stop offset=".45" stop-color="'+cG+'"/><stop offset="1" stop-color="#fff3c4" stop-opacity=".1"/></linearGradient>'+
+'<linearGradient id="scliff" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a2822"/><stop offset="1" stop-color="#22090d"/></linearGradient>'+
+'<pattern id="sgrid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(63,240,216,.055)"/></pattern>'+
+'<clipPath id="scL"><rect width="600" height="520"/></clipPath><clipPath id="scR"><rect x="600" width="600" height="520"/></clipPath></defs>';}
+function sp(d,st,f,extra){return '<path d="'+d+'" fill="'+(f||st.f)+'" stroke="'+st.s+'" stroke-width="'+st.w+'" stroke-linejoin="round" '+(extra||'')+'/>';}
+function sr(x,y,w,h,st,f,rx){return '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="'+(rx||0)+'" fill="'+(f||st.f)+'" stroke="'+st.s+'" stroke-width="'+st.w+'"/>';}
+function sl(x1,y1,x2,y2,c,w,extra){return '<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+c+'" stroke-width="'+(w||1.2)+'" '+(extra||'')+'/>';}
+function pinsH(x,y,w,n,len,st){var o='';for(var k=0;k<n;k++){var px=(x+(k+.5)*w/n).toFixed(1);o+=sl(px,y,px,y+len,st.s,st.w);}return o;}
+function pinsV(x,y,h,n,len,st){var o='';for(var k=0;k<n;k++){var py=(y+(k+.5)*h/n).toFixed(1);o+=sl(x,py,x+len,py,st.s,st.w);}return o;}
+function qn(x,y,r){r=r||5;return '<circle cx="'+x+'" cy="'+y+'" r="'+(r*2.4)+'" fill="none" stroke="'+cJ+'" stroke-opacity=".35"/><circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="'+cJ+'" filter="url(#sgl)"/>';}
+function trace(pts,c){c=c||"rgba(63,240,216,.5)";var e=pts[pts.length-1];return '<polyline points="'+pts.map(function(p){return p.join(",");}).join(" ")+'" fill="none" stroke="'+c+'" stroke-width="1.2"/><circle cx="'+e[0]+'" cy="'+e[1]+'" r="3" fill="'+c+'"/>';}
+function waves(y0,n,c){var o='';for(var k=0;k<n;k++){var y=y0+k*17,d='M'+(k%2?-30:0)+' '+y;for(var x=0;x<=1240;x+=60)d+=' q15 -5 30 0 t30 0';o+='<path d="'+d+'" fill="none" stroke="'+(c||"rgba(150,172,226,.13)")+'" stroke-width="1"/>';}return o;}
+function hills(base,amp,col,ph){var d='M0 520 L0 '+base;for(var x=0;x<=1200;x+=20){var y=base-amp*(.5+.3*Math.sin(x/170+ph)+.2*Math.sin(x/53+ph*2));d+=' L'+x+' '+y.toFixed(1);}return '<path d="'+d+' L1200 520Z" fill="'+col+'"/>';}
+function prng(seed){var s=seed;return function(){s=(s*9301+49297)%233280;return s/233280;};}
+function stars(n,seed,maxY){var r=prng(seed),o='';for(var k=0;k<n;k++)o+='<circle cx="'+(r()*1200).toFixed(0)+'" cy="'+(r()*(maxY||300)).toFixed(0)+'" r="'+(.6+r()*1.1).toFixed(1)+'" fill="'+(r()<.2?cG:cP)+'" opacity="'+(.3+r()*.5).toFixed(2)+'"/>';return o;}
+function fogs(list){return '<g filter="url(#sfog)">'+list.map(function(e){return '<ellipse cx="'+e[0]+'" cy="'+e[1]+'" rx="'+e[2]+'" ry="'+e[3]+'" fill="'+cP+'" fill-opacity="'+(e[4]||.08)+'"/>';}).join('')+'</g>';}
+function arrowAt(x,y,ang,len,c){var dx=Math.cos(ang),dy=Math.sin(ang),x2=x+dx*len,y2=y+dy*len,h=7;return sl(x.toFixed(1),y.toFixed(1),x2.toFixed(1),y2.toFixed(1),c,1.4)+'<path d="M'+x2.toFixed(1)+' '+y2.toFixed(1)+' L'+(x2-dx*h-dy*3.5).toFixed(1)+' '+(y2-dy*h+dx*3.5).toFixed(1)+' L'+(x2-dx*h+dy*3.5).toFixed(1)+' '+(y2-dy*h-dx*3.5).toFixed(1)+'Z" fill="'+c+'"/>';}
+function flame(x,y,s){return '<path d="M'+x+' '+y+' C'+(x-18*s)+' '+(y-30*s)+' '+(x-6*s)+' '+(y-52*s)+' '+x+' '+(y-84*s)+' C'+(x+8*s)+' '+(y-52*s)+' '+(x+18*s)+' '+(y-30*s)+' '+x+' '+y+'Z" fill="url(#sfire)" filter="url(#sgl)" opacity=".95"/>';}
+function hull(x,y,w,st){var h=w*.2;return sp('M'+x+' '+y+' L'+(x+w)+' '+y+' L'+(x+w*.86)+' '+(y+h)+' L'+(x+w*.14)+' '+(y+h)+' Z',st)+pinsH(x+w*.16,y+h,w*.68,8,8,st);}
+function roof(cx,y,w,h,st){return sp('M'+(cx-w/2)+' '+(y-10)+' Q'+(cx-w/2+22)+' '+y+' '+(cx-w/2+46)+' '+y+' L'+(cx+w/2-46)+' '+y+' Q'+(cx+w/2-22)+' '+y+' '+(cx+w/2)+' '+(y-10)+' L'+(cx+w*.3)+' '+(y-h)+' L'+(cx-w*.3)+' '+(y-h)+' Z',st,st.f2);}
+function cnText(x,y,t,size,fill,extra){return '<text x="'+x+'" y="'+y+'" font-family="Noto Serif TC,serif" font-weight="900" font-size="'+size+'" fill="'+fill+'" text-anchor="middle" '+(extra||'')+'>'+t+'</text>';}
+function frame(label,bg,draw,fg){return '<svg viewBox="0 0 1200 520" role="img" aria-label="'+label+'">'+sDefs()+'<rect width="1200" height="520" fill="url(#ssky)"/>'+bg+'<rect width="1200" height="520" fill="url(#sgrid)"/><g clip-path="url(#scL)">'+draw(SOLID)+'</g><g clip-path="url(#scR)">'+draw(WIRE)+'</g>'+fg+
+ '<line x1="600" y1="0" x2="600" y2="520" stroke="'+cG+'" stroke-width="1.4" stroke-dasharray="3 7" opacity=".75"/><circle cx="600" cy="20" r="4.5" fill="'+cG+'" filter="url(#sgl)"/></svg>';}
+
+var SCENES=[
+/* 0 straw boats */
+function(){
+ var B=[[90,330,250],[420,346,280],[790,326,230]],r=prng(11);
+ var bg=stars(70,3,260)+hills(300,70,"rgba(90,110,160,.14)",1)+'<path d="M840 300 L1200 292 L1200 330 L810 330Z" fill="#0a1122"/>'+
+  [930,1010,1090].map(function(x){return '<path d="M'+x+' 300 v-62 h26 v62 M'+(x-6)+' 238 h38 l-19 -16 z" fill="#0b1224" stroke="rgba(150,172,226,.3)"/><circle cx="'+(x+13)+'" cy="252" r="3" fill="'+cG+'" filter="url(#sgl)"/>';}).join('')+
+  '<rect y="330" width="1200" height="190" fill="url(#swat)"/>'+waves(352,10);
+ function draw(st){var o='';B.forEach(function(b){var x=b[0],y=b[1],w=b[2],n=Math.round(w/36),bw=(w-28)/n;
+  o+=hull(x,y,w,st);
+  for(var k=0;k<n;k++){var bx=x+14+k*bw;o+=sr(bx.toFixed(1),y-46,(bw-4).toFixed(1),46,st,st.f2,6);for(var h=1;h<4;h++){var lx=(bx+h*(bw-4)/4).toFixed(1);o+=sl(lx,y-42,lx,y-4,st.s,.6,'opacity=".55"');}}
+  o+=sl(x+w/2,y-46,x+w/2,y-132,st.s,st.w)+sp('M'+(x+w/2)+' '+(y-128)+' L'+(x+w/2+48)+' '+(y-110)+' L'+(x+w/2)+' '+(y-92)+'Z',st,st.f2);});return o;}
+ var fg='';
+ B.forEach(function(b){var x=b[0],y=b[1],w=b[2];fg+=qn(x+w/2,y-138,4.5);for(var k=0;k<18;k++){var px=x+20+r()*(w-40),py=y-40+r()*32;fg+=arrowAt(px,py,-0.42-r()*.2,-30,cG);}});
+ for(var k=0;k<26;k++){var t=r(),tx=B[k%3][0]+B[k%3][2]*(.2+r()*.6),ty=B[k%3][1]-30,sx=1000,sy=250,ax=sx+(tx-sx)*t,ay=sy+(ty-sy)*t-60*Math.sin(t*Math.PI)*.6;fg+=arrowAt(ax,ay,Math.atan2(ty-sy,tx-sx),26,"rgba(240,195,90,.8)");}
+ fg+=trace([[215,400],[215,450],[330,450],[360,480]])+trace([[560,416],[560,470],[700,470]])+trace([[905,397],[905,440],[1020,440],[1050,470]]);
+ fg+=fogs([[300,300,380,50,.1],[760,280,420,60,.09],[520,380,500,40,.07],[1000,360,300,40,.08]]);
+ return frame("Straw boats in fog, struck by thousands of arrows, drawn as circuit chips",bg,draw,fg);},
+/* 1 empty fort */
+function(){
+ var bg=stars(80,5,240)+hills(300,60,"rgba(90,110,160,.13)",2)+'<rect y="430" width="1200" height="90" fill="#080d1b"/>';
+ for(var k=0;k<30;k++){var x=40+k*11,y=286+(k%3)*7;bg+=sl(x,y,x,y-22,"rgba(150,172,226,.35)",1);}
+ bg+='<path d="M120 262 v-26 l18 6 l-18 6" fill="'+cS+'" opacity=".7"/><path d="M250 268 v-26 l18 6 l-18 6" fill="'+cS+'" opacity=".7"/>';
+ function draw(st){var o=sr(40,330,1120,100,st);for(var x=46;x<1150;x+=34)o+=sr(x,316,18,14,st,st.f2);o+=pinsH(40,430,1120,32,12,st);
+  o+=sr(470,240,260,90,st,st.f2)+roof(600,246,400,34,st)+sr(522,160,156,64,st,st.f2)+roof(600,166,290,36,st)+sl(560,130,640,130,st.s,st.w);return o;}
+ var gate='M560 330 V288 Q600 256 640 288 V330 Z';
+ var fg='<path d="M566 430 L634 430 L720 520 L480 520Z" fill="'+cG+'" opacity=".06"/>'+
+  '<g clip-path="url(#scL)"><path d="'+gate+'" fill="'+cG+'" opacity=".92" filter="url(#sgl)"/></g><g clip-path="url(#scR)"><path d="'+gate+'" fill="#04060d" stroke="'+cJ+'" stroke-width="1.3"/></g>'+
+  '<g fill="'+cJ+'" filter="url(#sgl)"><rect x="566" y="174" width="30" height="5"/><rect x="604" y="174" width="30" height="5"/><rect x="566" y="188" width="68" height="5"/><rect x="566" y="202" width="68" height="5"/></g>'+
+  sl(600,128,600,74,cJ,1.5)+qn(600,68,6)+
+  '<circle cx="380" cy="296" r="7" fill="'+cP+'"/><path d="M366 318 L394 318 L380 302Z" fill="'+cP+'" opacity=".85"/>'+sl(358,316,404,311,cG,3)+'<path d="M412 300 q6 -12 0 -24 t0 -24" fill="none" stroke="'+cP+'" stroke-opacity=".35"/>'+
+  trace([[150,316],[150,250],[110,210]])+qn(110,210,4)+trace([[270,316],[270,236],[310,196]])+qn(310,196,4)+trace([[930,316],[930,240],[890,200]])+qn(890,200,4)+trace([[1060,316],[1060,256],[1100,216]])+qn(1100,216,4)+
+  cnText(600,476,"空城",28,"rgba(240,195,90,.5)");
+ return frame("The empty fort drawn as a microchip city wall, half solid and half jade wireframe, with an open gate",bg,draw,fg);},
+/* 2 red cliffs / east wind */
+function(){
+ var r=prng(21),dip=[[930,58],[968,70],[1002,90],[1032,116],[1078,108],[1092,146],[1046,158]];
+ var bg=stars(60,9,220)+'<polyline points="'+dip.map(function(p){return p.join(",");}).join(" ")+' 1032,116" fill="none" stroke="'+cG+'" stroke-opacity=".35"/>'+dip.map(function(p){return '<circle cx="'+p[0]+'" cy="'+p[1]+'" r="3" fill="'+cG+'" filter="url(#sgl)"/>';}).join('')+
+  '<path d="M860 330 Q960 232 1060 240 Q1150 250 1200 300 L1200 330Z" fill="#0b1326"/>'+
+  '<g fill="none" stroke="'+cG+'" stroke-opacity=".6"><rect x="992" y="226" width="86" height="12"/><rect x="1002" y="214" width="66" height="12"/><rect x="1012" y="202" width="46" height="12"/></g>'+
+  '<circle cx="1035" cy="188" r="5" fill="'+cP+'"/><path d="M1027 202 L1043 202 L1035 192Z" fill="'+cP+'"/>'+sl(1004,214,1004,178,cS,1)+'<path d="M1004 178 l14 4 l-14 4" fill="'+cS+'"/>'+
+  '<path d="M0 110 L60 92 L118 126 L168 104 L222 150 L252 214 L292 252 L326 330 L0 330Z" fill="url(#scliff)"/>'+
+  trace([[40,300],[40,220],[80,190]],"rgba(240,195,90,.45)")+trace([[150,320],[150,250],[200,220]],"rgba(240,195,90,.45)")+
+  cnText(96,196,"赤",44,cS,'stroke="'+cG+'" stroke-width=".7"')+cnText(96,246,"壁",44,cS,'stroke="'+cG+'" stroke-width=".7"')+
+  '<rect y="330" width="1200" height="190" fill="url(#swat)"/>'+waves(352,10,"rgba(240,150,90,.10)");
+ var F=[];for(var k=0;k<6;k++)F.push(215+k*125);
+ function draw(st){var o='';F.forEach(function(x){var y=300;o+=hull(x,y,110,st)+sr(x+25,y-30,60,30,st,st.f2)+sl(x+55,y-30,x+55,y-126,st.s,st.w)+sr(x+31,y-114,48,64,st,st.f2,2);for(var g=1;g<4;g++)o+=sl(x+31,y-114+g*16,x+79,y-114+g*16,st.s,.6);o+=sl(x+55,y-114,x+55,y-50,st.s,.6);});
+  [[720,412],[860,424],[1000,408]].forEach(function(p){o+=hull(p[0],p[1],84,st)+sr(p[0]+26,p[1]-18,32,18,st,st.f2);});return o;}
+ var fg='';
+ for(var k=0;k<5;k++){var x=F[k]+108,y=306;for(var c=0;c<4;c++)fg+='<ellipse cx="'+(x+1+c*4.5)+'" cy="'+y+'" rx="3.2" ry="2" fill="none" stroke="'+cG+'" stroke-width="1.2"/>';}
+ F.forEach(function(x){fg+=qn(x+55,174,3.5);});
+ [[742,412,.8],[770,412,1],[884,424,1.1],[910,424,.8],[1022,408,1],[1050,408,.75]].forEach(function(f){fg+=flame(f[0],f[1],f[2]);});
+ [[880,300,1.3],[915,300,.9],[760,300,1],[790,300,.7],[640,300,.6]].forEach(function(f){fg+=flame(f[0],f[1]-8,f[2]);});
+ for(var k=0;k<40;k++){fg+='<circle cx="'+(640+r()*480).toFixed(0)+'" cy="'+(150+r()*220).toFixed(0)+'" r="'+(.8+r()*1.8).toFixed(1)+'" fill="'+(r()<.5?cG:cS)+'" opacity="'+(.4+r()*.5).toFixed(2)+'" filter="url(#sgl)"/>';}
+ [120,160,200,236].forEach(function(y0,i){var d='M1180 '+y0;for(var x=1180;x>=430+i*30;x-=10)d+=' L'+x+' '+(y0+11*Math.sin((1180-x)/34+i)).toFixed(1);fg+='<path d="'+d+'" fill="none" stroke="'+cJ+'" stroke-opacity="'+(.65-i*.1)+'" stroke-width="1.3"/>';var ex=430+i*30;fg+=arrowAt(ex+14,y0+11*Math.sin((1180-ex-14)/34+i),Math.PI,12,cJ);});
+ fg+=cnText(1140,290,"東南風",18,cG,'opacity=".85"');
+ return frame("Battle of Red Cliffs: a chained fleet of chip-ships burning, fire ships driven by a south-east wind drawn as wave functions",bg,draw,fg);},
+/* 3 eight formations */
+function(){
+ var bg=stars(70,13,220)+hills(250,70,"rgba(90,110,160,.13)",3)+'<rect y="440" width="1200" height="80" fill="url(#swat)"/>'+waves(456,4);
+ var P=[];for(var j=0;j<5;j++)for(var i=-1;i<10;i++){var x=110+i*112+j*30,y=190+j*58;if(x>40&&x<1170)P.push([x,y,i,j]);}
+ function draw(st){var o='';P.forEach(function(p){var nx=P.filter(function(q){return (q[2]===p[2]+1&&q[3]===p[3])||(q[2]===p[2]&&q[3]===p[3]+1);});nx.forEach(function(q){o+=sl(p[0],p[1],q[0],q[1],st.s,.7,'opacity=".35"');});});
+  P.forEach(function(p){var x=p[0],y=p[1];o+=sp('M'+(x-12)+' '+y+' L'+(x-14)+' '+(y-44)+' L'+(x-4)+' '+(y-56)+' L'+(x+12)+' '+(y-48)+' L'+(x+14)+' '+y+' Z',st,st.f2);});return o;}
+ var O=[394,306];
+ var fg=arrowAt(O[0],O[1],0,110,cG)+arrowAt(O[0],O[1],Math.atan2(58,30),62,cG)+'<circle cx="'+O[0]+'" cy="'+O[1]+'" r="4" fill="'+cG+'"/>'+
+  '<path d="M700 262 C760 222 830 300 768 334 S640 304 690 250 S830 196 868 284 S760 372 720 330" fill="none" stroke="'+cS+'" stroke-width="1.6" stroke-dasharray="5 6"/><circle cx="720" cy="330" r="6" fill="'+cP+'"/>'+
+  qn(1150,250,7)+cnText(1150,224,"生門",20,cG)+
+  fogs([[300,240,360,40,.08],[800,300,420,50,.1],[600,380,500,30,.07]]);
+ return frame("The Eight Formations maze: standing stones arranged as a lattice, with basis vectors and a lost rider's path",bg,draw,fg);},
+/* 4 silk bags */
+function(){
+ var bg=stars(80,17,260)+hills(330,60,"rgba(90,110,160,.13)",4);
+ function bag(cx,cy,st){return sl(cx,0,cx,cy-20,st.s,1)+sp('M'+(cx-36)+' '+cy+' Q'+(cx-48)+' '+(cy+72)+' '+cx+' '+(cy+80)+' Q'+(cx+48)+' '+(cy+72)+' '+(cx+36)+' '+cy+' Q'+cx+' '+(cy+12)+' '+(cx-36)+' '+cy+' Z',st,st.f2)+sp('M'+(cx-14)+' '+(cy+3)+' L'+(cx-20)+' '+(cy-20)+' L'+(cx+20)+' '+(cy-20)+' L'+(cx+14)+' '+(cy+3)+' Z',st);}
+ function draw(st){var o=sr(-2,430,1204,92,st);
+  o+=sr(90,190,90,240,st,st.f2)+sp('M80 194 L135 150 L190 194Z',st,st.f2)+pinsV(180,210,200,8,10,st)+sp('M182 236 A46 46 0 0 1 232 290 Z',st);
+  o+=sr(1020,190,90,240,st,st.f2)+sp('M1010 194 L1065 150 L1120 194Z',st,st.f2)+pinsV(1010,210,200,8,-10,st)+sp('M1018 236 A46 46 0 0 0 968 290 Z',st);
+  o+=bag(430,96,st)+bag(600,96,st)+bag(770,96,st);return o;}
+ var pol=[90,0,45,135,0,90,135,45,90,45,0,135],fg=sl(232,300,968,300,cJ,1.4,'opacity=".55" filter="url(#sgl)"');
+ for(var k=0;k<12;k++){var x=262+k*60,c=(k>=8&&k%2===0)?cS:cJ,a=pol[k]*Math.PI/180;fg+='<circle cx="'+x+'" cy="300" r="12" fill="rgba(63,240,216,.08)" stroke="'+c+'" stroke-width="1.3"/>'+sl((x-8*Math.cos(a)).toFixed(1),(300-8*Math.sin(a)).toFixed(1),(x+8*Math.cos(a)).toFixed(1),(300+8*Math.sin(a)).toFixed(1),c,2);}
+ fg+='<circle cx="742" cy="380" r="11" fill="#04060d" stroke="'+cS+'"/><path d="M724 430 Q742 392 760 430Z" fill="#04060d" stroke="'+cS+'"/>'+sl(742,368,742,314,cS,1.2,'stroke-dasharray="3 4"');
+ [430,600,770].forEach(function(cx,i){fg+='<circle cx="'+cx+'" cy="140" r="14" fill="'+cS+'"/>'+cnText(cx,146,"封",15,"#fbeee6")+cnText(cx,206,["一","二","三"][i],18,cG);});
+ fg+='<text x="135" y="460" fill="'+cP+'" font-family="JetBrains Mono,monospace" font-size="14" text-anchor="middle" opacity=".7">ALICE</text><text x="1065" y="460" fill="'+cP+'" font-family="JetBrains Mono,monospace" font-size="14" text-anchor="middle" opacity=".7">BOB</text>';
+ return frame("Three sealed silk bags above a beam of polarised photons between two towers, with an eavesdropper below",bg,draw,fg);},
+/* 5 seven captures */
+function(){
+ var bg=stars(70,19,240)+hills(320,90,"rgba(60,110,110,.14)",5)+hills(400,50,"rgba(30,70,70,.2)",1);
+ [[0,520,1],[1200,520,-1]].forEach(function(c){for(var k=0;k<5;k++){var a=-1.4+k*.35;bg+='<path d="M'+c[0]+' '+c[1]+' q'+(c[2]*(120+k*20))+' '+(-180+k*30)+' '+(c[2]*(220+k*30))+' '+(-120+k*40)+'" fill="none" stroke="rgba(63,240,216,.18)" stroke-width="10" stroke-linecap="round"/>';}});
+ var N=[];for(var k=0;k<7;k++){var a=-Math.PI/2+k*2*Math.PI/7;N.push([600+410*Math.cos(a),262+165*Math.sin(a)]);}
+ function draw(st){var o=sr(520,206,160,110,st,st.f2,4)+pinsH(520,194,160,8,12,st)+pinsH(520,316,160,8,12,st)+pinsV(508,206,110,5,12,st)+pinsV(680,206,110,5,12,st);
+  N.forEach(function(p){o+=sr((p[0]-24).toFixed(1),(p[1]-17).toFixed(1),48,34,st,st.f2,3);});return o;}
+ var fg='<ellipse cx="600" cy="262" rx="410" ry="165" fill="none" stroke="'+cG+'" stroke-opacity=".3" stroke-dasharray="4 8"/>'+cnText(600,274,"孟獲",30,cP);
+ N.forEach(function(p,k){var x=p[0],y=p[1],last=k===6,c=last?cG:(k%2?cJ:cS);
+  fg+='<path d="M'+(x-7).toFixed(1)+' '+(y-2).toFixed(1)+' v-6 a7 7 0 0 1 14 0 v'+(k<6?-3:6)+'" fill="none" stroke="'+c+'" stroke-width="2"/><rect x="'+(x-9).toFixed(1)+'" y="'+(y-2).toFixed(1)+'" width="18" height="12" rx="2" fill="'+c+'"/>';
+  fg+=cnText((x+(x<600?-44:44)).toFixed(1),(y+8).toFixed(1),["一","二","三","四","五","六","七"][k],22,cG);
+  var ang=Math.atan2(y-262,x-600);fg+=arrowAt(600+Math.cos(ang)*110,262+Math.sin(ang)*72,ang,Math.hypot(x-600,y-262)-150,k%2?"rgba(63,240,216,.55)":"rgba(200,56,47,.75)");
+  if(last)fg+=qn(x,y-34,5);});
+ return frame("Seven capture nodes in orbit around a central chip fortress, alternating red-team and blue-team arrows",bg,draw,fg);},
+/* 6 wooden ox */
+function(){
+ var R=[[30,470],[330,404],[140,332],[520,272],[360,204],[760,164],[1180,120]];
+ var bg=stars(70,23,200)+'<path d="M0 520 L0 300 L160 160 L300 250 L460 120 L640 230 L820 90 L1000 200 L1200 110 L1200 520Z" fill="rgba(90,110,160,.12)"/>'+hills(380,80,"rgba(50,64,104,.25)",6);
+ function at(a,b,t){return [R[a][0]+(R[b][0]-R[a][0])*t,R[a][1]+(R[b][1]-R[a][1])*t];}
+ var OX=[at(0,1,.6),at(2,3,.55),at(4,5,.6),at(5,6,.5)];
+ function draw(st){var d='M'+R.map(function(p){return p.join(" ");}).join(" L");var o='<path d="'+d+'" fill="none" stroke="'+st.s+'" stroke-width="14" stroke-linejoin="round" opacity=".55"/><path d="'+d+'" fill="none" stroke="'+(st===SOLID?"#1a2442":"#06101a")+'" stroke-width="10" stroke-linejoin="round"/>';
+  for(var s=0;s<R.length-1;s++)for(var t=.1;t<1;t+=.18){var p=at(s,s+1,t);o+=sl(p[0].toFixed(1),(p[1]+6).toFixed(1),p[0].toFixed(1),(p[1]+34).toFixed(1),st.s,1,'opacity=".6"');}
+  OX.forEach(function(p){var x=p[0],y=p[1]-6;o+=sr((x-36).toFixed(1),(y-40).toFixed(1),66,26,st,st.f2,6)+sr((x+26).toFixed(1),(y-52).toFixed(1),20,18,st,st.f2,3);
+   [-28,-14,10,22].forEach(function(dx){o+=sl((x+dx).toFixed(1),(y-14).toFixed(1),(x+dx+(dx%4?3:-3)).toFixed(1),y.toFixed(1),st.s,2);});
+   o+='<circle cx="'+(x-12).toFixed(1)+'" cy="'+(y-27).toFixed(1)+'" r="8" fill="none" stroke="'+st.s+'" stroke-width="'+st.w+'"/>'+sr((x+2).toFixed(1),(y-34).toFixed(1),18,12,st,st.f,1)+
+    '<ellipse cx="'+(x-18).toFixed(1)+'" cy="'+(y-46).toFixed(1)+'" rx="12" ry="7" fill="'+st.f2+'" stroke="'+st.s+'" stroke-width="'+st.w+'"/><ellipse cx="'+(x+4).toFixed(1)+'" cy="'+(y-47).toFixed(1)+'" rx="12" ry="7" fill="'+st.f2+'" stroke="'+st.s+'" stroke-width="'+st.w+'"/>';});return o;}
+ var fg='<polyline points="'+R.map(function(p){return p[0]+","+(p[1]-20);}).join(" ")+'" fill="none" stroke="'+cG+'" stroke-width="1.6" stroke-dasharray="6 7" opacity=".85"/>';
+ R.forEach(function(p,i){fg+=qn(p[0],p[1]-20,i===0||i===R.length-1?6:4);});
+ fg+=cnText(70,440,"漢中",18,cG)+cnText(1130,92,"祁山",18,cG);
+ return frame("Wooden oxen built as machines with gears and chip panels, hauling grain along a zigzag plank road with glowing waypoints",bg,draw,fg);},
+/* 7 longzhong */
+function(){
+ var bg=stars(90,29,260)+'<circle cx="120" cy="90" r="44" fill="'+cP+'" opacity=".09"/><circle cx="120" cy="90" r="60" fill="none" stroke="'+cJ+'" stroke-opacity=".2"/>'+hills(360,60,"rgba(90,110,160,.13)",7);
+ [30,52,78].forEach(function(x,i){bg+=sl(x,520,x+6,150+i*30,"rgba(63,240,216,.22)",4);for(var y=480;y>170+i*30;y-=46)bg+=sl(x-4,y,x+10,y,"rgba(63,240,216,.3)",1)+'<path d="M'+(x+4)+' '+y+' q26 -10 40 6" fill="none" stroke="rgba(63,240,216,.2)" stroke-width="3" stroke-linecap="round"/>';});
+ function draw(st){var o=sr(-2,400,1204,122,st);
+  o+=sr(150,300,240,100,st,st.f2)+sr(252,330,38,70,st,st.f)+sr(178,322,44,32,st,st.f)+sl(200,322,200,354,st.s,1)+sl(178,338,222,338,st.s,1);
+  o+=sp('M118 306 L168 240 Q270 196 372 240 L422 306 Z',st);for(var x=150;x<400;x+=14)o+=sl(x,250+Math.abs(x-270)*.08,x+(x<270?-10:10),304,st.s,.7,'opacity=".6"');
+  o+=sr(642,150,22,240,st,st.f2,10)+sr(1108,150,22,240,st,st.f2,10)+sr(660,166,450,208,st,st.f2);return o;}
+ var fg=trace([[660,252],[840,252],[900,206],[1110,214]],"rgba(240,195,90,.7)")+trace([[872,252],[872,374]],"rgba(240,195,90,.7)")+qn(872,252,5)+
+  cnText(890,214,"魏",42,cP)+cnText(770,330,"蜀",42,cJ,'filter="url(#sgl)"')+cnText(1000,330,"吳",42,cG)+
+  '<text x="882" y="280" fill="'+cP+'" font-family="JetBrains Mono,monospace" font-size="12" opacity=".7">荊州</text>'+
+  '<path d="M560 512 Q440 470 290 404" fill="none" stroke="'+cP+'" stroke-opacity=".2" stroke-dasharray="2 8"/>';
+ [[520,494,"一"],[430,462,"二"],[350,428,"三"]].forEach(function(p){fg+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="4" fill="'+cG+'"/>'+cnText(p[0],p[1]-12,p[2],14,cG);});
+ fg+='<circle cx="314" cy="372" r="6" fill="'+cP+'"/><path d="M304 398 L324 398 L314 380Z" fill="'+cP+'" opacity=".85"/><path d="M324 384 l12 -10 l4 8z" fill="'+cG+'"/>';
+ return frame("The thatched cottage at Longzhong beside a map scroll dividing the realm into Wei, Shu and Wu with circuit borders",bg,draw,fg);}
+];
+
+/* ---- interactive demos ---- */
+function rnd(n){return Math.floor(Math.random()*n);}
+function tile(v,l,cls){return '<div class="tile '+(cls||"")+'"><b>'+v+'</b><span>'+l+'</span></div>';}
+var DEMOS=[
+function(el){ /* honeypot */
+ el.innerHTML='<div class="dctl"><label for="hpN">Decoy boats</label><input id="hpN" type="range" min="0" max="9" value="4"><output id="hpNo">4</output><button class="btn" id="hpGo" type="button">Fire 1,000 probes</button></div><div class="fleet" id="hpFleet"></div><div class="tiles" id="hpStats"></div><p class="dnote" id="hpNote"></p>';
+ var n=4,real=rnd(5),counts=null,res=null;
+ function boat(isR){var c=isR?cG:cJ;var o='<svg viewBox="0 0 80 44" width="72" height="40" aria-hidden="true"><path d="M4 20H76L66 38H14Z" fill="'+(isR?"rgba(240,195,90,.15)":"rgba(63,240,216,.06)")+'" stroke="'+c+'" stroke-width="1.5"/>';for(var k=0;k<5;k++)o+='<rect x="'+(14+k*11)+'" y="6" width="8" height="13" rx="2" fill="none" stroke="'+c+'"/>';return o+'</svg>';}
+ function draw(){var h='',dn=0;for(var k=0;k<=n;k++){var isR=k===real;if(!isR)dn++;h+='<div class="boat'+(isR?' real':'')+'">'+boat(isR)+'<span class="bl">'+(isR?'Real server':'Decoy '+dn)+'</span><span class="bc">'+(counts?counts[k]+' hits':'—')+'</span></div>';}
+  $("hpFleet").innerHTML=h;
+  $("hpStats").innerHTML=res?tile(res.real,'Probes that reached the real server',res.real>500?'bad':'warn')+tile(res.cap,'Probes captured by decoys','good')+tile(res.uniq+' / 20','Attack variants identified','good'):tile('—','Probes that reached the real server')+tile('—','Probes captured by decoys')+tile('—','Attack variants identified');
+  $("hpNote").textContent=res&&n===0?'With no decoys, every probe hits the real server and nothing is captured for study.':'Each probe carries one of 20 attack variants. A variant counts as identified once a decoy captures it.';}
+ $("hpN").addEventListener("input",function(){n=+this.value;$("hpNo").textContent=n;real=rnd(n+1);counts=null;res=null;draw();});
+ $("hpGo").addEventListener("click",function(){counts=[];for(var k=0;k<=n;k++)counts.push(0);var v={};for(var i=0;i<1000;i++){var t=rnd(n+1);counts[t]++;if(t!==real)v[rnd(20)]=1;}res={real:counts[real],cap:1000-counts[real],uniq:Object.keys(v).length};draw();});
+ draw();},
+function(el){ /* moving target */
+ el.innerHTML='<div class="dctl"><label class="chk"><input type="checkbox" id="gtM"> Moving-target defence</label><button class="btn ghost" id="gtR" type="button">New game</button><button class="btn ghost" id="gtS" type="button">Simulate 10,000 attackers</button></div><div class="gates" id="gtG"></div><p class="dmsg" id="gtMsg" aria-live="polite"></p><div class="tiles" id="gtStats"></div>';
+ var real,probes,done,probed;
+ function draw(){var h='';RING.forEach(function(t,k){var cls=done&&k===real?' found':(probed[k]?' probed':'');h+='<button type="button" class="gate'+cls+'" data-k="'+k+'"><span class="gc">'+fx(t)+'</span><span class="gl">Gate '+(k+1)+'</span></button>';});$("gtG").innerHTML=h;simpEl($("gtG"));}
+ function msg(t){$("gtMsg").textContent=t;}
+ function reset(){real=rnd(8);probes=0;done=false;probed={};draw();msg('Probe a gate. The real service hides behind one of them.');}
+ $("gtG").addEventListener("click",function(e){var b=e.target.closest(".gate");if(!b||done)return;var k=+b.getAttribute("data-k");probes++;
+  if(k===real){done=true;msg('Found the real gate on probe '+probes+'.');}
+  else if($("gtM").checked){real=rnd(8);probed={};msg('Empty. The gates have moved, so earlier probes no longer help. Probes so far: '+probes+'.');}
+  else{probed[k]=1;msg('Empty. Probes so far: '+probes+'.');}
+  draw();});
+ $("gtR").addEventListener("click",reset);
+ $("gtM").addEventListener("change",reset);
+ $("gtS").addEventListener("click",function(){var a=0,b=0,N=10000;for(var i=0;i<N;i++){a+=rnd(8)+1;var c=1;while(rnd(8)!==0)c++;b+=c;}
+  $("gtStats").innerHTML=tile((a/N).toFixed(2),'Static gates: average probes to find the service','warn')+tile((b/N).toFixed(2),'Moving gates: average probes to find the service','good')+tile('×'+(b/a).toFixed(2),'Extra work for the attacker','good');});
+ reset();},
+function(el){ /* quantum memory */
+ el.innerHTML='<div class="dctl"><label for="qmN">Particles (n)</label><input id="qmN" type="range" min="1" max="100" value="40"><output id="qmNo">40</output></div><div class="tiles" id="qmT"></div><div class="logbar"><div class="lb-track"><div class="lb-fill" id="qmF"></div><span class="lb-mk" style="left:'+(10.2/32*100)+'%"><i></i>Laptop, 16 GB</span><span class="lb-mk up" style="left:'+(16/32*100)+'%"><i></i>Large supercomputer, ~10 PB</span></div></div><p class="dnote">Each amplitude is stored as a 16-byte complex number. The bar uses a log scale: each step right is ten times more memory. Reference sizes are rough.</p>';
+ function sci(x){var e=Math.floor(Math.log10(x));return (x/Math.pow(10,e)).toFixed(2)+' × 10<sup>'+e+'</sup>';}
+ function bytes(b){var u=["B","KB","MB","GB","TB","PB","EB","ZB","YB"],i=0;while(b>=1000&&i<u.length-1){b/=1000;i++;}if(b>=1000)return sci(b*Math.pow(1000,8))+' B';return (b<10?b.toFixed(1):Math.round(b))+' '+u[i];}
+ function upd(){var n=+$("qmN").value;$("qmNo").textContent=n;var amp=Math.pow(2,n),by=amp*16;
+  $("qmT").innerHTML=tile(n<=40?amp.toLocaleString("en"):sci(amp),'Amplitudes to store (2<sup>'+n+'</sup>)')+tile(bytes(by),'Classical memory for the full state',by>1e16?'bad':(by>1.6e10?'warn':'good'))+tile(n,'Qubits that would hold it','good');
+  $("qmF").style.width=Math.min(100,Math.log10(by)/32*100)+"%";}
+ $("qmN").addEventListener("input",upd);upd();},
+function(el){ /* lattice */
+ el.innerHTML='<div class="dctl"><div class="seg" role="group" aria-label="Basis"><button type="button" class="segb on" data-b="g">Good basis (private key)</button><button type="button" class="segb" data-b="b">Bad basis (public key)</button></div></div><canvas id="ltC" class="dcanvas" aria-label="Lattice. Click to place a point."></canvas><div class="tiles" id="ltT"></div>';
+ var cv=$("ltC"),c=cv.getContext("2d"),W=0,H=0,D=1,mode="g";
+ var g1={x:54,y:0},g2={x:0,y:50},b1={x:5*54,y:2*50},b2={x:7*54,y:3*50};
+ function co(t,u,v){var d=u.x*v.y-u.y*v.x;return {a:(t.x*v.y-t.y*v.x)/d,c:(u.x*t.y-u.y*t.x)/d};}
+ function babai(t,u,v){var k=co(t,u,v),a=Math.round(k.a),cc=Math.round(k.c);return {x:a*u.x+cc*v.x,y:a*u.y+cc*v.y};}
+ function dist(p,q){return Math.hypot(p.x-q.x,p.y-q.y);}
+ function closest(t){var k=co(t,g1,g2),best=null,bd=1e18;for(var da=-2;da<=2;da++)for(var dc=-2;dc<=2;dc++){var a=Math.round(k.a)+da,cc=Math.round(k.c)+dc,p={x:a*g1.x+cc*g2.x,y:a*g1.y+cc*g2.y},d=dist(p,t);if(d<bd){bd=d;best=p;}}return best;}
+ var tgt={x:150,y:-70};for(var tries=0;tries<300;tries++){var cand={x:(Math.random()-.5)*360,y:(Math.random()-.5)*220};if(dist(babai(cand,b1,b2),closest(cand))>40){tgt=cand;break;}}
+ function arrow(x1,y1,x2,y2,col){c.strokeStyle=col;c.fillStyle=col;c.lineWidth=2;c.beginPath();c.moveTo(x1,y1);c.lineTo(x2,y2);c.stroke();var a=Math.atan2(y2-y1,x2-x1);c.beginPath();c.moveTo(x2,y2);c.lineTo(x2-9*Math.cos(a-.4),y2-9*Math.sin(a-.4));c.lineTo(x2-9*Math.cos(a+.4),y2-9*Math.sin(a+.4));c.fill();}
+ function draw(){if(!cv.isConnected)return;W=cv.clientWidth;H=Math.round(Math.min(400,Math.max(260,W*.55)));D=Math.min(window.devicePixelRatio||1,2);cv.style.height=H+"px";cv.width=W*D;cv.height=H*D;c.setTransform(D,0,0,D,0,0);c.clearRect(0,0,W,H);
+  var ox=W/2,oy=H/2,u=mode==="g"?g1:b1,v=mode==="g"?g2:b2,col=mode==="g"?cJ:cG;
+  c.fillStyle="rgba(63,240,216,.06)";c.strokeStyle=mode==="g"?"rgba(63,240,216,.4)":"rgba(240,195,90,.4)";c.lineWidth=1;c.beginPath();c.moveTo(ox,oy);c.lineTo(ox+u.x,oy+u.y);c.lineTo(ox+u.x+v.x,oy+u.y+v.y);c.lineTo(ox+v.x,oy+v.y);c.closePath();c.fill();c.stroke();
+  for(var i=-20;i<=20;i++)for(var j=-12;j<=12;j++){var x=ox+i*g1.x+j*g2.x,y=oy+i*g1.y+j*g2.y;if(x<-5||x>W+5||y<-5||y>H+5)continue;c.fillStyle="rgba(236,230,214,.55)";c.beginPath();c.arc(x,y,2.4,0,7);c.fill();}
+  arrow(ox,oy,ox+u.x,oy+u.y,col);arrow(ox,oy,ox+v.x,oy+v.y,col);
+  var bb=babai(tgt,u,v),cl=closest(tgt),tx=ox+tgt.x,ty=oy+tgt.y;
+  c.setLineDash([4,4]);c.strokeStyle="rgba(240,195,90,.7)";c.beginPath();c.moveTo(tx,ty);c.lineTo(ox+bb.x,oy+bb.y);c.stroke();c.setLineDash([]);
+  c.strokeStyle=cJ;c.lineWidth=2;c.beginPath();c.arc(ox+cl.x,oy+cl.y,10,0,7);c.stroke();
+  c.fillStyle=cG;c.beginPath();c.arc(ox+bb.x,oy+bb.y,6,0,7);c.fill();
+  c.strokeStyle=cS;c.lineWidth=2.5;c.beginPath();c.moveTo(tx-7,ty-7);c.lineTo(tx+7,ty+7);c.moveTo(tx+7,ty-7);c.lineTo(tx-7,ty+7);c.stroke();
+  var ok=dist(bb,cl)<1;
+  $("ltT").innerHTML=tile(dist(bb,tgt).toFixed(1),'Distance to the point Babai found (gold dot)',ok?'good':'bad')+tile(dist(cl,tgt).toFixed(1),'Distance to the true closest point (jade ring)','good')+tile(ok?'Found it':'Lost in the maze','Result with the '+(mode==="g"?'good':'bad')+' basis',ok?'good':'bad');}
+ el.querySelectorAll(".segb").forEach(function(b){b.addEventListener("click",function(){mode=b.getAttribute("data-b");el.querySelectorAll(".segb").forEach(function(x){x.classList.toggle("on",x===b);});draw();});});
+ cv.addEventListener("click",function(e){var r=cv.getBoundingClientRect();tgt={x:e.clientX-r.left-W/2,y:e.clientY-r.top-H/2};draw();});
+ window.addEventListener("resize",draw);requestAnimationFrame(draw);},
+function(el){ /* BB84 */
+ el.innerHTML='<div class="dctl"><label class="chk"><input type="checkbox" id="bbE"> Eve intercepts every photon</label><button class="btn" id="bbGo" type="button">Send 24 photons</button></div><div class="tblwrap" id="bbT"></div><div class="tiles" id="bbS"></div><p class="dmsg" id="bbM" aria-live="polite"></p><p class="dnote">The channel here is noise-free. Real links have a little noise, so Alice and Bob set a threshold. With small samples, results vary from run to run.</p>';
+ var SYM={"+":["—","|"],"×":["/","\\"]};
+ function run(){var N=24,eve=$("bbE").checked,rows={ab:[],aB:[],ph:[],eB:[],bB:[],bb:[],keep:[],err:[]},kept=0,errs=0;
+  for(var i=0;i<N;i++){var bit=rnd(2),aB=rnd(2)?"+":"×",pB=aB,pBit=bit,eB="";
+   if(eve){eB=rnd(2)?"+":"×";var eBit=eB===pB?pBit:rnd(2);pB=eB;pBit=eBit;}
+   var bB=rnd(2)?"+":"×",bBit=bB===pB?pBit:rnd(2),keep=aB===bB,err=keep&&bBit!==bit;if(keep)kept++;if(err)errs++;
+   rows.ab.push(bit);rows.aB.push(aB);rows.ph.push(SYM[aB][bit]);rows.eB.push(eB);rows.bB.push(bB);rows.bb.push(bBit);rows.keep.push(keep);rows.err.push(err);}
+  function tr(lbl,arr,f){return '<tr><th scope="row">'+lbl+'</th>'+arr.map(function(v,i){return '<td class="'+(rows.err[i]?'err':(rows.keep[i]?'keep':'dim'))+'">'+(f?f(v,i):v)+'</td>';}).join('')+'</tr>';}
+  var h='<table class="bb"><tbody>'+tr('Alice bit',rows.ab)+tr('Alice basis',rows.aB)+tr('Photon sent',rows.ph)+(eve?tr('Eve basis',rows.eB):'')+tr('Bob basis',rows.bB)+tr('Bob bit',rows.bb)+tr('Same basis?',rows.keep,function(v){return v?'✓':'·';})+'</tbody></table>';
+  $("bbT").innerHTML=h;var q=kept?errs/kept*100:0;
+  $("bbS").innerHTML=tile(kept+' / 24','Bits kept after comparing bases','good')+tile(errs,'Kept bits that disagree',errs?'bad':'good')+tile(q.toFixed(0)+'%','Error rate (QBER)',errs?'bad':'good');
+  $("bbM").textContent=errs?'Errors found. Someone touched the photons. Discard this key and try another channel.':(eve?'No errors this time. Eve was lucky. Run again: over many photons she will be seen.':'No errors. Alice and Bob share a secret key.');}
+ $("bbGo").addEventListener("click",run);$("bbE").addEventListener("change",run);run();},
+function(el){ /* red/blue rounds */
+ el.innerHTML='<div class="dctl"><button class="btn" id="rbGo" type="button">Run round 1</button><button class="btn ghost" id="rbR" type="button">Start over</button></div><div class="rounds"><ol class="rlog" id="rbLog"></ol><div class="rchart" id="rbC"></div></div><p class="dnote">Model: 14 hidden flaws at the start. Each round the red team finds each flaw with a 45% chance. Each fix has a 10% chance of adding a new flaw.</p>';
+ var hist,log;
+ function chart(){var w=360,h=170,bw=w/8,mx=16,o='<svg viewBox="0 -16 '+w+' '+(h+44)+'" role="img" aria-label="Remaining flaws after each round">';
+  for(var g=0;g<=16;g+=4){var y=h-g/mx*h;o+='<line x1="0" x2="'+w+'" y1="'+y+'" y2="'+y+'" stroke="rgba(150,172,226,.12)"/><text x="'+(w-2)+'" y="'+(y-3)+'" fill="#9aa3bf" font-size="10" text-anchor="end" font-family="JetBrains Mono,monospace">'+g+'</text>';}
+  hist.forEach(function(v,i){var bh=v/mx*h;o+='<rect x="'+(i*bw+6)+'" y="'+(h-bh)+'" width="'+(bw-12)+'" height="'+bh+'" fill="'+(i===0?cS:(v===0?cJ:cG))+'" opacity=".85"/><text x="'+(i*bw+bw/2)+'" y="'+(h-bh-5)+'" fill="#ece6d6" font-size="11" text-anchor="middle" font-family="JetBrains Mono,monospace">'+v+'</text>';});
+  for(var i=0;i<8;i++)o+='<text x="'+(i*bw+bw/2)+'" y="'+(h+18)+'" fill="#9aa3bf" font-size="11" text-anchor="middle" font-family="Noto Serif TC,serif">'+(i===0?'始':["一","二","三","四","五","六","七"][i-1])+'</text>';
+  return o+'</svg>';}
+ function draw(){$("rbLog").innerHTML=log.length?log.join(''):'<li>14 flaws are hidden in the system. Run the first round.</li>';$("rbC").innerHTML=chart();var r=hist.length-1;$("rbGo").textContent=r>=7?'All seven rounds done':'Run round '+(r+1);$("rbGo").disabled=r>=7;}
+ function reset(){hist=[14];log=[];draw();}
+ $("rbGo").addEventListener("click",function(){var v=hist[hist.length-1],f=0,nw=0;for(var i=0;i<v;i++)if(Math.random()<.45)f++;for(var i=0;i<f;i++)if(Math.random()<.1)nw++;var left=v-f+nw;hist.push(left);
+  log.push('<li><b>Round '+(hist.length-1)+':</b> red found '+f+', blue fixed '+f+(nw?', '+nw+' new flaw'+(nw>1?'s':'')+' added':'')+'. Remaining: '+left+'.</li>');
+  if(hist.length===8)log.push('<li><b>'+(left===0?'Every flaw found. Like Meng Huo after the seventh capture, this defence can be trusted.':left+' flaw'+(left>1?'s remain':' remains')+'. Seven rounds were not enough. Keep testing.')+'</b></li>');draw();});
+ $("rbR").addEventListener("click",reset);reset();},
+function(el){ /* route annealing */
+ el.innerHTML='<div class="dctl"><button class="btn" id="rtA" type="button">Anneal</button><button class="btn ghost" id="rtC" type="button">Clear my route</button></div><canvas id="rtV" class="dcanvas" aria-label="Map of camps. Click camps to build a route."></canvas><div class="tiles" id="rtT"></div><p class="dnote">Positions are schematic, not a real map. Distances are in map units.</p>';
+ var C=[["漢中","Base",.12,.8],["陽平","Yangping",.06,.38],["祁山","Qishan",.3,.14],["街亭","Jieting",.55,.1],["陳倉","Chencang",.72,.3],["五丈原","Wuzhang",.9,.62],["斜谷","Xiegu",.48,.55]];
+ var cv=$("rtV"),c=cv.getContext("2d"),W=0,H=0,D=1,mine=[0],ann=null,annLen=null,best=null,bestLen=0;
+ function d(a,b){return Math.hypot((C[a][2]-C[b][2])*100,(C[a][3]-C[b][3])*60);}
+ function len(r){var s=0;for(var i=0;i<r.length;i++)s+=d(r[i],r[(i+1)%r.length]);return s;}
+ (function(){var perm=[1,2,3,4,5,6],bl=1e9,br=null;function go(k){if(k===perm.length){var r=[0].concat(perm),l=len(r);if(l<bl){bl=l;br=r.slice();}return;}for(var i=k;i<perm.length;i++){var t=perm[k];perm[k]=perm[i];perm[i]=t;go(k+1);t=perm[k];perm[k]=perm[i];perm[i]=t;}}go(0);best=br;bestLen=bl;})();
+ function P(i){return [40+C[i][2]*(W-80),30+C[i][3]*(H-60)];}
+ function path(r,col,w,dash,close){if(r.length<2)return;c.strokeStyle=col;c.lineWidth=w;c.setLineDash(dash||[]);c.beginPath();r.forEach(function(k,i){var p=P(k);i?c.lineTo(p[0],p[1]):c.moveTo(p[0],p[1]);});if(close)c.closePath();c.stroke();c.setLineDash([]);}
+ function draw(){if(!cv.isConnected)return;W=cv.clientWidth;H=Math.round(Math.min(380,Math.max(260,W*.5)));D=Math.min(window.devicePixelRatio||1,2);cv.style.height=H+"px";cv.width=W*D;cv.height=H*D;c.setTransform(D,0,0,D,0,0);c.clearRect(0,0,W,H);
+  if(ann)path(ann,"rgba(63,240,216,.85)",2.5,[],true);
+  path(mine,"rgba(240,195,90,.9)",2,[6,5],mine.length===C.length);
+  C.forEach(function(cp,i){var p=P(i),inM=mine.indexOf(i)>=0;c.fillStyle=i===0?cS:(inM?cG:"rgba(236,230,214,.85)");c.beginPath();c.arc(p[0],p[1],i===0?9:7,0,7);c.fill();
+   c.fillStyle="#ece6d6";c.font="900 15px 'Noto Serif TC',serif";c.textAlign="center";c.fillText(cp[0],p[0],p[1]-14);c.fillStyle="#9aa3bf";c.font="11px 'JetBrains Mono',monospace";c.fillText(cp[1],p[0],p[1]+22);});
+  var done=mine.length===C.length;
+  $("rtT").innerHTML=tile(done?len(mine).toFixed(0):(mine.length-1)+' / 6 camps','Your route (gold)',done?(len(mine)-bestLen<1?'good':'warn'):'')+tile(annLen?annLen.toFixed(0):'—','Annealing (jade)',annLen?(annLen-bestLen<1?'good':'warn'):'')+tile(bestLen.toFixed(0),'Best possible, checked over all 720 orders','good');}
+ cv.addEventListener("click",function(e){var r=cv.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,hit=-1;C.forEach(function(cp,i){var p=P(i);if(Math.hypot(p[0]-x,p[1]-y)<20)hit=i;});if(hit>0&&mine.indexOf(hit)<0&&mine.length<C.length){mine.push(hit);draw();}});
+ $("rtC").addEventListener("click",function(){mine=[0];draw();});
+ $("rtA").addEventListener("click",function(){var cur=[0,1,2,3,4,5,6].slice(0,1).concat([1,2,3,4,5,6].sort(function(){return Math.random()-.5;})),cl=len(cur),T=60,it=0,bestR=cur.slice(),bL=cl;
+  function step(){for(var k=0;k<25;k++){var i=1+rnd(6),j=1+rnd(6);if(i===j)continue;if(i>j){var t=i;i=j;j=t;}var nr=cur.slice(0,i).concat(cur.slice(i,j+1).reverse(),cur.slice(j+1)),nl=len(nr);if(nl<cl||Math.random()<Math.exp((cl-nl)/T)){cur=nr;cl=nl;if(cl<bL){bL=cl;bestR=cur.slice();}}T*=.985;it++;}
+   ann=cur;annLen=cl;draw();if(it<1600){if(reduce)step();else requestAnimationFrame(step);}else{ann=bestR;annLen=bL;draw();}}
+  step();});
+ window.addEventListener("resize",draw);requestAnimationFrame(draw);},
+function(el){ /* Mosca */
+ el.innerHTML='<div class="mosca"><div class="slider"><label for="mx"><span>x · Years data must stay secret</span><output id="mxo"></output></label><input id="mx" type="range" min="0" max="30" value="10"></div><div class="slider"><label for="my"><span>y · Years to migrate</span><output id="myo"></output></label><input id="my" type="range" min="0" max="15" value="5"></div><div class="slider"><label for="mz"><span>z · Years until a CRQC (your estimate)</span><output id="mzo"></output></label><input id="mz" type="range" min="1" max="30" value="12"></div></div><div id="mT" class="mtl"></div><div class="tiles" id="mS"></div>';
+ function upd(){var x=+$("mx").value,y=+$("my").value,z=+$("mz").value;$("mxo").textContent=x;$("myo").textContent=y;$("mzo").textContent=z;
+  var S=45,w=1000,sc=function(v){return 24+v/S*(w-48);};
+  var o='<svg viewBox="0 0 '+w+' 124" role="img" aria-label="Timeline of migration and secrecy against quantum arrival">';
+  for(var t=0;t<=S;t+=5)o+='<line x1="'+sc(t)+'" x2="'+sc(t)+'" y1="10" y2="92" stroke="rgba(150,172,226,.12)"/><text x="'+sc(t)+'" y="114" fill="#9aa3bf" font-size="13" text-anchor="middle" font-family="JetBrains Mono,monospace">+'+t+'y</text>';
+  o+='<rect x="24" y="30" width="'+(sc(y)-24)+'" height="24" fill="'+cG+'" opacity=".85"/><rect x="'+sc(y)+'" y="30" width="'+(sc(x)-24)+'" height="24" fill="'+cJ+'" opacity=".7"/>';
+  if(x+y>z)o+='<rect x="'+sc(z)+'" y="30" width="'+(sc(x+y-z)-24)+'" height="24" fill="url(#mHatch)"/>';
+  o+='<defs><pattern id="mHatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="4" height="8" fill="'+cS+'"/></pattern></defs>';
+  o+='<line x1="'+sc(z)+'" x2="'+sc(z)+'" y1="10" y2="80" stroke="'+cS+'" stroke-width="2"/><text x="'+(sc(z)+6)+'" y="76" fill="'+cS+'" font-size="13" text-anchor="'+(sc(z)>w-160?'end':'start')+'" font-family="JetBrains Mono,monospace">CRQC arrives</text>';
+  o+='<text x="24" y="20" fill="#9aa3bf" font-size="13" font-family="JetBrains Mono,monospace"><tspan fill="'+cG+'">■</tspan> migration (y)   <tspan fill="'+cJ+'">■</tspan> data still secret (x)   <tspan fill="'+cS+'">■</tspan> exposed</text></svg>';
+  $("mT").innerHTML=o;var gap=x+y-z;
+  $("mS").innerHTML=gap>0?tile(gap+' years','Data that can be read after a CRQC arrives','bad')+tile('x + y > z','Mosca’s inequality says you are late','bad')+tile('Start now','Begin the inventory this year','warn'):tile((-gap)+' years','Safety margin','good')+tile('x + y ≤ z','You are inside the window','good')+tile('Keep watching','Update z as hardware advances','warn');}
+ ["mx","my","mz"].forEach(function(id){$(id).addEventListener("input",upd);});upd();}
+];
+
+function learnCard(kind,i){var d=I[lang];return '<a class="card lcard" href="#programs"><span class="lbl">'+rb(T(kind==="level"?"ls.level":"ls.lab"))+'</span><span class="pcn">'+(kind==="level"?fx(LEVELS[i]):fx(LABS[i]))+'</span><span class="lsub">'+rb(kind==="level"?d.levels[i].t:d.labs[i].t)+'</span></a>';}
+function renderLesson(i){
+ curLesson=i;var d=I[lang],s=d.strats[i],b=STRATS[i],L=LES[i],en=I.en.strats[i],pv=(i+7)%8,nx=(i+1)%8;
+ var h='<div class="wrap ls-top"><a class="textlink" href="#stratagems">← '+rb(T("ls.back"))+'</a></div>'+
+ '<div class="wrap ls-hero"><div class="ls-title"><p class="eyebrow">'+rb(T("ls.lesson")).replace("{n}",i+1)+' · '+L.ch+'</p><h1 class="cn ls-cn">'+fx(b[0])+'</h1><p class="ls-sub">'+rb(s.t)+(lang!=="en"?'<span class="muted"> · '+en.t+'</span>':'')+'</p><div class="tri-row">'+triSVG(TRI[b[1]].b,34)+'<span class="tri-meta">'+triMeta(b[1])+'</span></div><p class="ls-lead">'+rb(s.l)+'</p></div><figure class="scene">'+SCENES[i]()+'</figure></div>'+
+ (lang!=="en"?'<div class="wrap"><p class="ls-note">'+rb(T("ls.note"))+'</p></div>':'')+
+ '<div class="wrap ls-sec ls-story"><div class="ls-main"><h2>'+rb(T("ls.story"))+'</h2>'+L.story.map(function(p){return '<p>'+p+'</p>';}).join('')+'</div><aside class="ls-aside"><p class="lbl">Romance of the Three Kingdoms</p><p class="ls-ch">'+L.ch+'</p><p class="tags">'+chips(s.k)+'</p></aside></div>'+
+ '<div class="wrap ls-sec"><h2>'+rb(T("ls.idea"))+'</h2><ol class="steps">'+L.steps.map(function(st,k){return '<li><span class="sn">0'+(k+1)+'</span><h3>'+st[0]+'</h3><p>'+st[1]+'</p></li>';}).join('')+'</ol></div>'+
+ '<div class="wrap ls-sec"><h2>'+rb(T("ls.try"))+'</h2><div class="demo-box"><div class="demo-head"><h3>'+L.tryH+'</h3><p>'+L.tryP+'</p></div><div id="lsDemo"></div></div></div>'+
+ '<div class="wrap ls-sec ls-two"><div><h2>'+rb(T("ls.terms"))+'</h2><dl class="terms">'+L.terms.map(function(t){return '<div><dt>'+t[0]+'</dt><dd>'+t[1]+'</dd></div>';}).join('')+'</dl></div><div><h2>'+rb(T("ls.learn"))+'</h2><div class="learn">'+learnCard("level",L.level)+learnCard("lab",L.lab)+'</div></div></div>'+
+ '<nav class="wrap pn" aria-label="Lessons"><a href="#'+LIDS[pv]+'"><span class="lbl">← '+rb(T("ls.prev"))+'</span><span class="cn">'+fx(STRATS[pv][0])+'</span><span class="pt">'+rb(d.strats[pv].t)+'</span></a><a class="nx" href="#'+LIDS[nx]+'"><span class="lbl">'+rb(T("ls.next"))+' →</span><span class="cn">'+fx(STRATS[nx][0])+'</span><span class="pt">'+rb(d.strats[nx].t)+'</span></a></nav>';
+ $("v-lesson").innerHTML=h;DEMOS[i]($("lsDemo"));
+}
+
+/* ---------- boot ---------- */
+var saved=null; try{saved=localStorage.getItem("kmq-lang");}catch(e){}
+setLang(saved||"en");
+route(true);
+buildSky(); sizeBagua(); drawBloch(+theta.value); runShots(false);
+var rt; window.addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(function(){buildSky();sizeBagua();if(reduce){drawSky(0);drawBagua(0);}},150);});
+if(window.ResizeObserver) new ResizeObserver(function(){sizeBagua();if(reduce)drawBagua(0);}).observe(bc);
+if(reduce){ drawSky(0); drawBagua(0); if(document.fonts) document.fonts.ready.then(function(){drawBagua(0);}); }
+else {
+  (function loop(t){ if(!document.hidden){ drawSky(t); drawBagua(t); } requestAnimationFrame(loop); })(0);
+}
+})();
+</script>
+
+</body></html>
