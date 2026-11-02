@@ -129,7 +129,10 @@ p{margin:0}
   .oracle{grid-column:1/-1}
 }
 @media (max-width:620px){
-  .hero{grid-template-columns:minmax(0,1fr)}
+  .hero{grid-template-columns:minmax(0,1fr);row-gap:6px}
+  .hero-copy{gap:18px}
+  .hero-copy h1{order:-1}
+  .hero-copy .eyebrow{margin-top:-8px}
   .vtitle{flex-direction:row;font-size:56px;gap:.04em}
   .vc{flex-direction:column-reverse;gap:2px}
   .vtitle i{writing-mode:horizontal-tb;font-size:.24em}
