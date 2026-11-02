@@ -172,15 +172,14 @@ p{margin:0}
 .more{margin-top:28px}
 
 /* Path (home) */
-.path{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:4px;background:rgba(13,19,36,.6)}
+.path{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:4px;background:rgba(13,19,36,.6)}
 .path li{list-style:none;padding:22px;display:grid;gap:6px;border-right:1px solid var(--line);min-width:0}
 .path li:last-child{border-right:0}
 .path .num{font-family:"Noto Serif TC",serif;font-weight:900;color:var(--gold);font-size:14px}
 .path .pcn{font-family:"Noto Serif TC",serif;font-weight:900;font-size:28px;letter-spacing:.06em}
 .path .psub{color:var(--mist);font-size:14.5px}
 ol.path{margin:0;padding:0}
-@media (max-width:820px){.path{grid-template-columns:repeat(2,minmax(0,1fr))}.path li:nth-child(2){border-right:0}.path li:nth-child(-n+2){border-bottom:1px solid var(--line)}}
-@media (max-width:440px){.path{grid-template-columns:minmax(0,1fr)}.path li{border-right:0;border-bottom:1px solid var(--line)}.path li:last-child{border-bottom:0}}
+@media (max-width:900px){.path{grid-template-columns:minmax(0,1fr)}.path li{grid-template-columns:28px 6.5rem minmax(0,1fr);align-items:baseline;column-gap:16px;border-right:0;border-bottom:1px solid var(--line);padding-block:14px}.path li:last-child{border-bottom:0}}
 
 /* Stratagems */
 .strat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;padding-bottom:clamp(56px,8vw,104px)}
@@ -199,7 +198,7 @@ ol.path{margin:0;padding:0}
 :root:is([lang="vi"],[lang="ja"],[lang="ko"],[lang="zh-Hant"]) .tag{line-height:2}
 
 /* Programs */
-.levels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;position:relative;margin:0;padding:0}
+.levels{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;position:relative;margin:0;padding:0}
 .levels::before{content:"";position:absolute;top:22px;left:22px;right:22px;height:1px;background:linear-gradient(90deg,var(--gold),var(--jade));opacity:.5}
 .level{list-style:none;display:grid;gap:12px;align-content:start;position:relative;min-width:0}
 .level .dot{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--night);border:1px solid var(--gold);color:var(--gold);font-family:"Noto Serif TC",serif;font-weight:900;font-size:18px;box-shadow:0 0 18px rgba(240,195,90,.3)}
@@ -207,8 +206,8 @@ ol.path{margin:0;padding:0}
 .level h3{font-size:17px;color:var(--jade);font-weight:500;line-height:1.5}
 :root:is([lang="vi"],[lang="ja"],[lang="ko"],[lang="zh-Hant"]) .level h3{line-height:2}
 .level p{color:var(--mist);font-size:15px}
-@media (max-width:900px){.levels{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:36px}.levels::before{display:none}}
-@media (max-width:520px){.levels{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:1060px){.levels{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:36px}.levels::before{display:none}}
+@media (max-width:560px){.levels{grid-template-columns:minmax(0,1fr)}}
 .labs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 @media (max-width:1000px){.labs{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.labs{grid-template-columns:minmax(0,1fr)}}
@@ -582,12 +581,12 @@ var TRI={"乾":{b:"111",n:"天"},"兌":{b:"110",n:"澤"},"離":{b:"101",n:"火"}
 var RING=["乾","巽","坎","艮","坤","震","離","兌"]; /* Earlier Heaven order, clockwise from top (south) */
 var STRATS=[["草船借箭","坎"],["空城計","兌"],["借東風","巽"],["八陣圖","坤"],["錦囊妙計","離"],["七擒孟獲","震"],["木牛流馬","艮"],["隆中對","乾"]];
 var LIDS=["straw-boats","empty-fort","east-wind","eight-formations","silk-bags","seven-captures","wooden-ox","longzhong"];
-var LEVELS=["茅廬","隆中","赤壁","五丈原"], NUMS=["一","二","三","四"];
+var LEVELS=["茅廬","隆中","赤壁","出師表","五丈原"], NUMS=["一","二","三","四","五"];
 var LABS=["觀星臺","八陣圖","草船","木牛流馬"];
 var REALMS=["量","網","粒"], VALUES=["知","謀","義","傳"];
 var FIX={
-ja:{"草船借箭":"そうせんしゃくせん","空城計":"くうじょうけい","借東風":"しゃくとうふう","八陣圖":"はちじんず","錦囊妙計":"きんのうみょうけい","七擒孟獲":"しちきんもうかく","木牛流馬":"もくぎゅうりゅうば","隆中對":"りゅうちゅうたい","茅廬":"ぼうろ","隆中":"りゅうちゅう","赤壁":"せきへき","五丈原":"ごじょうげん","觀星臺":"かんせいだい","草船":"そうせん","量":"りょう","網":"もう","粒":"りゅう","知":"ち","謀":"ぼう","義":"ぎ","傳":"でん","乾":"けん","兌":"だ","離":"り","震":"しん","巽":"そん","坎":"かん","艮":"ごん","坤":"こん","天":"てん","澤":"たく","火":"か","雷":"らい","風":"ふう","水":"すい","山":"さん","地":"ち","一":"いち","二":"に","三":"さん","四":"し","鞠躬盡瘁":"きっきゅうじんすい","死而後已":"しじこうい","諸葛量子":"しょかつりょうし"},
-ko:{"草船借箭":"초선차전","空城計":"공성계","借東風":"차동풍","八陣圖":"팔진도","錦囊妙計":"금낭묘계","七擒孟獲":"칠금맹획","木牛流馬":"목우유마","隆中對":"융중대","茅廬":"모려","隆中":"융중","赤壁":"적벽","五丈原":"오장원","觀星臺":"관성대","草船":"초선","量":"량","網":"망","粒":"립","知":"지","謀":"모","義":"의","傳":"전","乾":"건","兌":"태","離":"리","震":"진","巽":"손","坎":"감","艮":"간","坤":"곤","天":"천","澤":"택","火":"화","雷":"뢰","風":"풍","水":"수","山":"산","地":"지","一":"일","二":"이","三":"삼","四":"사","鞠躬盡瘁":"국궁진췌","死而後已":"사이후이","諸葛量子":"제갈양자"}};
+ja:{"草船借箭":"そうせんしゃくせん","空城計":"くうじょうけい","借東風":"しゃくとうふう","八陣圖":"はちじんず","錦囊妙計":"きんのうみょうけい","七擒孟獲":"しちきんもうかく","木牛流馬":"もくぎゅうりゅうば","隆中對":"りゅうちゅうたい","茅廬":"ぼうろ","隆中":"りゅうちゅう","赤壁":"せきへき","五丈原":"ごじょうげん","觀星臺":"かんせいだい","草船":"そうせん","量":"りょう","網":"もう","粒":"りゅう","知":"ち","謀":"ぼう","義":"ぎ","傳":"でん","乾":"けん","兌":"だ","離":"り","震":"しん","巽":"そん","坎":"かん","艮":"ごん","坤":"こん","天":"てん","澤":"たく","火":"か","雷":"らい","風":"ふう","水":"すい","山":"さん","地":"ち","一":"いち","二":"に","三":"さん","四":"し","五":"ご","出師表":"すいしのひょう","鞠躬盡瘁":"きっきゅうじんすい","死而後已":"しじこうい","諸葛量子":"しょかつりょうし"},
+ko:{"草船借箭":"초선차전","空城計":"공성계","借東風":"차동풍","八陣圖":"팔진도","錦囊妙計":"금낭묘계","七擒孟獲":"칠금맹획","木牛流馬":"목우유마","隆中對":"융중대","茅廬":"모려","隆中":"융중","赤壁":"적벽","五丈原":"오장원","觀星臺":"관성대","草船":"초선","量":"량","網":"망","粒":"립","知":"지","謀":"모","義":"의","傳":"전","乾":"건","兌":"태","離":"리","震":"진","巽":"손","坎":"감","艮":"간","坤":"곤","天":"천","澤":"택","火":"화","雷":"뢰","風":"풍","水":"수","山":"산","地":"지","一":"일","二":"이","三":"삼","四":"사","五":"오","出師表":"출사표","鞠躬盡瘁":"국궁진췌","死而後已":"사이후이","諸葛量子":"제갈양자"}};
 var HTMLLANG={en:"en",zh:"zh-Hant",ja:"ja",ko:"ko",vi:"vi"};
 
 /* ---------- translations ---------- */
@@ -606,12 +605,12 @@ en:{
  "quote.src":"Zhuge Liang, Later Memorial on Dispatching the Troops",
  "feat.h":"Ancient stratagems, quantum lessons","feat.link":"All eight stratagems →",
  "path.h":"From the thatched cottage to the Wuzhang Plains",
- "path.p":"Four levels, each named for a turning point in Kong Ming’s life.","path.link":"All programs and labs →",
+ "path.p":"Five levels, each named for a turning point in Kong Ming’s life.","path.link":"All programs and labs →",
  "strat.eyebrow":"From the Romance of the Three Kingdoms","strat.h":"Eight stratagems, eight lessons",
  "strat.p":"Each story opens one idea in quantum science or cybersecurity. Each card also carries a trigram and its three-qubit state.",
  "lbl.story":"The story","lbl.lesson":"The lesson",
- "prog.eyebrow":"Four levels · Four labs","prog.p":"Study in order, or start where your knowledge already is.",
- "prog.levels":"The four levels","prog.labs":"The four labs",
+ "prog.eyebrow":"Five levels · Four labs","prog.p":"Study in order, or start where your knowledge already is.",
+ "prog.levels":"The five levels","prog.labs":"The four labs",
  "demo.h":"Try it: one qubit on the Stargazing Terrace",
  "demo.p":"Set the angle θ, then measure 1,000 times. Theory says |1⟩ appears with probability sin²(θ/2).",
  "demo.angle":"Angle θ","demo.btn":"Measure 1,000 times","demo.obs":"Observed","demo.exp":"Expected",
@@ -642,6 +641,7 @@ en:{
   {t:"Thatched Cottage · Foundations",d:"Before the three visits, Kong Ming studied alone. Start here: atoms, light, probability, linear algebra, and how computers and networks work."},
   {t:"Longzhong · Strategy & Cryptography",d:"The Longzhong Plan was a map of the future. Learn qubits and gates, classical and post-quantum cryptography, and how to plan a migration."},
   {t:"Red Cliffs · Defence Labs",d:"Fire on the river. Hands-on attack-and-defence exercises, quantum circuits on simulators, and team capture-the-flag."},
+  {t:"Setting Out · Advanced Studies",d:"With the Memorial on Dispatching the Troops, Kong Ming set out on his northern campaigns. Go deeper: quantum algorithms, quantum error correction, and a specialist track in attack or defence."},
   {t:"Wuzhang Plains · Capstone",d:"Kong Ming’s final campaign. A mentored research or engineering project that ends in a public defence."}],
  labs:[
   {t:"Stargazing Terrace · Qubit sandbox",d:"Build circuits and watch the probabilities change."},
@@ -668,12 +668,12 @@ zh:{
  "quote.src":"諸葛亮《後出師表》",
  "feat.h":"古計今用，量子之課","feat.link":"全部八計 →",
  "path.h":"由茅廬至五丈原",
- "path.p":"四個階段，各以孔明一生的轉捩點命名。","path.link":"全部課程與實驗室 →",
+ "path.p":"五個階段，各以孔明一生的轉捩點命名。","path.link":"全部課程與實驗室 →",
  "strat.eyebrow":"出自《三國演義》","strat.h":"八計八課",
  "strat.p":"每段故事，開啟一個量子科學或網絡安全的概念。每張卡片亦附一卦，及其三量子位元狀態。",
  "lbl.story":"典故","lbl.lesson":"今課",
- "prog.eyebrow":"四個階段 · 四座實驗室","prog.p":"循序漸進，或從你已有的程度開始。",
- "prog.levels":"四個階段","prog.labs":"四座實驗室",
+ "prog.eyebrow":"五個階段 · 四座實驗室","prog.p":"循序漸進，或從你已有的程度開始。",
+ "prog.levels":"五個階段","prog.labs":"四座實驗室",
  "demo.h":"試一試：觀星臺上的一個量子位元",
  "demo.p":"設定角度 θ，然後測量 1,000 次。理論上，|1⟩ 出現的機率為 sin²(θ/2)。",
  "demo.angle":"角度 θ","demo.btn":"測量 1,000 次","demo.obs":"實測","demo.exp":"理論",
@@ -704,6 +704,7 @@ zh:{
   {t:"基礎",d:"三顧之前，孔明獨自苦讀。由此起步：原子、光、機率、線性代數，以及電腦與網絡的運作原理。"},
   {t:"謀略與密碼",d:"隆中對是一幅未來的地圖。學習量子位元與量子閘、古典與後量子密碼，以及如何規劃遷移。"},
   {t:"攻防實驗",d:"火燒赤壁。實戰攻防演練、在模擬器上運行量子電路，以及團隊奪旗賽。"},
+  {t:"進階研修",d:"上《出師表》後，孔明揮軍北伐。更上層樓：量子演算法、量子糾錯，以及攻擊或防守的專業方向。"},
   {t:"畢業專題",d:"孔明最後的北伐。在導師指導下完成研究或工程專題，並公開答辯。"}],
  labs:[
   {t:"量子位元沙盒",d:"搭建電路，觀察機率變化。"},
@@ -730,12 +731,12 @@ ja:{
  "quote.src":"[諸葛亮|しょかつりょう]『[後出師表|ごすいしのひょう]』",
  "feat.h":"[古|いにしえ]の[計略|けいりゃく]、[量子|りょうし]の[敎訓|きょうくん]","feat.link":"[八|やっ]つの[計略|けいりゃく]をすべて[見|み]る →",
  "path.h":"[茅廬|ぼうろ]から[五丈原|ごじょうげん]へ",
- "path.p":"[四|よっ]つの[段階|だんかい]。それぞれ[孔明|こうめい]の[生涯|しょうがい]の[轉機|てんき]に[因|ちな]む。","path.link":"[課程|かてい]と[實驗室|じっけんしつ]をすべて[見|み]る →",
+ "path.p":"[五|いつ]つの[段階|だんかい]。それぞれ[孔明|こうめい]の[生涯|しょうがい]の[轉機|てんき]に[因|ちな]む。","path.link":"[課程|かてい]と[實驗室|じっけんしつ]をすべて[見|み]る →",
  "strat.eyebrow":"『[三國志演義|さんごくしえんぎ]』より","strat.h":"[八|やっ]つの[計略|けいりゃく]、[八|やっ]つの[敎訓|きょうくん]",
  "strat.p":"[各逸話|かくいつわ]が、[量子科學|りょうしかがく]やサイバー[安全|あんぜん]の[一|ひと]つの[槪念|がいねん]を[開|ひら]く。[各|かく]カードには[一|ひと]つの[卦|け]と、その[三量子|さんりょうし]ビット[狀態|じょうたい]を[添|そ]えた。",
  "lbl.story":"[故事|こじ]","lbl.lesson":"[敎訓|きょうくん]",
- "prog.eyebrow":"[四|よっ]つの[段階|だんかい] · [四|よっ]つの[實驗室|じっけんしつ]","prog.p":"[順|じゅん]に[學|まな]ぶもよし、[今|いま]の[知識|ちしき]から[始|はじ]めるもよし。",
- "prog.levels":"[四|よっ]つの[段階|だんかい]","prog.labs":"[四|よっ]つの[實驗室|じっけんしつ]",
+ "prog.eyebrow":"[五|いつ]つの[段階|だんかい] · [四|よっ]つの[實驗室|じっけんしつ]","prog.p":"[順|じゅん]に[學|まな]ぶもよし、[今|いま]の[知識|ちしき]から[始|はじ]めるもよし。",
+ "prog.levels":"[五|いつ]つの[段階|だんかい]","prog.labs":"[四|よっ]つの[實驗室|じっけんしつ]",
  "demo.h":"[試|ため]してみよう：[觀星臺|かんせいだい]の[一量子|いちりょうし]ビット",
  "demo.p":"[角度|かくど] θ を[決|き]め、1,000 [回|かい][測定|そくてい]する。[理論上|りろんじょう]、|1⟩ が[出|で]る[確率|かくりつ]は sin²(θ/2)。",
  "demo.angle":"[角度|かくど] θ","demo.btn":"1,000 [回|かい][測定|そくてい]","demo.obs":"[實測|じっそく]","demo.exp":"[理論値|りろんち]",
@@ -766,6 +767,7 @@ ja:{
   {t:"[基礎|きそ]",d:"[三顧|さんこ]の[禮|れい]の[前|まえ]、[孔明|こうめい]は[獨|ひと]り[學|まな]んだ。ここから[始|はじ]める。[原子|げんし]、[光|ひかり]、[確率|かくりつ]、[線形代數|せんけいだいすう]、そして[計算機|けいさんき]とネットワークの[仕組|しく]み。"},
   {t:"[謀略|ぼうりゃく]と[暗號|あんごう]",d:"[隆中對|りゅうちゅうたい]は[未來|みらい]の[地圖|ちず]だった。[量子|りょうし]ビットとゲート、[古典暗號|こてんあんごう]と[耐量子暗號|たいりょうしあんごう]、そして[移行|いこう]の[計劃|けいかく]を[學|まな]ぶ。"},
   {t:"[攻防實驗|こうぼうじっけん]",d:"[江上|こうじょう]の[火攻|ひぜ]め。[實踐的|じっせんてき]な[攻防演習|こうぼうえんしゅう]、シミュレータ[上|じょう]の[量子回路|りょうしかいろ]、チーム[對抗|たいこう]の CTF。"},
+  {t:"[上級研究|じょうきゅうけんきゅう]",d:"『[出師表|すいしのひょう]』を[奉|たてまつ]り、[孔明|こうめい]は[北伐|ほくばつ]に[出|で]た。さらに[深|ふか]く[學|まな]ぶ。[量子|りょうし]アルゴリズム、[量子誤|りょうしあやま]り[訂正|ていせい]、そして[攻擊|こうげき]か[防禦|ぼうぎょ]の[專門|せんもん]コース。"},
   {t:"[卒業研究|そつぎょうけんきゅう]",d:"[孔明|こうめい][最後|さいご]の[北伐|ほくばつ]。[指導者|しどうしゃ]のもとで[研究|けんきゅう]または[工學|こうがく]の[課題|かだい]に[取|と]り[組|く]み、[公開審査|こうかいしんさ]で[締|し]めくくる。"}],
  labs:[
   {t:"[量子|りょうし]ビットの[砂場|すなば]",d:"[回路|かいろ]を[組|く]み、[確率|かくりつ]の[變化|へんか]を[見|み]る。"},
@@ -792,12 +794,12 @@ ko:{
  "quote.src":"[諸葛亮|제갈량], 《[後出師表|후출사표]》",
  "feat.h":"옛 [計略|계략], [量子|양자]의 [敎訓|교훈]","feat.link":"여덟 [計略|계략] 모두 보기 →",
  "path.h":"[茅廬|모려]에서 [五丈原|오장원]까지",
- "path.p":"네 [段階|단계]. [各各|각각] [孔明|공명] [生涯|생애]의 [轉換點|전환점]에서 이름을 따왔다.","path.link":"[課程|과정]과 [實驗室|실험실] 모두 보기 →",
+ "path.p":"다섯 [段階|단계]. [各各|각각] [孔明|공명] [生涯|생애]의 [轉換點|전환점]에서 이름을 따왔다.","path.link":"[課程|과정]과 [實驗室|실험실] 모두 보기 →",
  "strat.eyebrow":"《[三國志演義|삼국지연의]》에서","strat.h":"여덟 [計略|계략], 여덟 [敎訓|교훈]",
  "strat.p":"이야기 하나하나가 [量子科學|양자과학]이나 사이버 [保安|보안]의 [槪念|개념] 하나를 연다. 카드마다 [卦|괘] 하나와 그 [量子|양자]비트 세 개의 [狀態|상태]를 담았다.",
  "lbl.story":"[故事|고사]","lbl.lesson":"[敎訓|교훈]",
- "prog.eyebrow":"네 [段階|단계] · 네 [實驗室|실험실]","prog.p":"[順序|순서]대로 배워도 좋고, 지금 아는 데서 [始作|시작]해도 좋다.",
- "prog.levels":"네 [段階|단계]","prog.labs":"네 [實驗室|실험실]",
+ "prog.eyebrow":"다섯 [段階|단계] · 네 [實驗室|실험실]","prog.p":"[順序|순서]대로 배워도 좋고, 지금 아는 데서 [始作|시작]해도 좋다.",
+ "prog.levels":"다섯 [段階|단계]","prog.labs":"네 [實驗室|실험실]",
  "demo.h":"[直接|직접] 해보기: [觀星臺|관성대]의 [量子|양자]비트 하나",
  "demo.p":"[角度|각도] θ를 [定|정]하고 1,000[番|번] [測定|측정]한다. [理論上|이론상] |1⟩이 나올 [確率|확률]은 sin²(θ/2)이다.",
  "demo.angle":"[角度|각도] θ","demo.btn":"1,000[番|번] [測定|측정]","demo.obs":"[實測|실측]","demo.exp":"[理論|이론]",
@@ -828,6 +830,7 @@ ko:{
   {t:"[基礎|기초]",d:"[三顧草廬|삼고초려] [以前|이전], [孔明|공명]은 홀로 [工夫|공부]했다. 여기서 [始作|시작]한다. [原子|원자], 빛, [確率|확률], [線形代數|선형대수], 그리고 컴퓨터와 네트워크의 [原理|원리]."},
   {t:"[謀略|모략]과 [暗號|암호]",d:"[隆中對|융중대]는 [未來|미래]의 [地圖|지도]였다. [量子|양자]비트와 게이트, [古典|고전] [暗號|암호]와 [後量子|후양자] [暗號|암호], 그리고 [移轉|이전] [計劃|계획]을 배운다."},
   {t:"[攻防|공방] [實驗|실험]",d:"[江|강] 위의 [火攻|화공]. [實戰|실전] [攻防|공방] [演習|연습], 시뮬레이터 위의 [量子|양자] [回路|회로], 팀 [對抗|대항] CTF."},
+  {t:"[深化|심화] [課程|과정]",d:"《[出師表|출사표]》를 올리고 [孔明|공명]은 [北伐|북벌]에 나섰다. 더 깊이 배운다. [量子|양자] 알고리즘, [量子|양자] [誤謬|오류] [訂正|정정], 그리고 [攻擊|공격] 또는 [防禦|방어] [專門|전문] 트랙."},
   {t:"[卒業|졸업] 프로젝트",d:"[孔明|공명]의 마지막 [北伐|북벌]. [指導敎授|지도교수]와 함께 [硏究|연구] 또는 [工學|공학] 프로젝트를 [遂行|수행]하고 [公開|공개] [發表|발표]로 마무리한다."}],
  labs:[
   {t:"[量子|양자]비트 샌드박스",d:"[回路|회로]를 만들고 [確率|확률]의 [變化|변화]를 지켜본다."},
@@ -854,12 +857,12 @@ vi:{
  "quote.src":"[Gia Cát Lượng|諸葛亮], [Hậu xuất sư biểu|後出師表]",
  "feat.h":"[Kế|計] xưa, bài học [lượng tử|量子]","feat.link":"Xem cả tám [kế|計] →",
  "path.h":"Từ [mao lư|茅廬] đến [Ngũ Trượng Nguyên|五丈原]",
- "path.p":"Bốn [cấp độ|級度], mỗi cấp mang tên một bước ngoặt trong đời [Khổng Minh|孔明].","path.link":"Xem mọi [chương trình|章程] →",
+ "path.p":"Năm [cấp độ|級度], mỗi cấp mang tên một bước ngoặt trong đời [Khổng Minh|孔明].","path.link":"Xem mọi [chương trình|章程] →",
  "strat.eyebrow":"Từ [Tam Quốc diễn nghĩa|三國演義]","strat.h":"Tám [kế|計], tám bài học",
  "strat.p":"Mỗi [điển tích|典跡] mở ra một [khái niệm|槪念] về [khoa học|科學] [lượng tử|量子] hoặc [an ninh|安寧] mạng. Mỗi thẻ còn mang một quẻ và [trạng thái|狀態] ba qubit của nó.",
  "lbl.story":"[Điển tích|典跡]","lbl.lesson":"Bài học",
- "prog.eyebrow":"Bốn cấp độ · Bốn phòng thí nghiệm","prog.p":"Học theo thứ tự, hoặc bắt đầu từ chỗ bạn đã biết.",
- "prog.levels":"Bốn [cấp độ|級度]","prog.labs":"Bốn phòng [thí nghiệm|試驗]",
+ "prog.eyebrow":"Năm cấp độ · Bốn phòng thí nghiệm","prog.p":"Học theo thứ tự, hoặc bắt đầu từ chỗ bạn đã biết.",
+ "prog.levels":"Năm [cấp độ|級度]","prog.labs":"Bốn phòng [thí nghiệm|試驗]",
  "demo.h":"Thử ngay: một qubit trên [Quan Tinh Đài|觀星臺]",
  "demo.p":"Chọn góc θ rồi đo 1.000 lần. Theo [lý thuyết|理說], |1⟩ xuất hiện với [xác suất|確率] sin²(θ/2).",
  "demo.angle":"Góc θ","demo.btn":"Đo 1.000 lần","demo.obs":"[Thực tế|實際]","demo.exp":"[Lý thuyết|理說]",
@@ -890,6 +893,7 @@ vi:{
   {t:"Nền tảng",d:"Trước [Tam cố|三顧], [Khổng Minh|孔明] tự học một mình. Bắt đầu tại đây: [nguyên tử|原子], ánh sáng, [xác suất|確率], [đại số|代數] [tuyến tính|線性] và cách máy tính, mạng vận hành."},
   {t:"[Mưu lược|謀略] & [mật mã|密碼]",d:"[Long Trung đối|隆中對] là tấm bản đồ của [tương lai|將來]. Học qubit và cổng [lượng tử|量子], mật mã [cổ điển|古典] và hậu lượng tử, cùng cách lập [kế hoạch|計劃] chuyển đổi."},
   {t:"[Thí nghiệm|試驗] [công thủ|攻守]",d:"Lửa trên sông. Diễn tập tấn công và phòng thủ, mạch [lượng tử|量子] trên trình [mô phỏng|模倣], và thi cướp cờ (CTF) theo đội."},
+  {t:"[Chuyên sâu|專深]",d:"Dâng [Xuất sư biểu|出師表], [Khổng Minh|孔明] lên đường [Bắc phạt|北伐]. Học sâu hơn: [thuật toán|術算] [lượng tử|量子], sửa lỗi [lượng tử|量子], và hướng [chuyên môn|專門] tấn công hoặc [phòng thủ|防守]."},
   {t:"[Đồ án|圖案] tốt nghiệp",d:"Chiến dịch cuối cùng của [Khổng Minh|孔明]. Một [đề tài|題材] [nghiên cứu|研究] hoặc kỹ thuật có người hướng dẫn, kết thúc bằng buổi bảo vệ công khai."}],
  labs:[
   {t:"Sa bàn qubit",d:"Dựng mạch và xem [xác suất|確率] thay đổi."},
@@ -1223,7 +1227,7 @@ var LES=[
  ["Raise the cost of every guess","Neither technique makes a system unbreakable. Both make each probe less useful to the attacker and more likely to be seen."]],
  terms:[["Reconnaissance","Gathering information about a target before attacking."],["Attack surface","Every point where an attacker could try to get in."],["Moving-target defence","Changing a system's visible shape so attacker knowledge goes stale."],["Honeytoken","A fake credential or record that should never be used. Any use is an alarm."],["Deception","Showing attackers a false picture on purpose."]],
  tryH:"Find the real gate",tryP:"One of eight gates is real. Click a gate to probe it. Turn on moving-target defence and the real gate moves after every probe."},
-{ch:"Chapter 49",level:1,lab:0,
+{ch:"Chapter 49",level:3,lab:0,
  story:["Wu and Shu planned to burn Cao Cao's fleet at Red Cliffs. Cao Cao had chained his ships together so his northern soldiers would not be seasick. Fire would leap from ship to ship, but only with the right wind.",
  "In winter the wind blew from the north-west, back toward Wu. Zhou Yu fell ill with worry. Kong Ming told him he could borrow a south-east wind.",
  "He built the Seven Stars Altar on the Nanping hills and promised a wind for three days and nights. On the night of the attack the wind turned. Huang Gai's fire ships sailed into the chained fleet, and Cao Cao's navy burned.",
@@ -1267,7 +1271,7 @@ var LES=[
  ["Disclose responsibly","When researchers find flaws in someone else's system, they report them privately and give the owner time to fix them before going public."]],
  terms:[["Red team","Authorised attackers who test defences."],["Blue team","Defenders who detect, respond and repair."],["Purple team","Red and blue working together and sharing what they learn."],["Penetration test","A scoped, time-boxed attempt to break in."],["Coordinated disclosure","Reporting a flaw privately before publishing it."]],
  tryH:"Seven rounds in the south",tryP:"The system starts with hidden weaknesses. Each round, the red team finds some and the blue team fixes them. Some fixes add new flaws. Run all seven rounds. This is a simple model, not real data."},
-{ch:"Chapter 102",level:2,lab:3,
+{ch:"Chapter 102",level:3,lab:3,
  story:["Kong Ming's northern campaigns failed more than once because grain could not cross the Qinling mountains. The plank roads of Shu were narrow and steep.",
  "He designed the Wooden Ox and the Flowing Horse: carts shaped like animals, moved by levers hidden inside. In the novel they carried grain day and night and needed neither food nor rest.",
  "Sima Yi captured some and had copies built. Kong Ming let him. When Wei used the copies, Shu soldiers twisted the oxen's tongues, which locked their legs, and drove the whole convoy home to Shu.",
